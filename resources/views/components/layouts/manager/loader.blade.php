@@ -1,0 +1,4 @@
+<!---Global-loader-->
+{{--<div id="global-loader">--}}
+{{--    <img src="../assets/images/svgs/loader.svg" alt="loader">--}}
+{{--</div>--}}
