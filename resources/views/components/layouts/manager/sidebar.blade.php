@@ -40,10 +40,10 @@
                         <span class="side-menu__label">حساب کاربری</span><i class="angle fe fe-chevron-right"></i></a>
                     <ul class="slide-menu">
                         <li class="side-menu-label1">
-                            <a href="javascript:void(0)">حساب کاربری</a>
+                            <a href="{{route('manager.user.index')}}">حساب کاربری</a>
                         </li>
                         <li>
-                            <a class="slide-item" href="index.html">
+                            <a class="slide-item" href="{{route('manager.user.index')}}">
                                 <span>کاربران</span>
                             </a>
                         </li>
