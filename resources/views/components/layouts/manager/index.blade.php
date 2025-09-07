@@ -1,54 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="fa" dir="rtl">
 <head>
-
-    <!-- Meta data -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta content="Dashtic - Bootstrap Webapp Responsive Dashboard Simple Admin Panel Premium HTML5 Template" name="description">
     <meta content="Spruko Technologies Private Limited" name="author">
     <meta name="keywords" content="admin, admin template, dashboard, admin dashboard, bootstrap 5, responsive, clean, ui, admin panel, ui kit, responsive admin, application, bootstrap 4, flat, bootstrap5, admin dashboard template" />
-
-    <!-- Title -->
-    <title>Dashtic - Bootstrap Webapp Responsive Dashboard Simple Admin Panel Premium HTML5 Template</title>
-
-    <!--Favicon -->
-{{--    <link rel="icon" href="../assets/images/brand/favicon.ico" type="image/x-icon" />--}}
-
-    <!-- Bootstrap css -->
+    <title>مدیریت فروشگاه رایان نوین</title>
+    <link rel="icon" href="../assets/images/brand/favicon.ico" type="image/x-icon" />
     <link id="style" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
-
-    <!-- Style css -->
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" />
-
-    <!-- Plugin css -->
     <link href="{{asset('assets/css/plugin.css')}}" rel="stylesheet" />
-
-    <!-- Animate css -->
     <link href="{{asset('assets/css/animated.css')}}" rel="stylesheet" />
-
-    <!---Icons css-->
     <link href="{{asset('assets/plugins/web-fonts/icons.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/plugins/web-fonts/font-awesome/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/plugins/web-fonts/plugin.css')}}" rel="stylesheet" />
-
+    @vite(['resources/css/manager.css','resources/js/manager.js'])
 </head>
-
 <body class="main-body app sidebar-mini light-mode rtl">
-
 @include('components.layouts.manager.loader')
-
-
 <div class="page">
     <div class="page-main">
-
        @include('components.layouts.manager.header')
        @include('components.layouts.manager.sidebar')
-
-
-
-        <!-- app-content start-->
         <div class="app-content main-content">
             <div class="side-app">
                 <div class="container-fluid main-container">
