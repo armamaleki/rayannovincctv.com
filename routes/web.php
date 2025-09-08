@@ -5,7 +5,7 @@ use Inertia\Inertia;
 
 Route::get('auth' , function () {
     return view('auth.login');
-});
+})->name('login');
 
 Route::get('/', function () {
     return Inertia::render('welcome');

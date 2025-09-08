@@ -47,6 +47,11 @@
                                 <span>کاربران</span>
                             </a>
                         </li>
+                        <li>
+                            <a class="slide-item" href="{{route('manager.role.index')}}">
+                                <span>دسترسی ها</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

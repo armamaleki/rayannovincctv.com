@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         $users = User::where('phone', 'like', "%{$request->q}%")
             ->orWhere('name', 'like', "%{$request->q}%")
-            ->get();
+            ->paginate(100);
         return view('manager.user.index' , compact('users'));
     }
 }
