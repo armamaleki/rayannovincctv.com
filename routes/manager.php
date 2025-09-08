@@ -23,5 +23,12 @@ Route::prefix('article')->name('article.')->group(function () {
     Route::post('/store',[\App\Http\Controllers\Manager\ArticleController::class , 'store'])->name('store');
     Route::get('/edit/{article}',[\App\Http\Controllers\Manager\ArticleController::class , 'edit'])->name('edit');
     Route::put('/update/{article}',[\App\Http\Controllers\Manager\ArticleController::class , 'update'])->name('update');
+});
 
+Route::prefix('value')->name('value.')->group(function () {
+    Route::get('/',[\App\Http\Controllers\Manager\ValueController::class , 'index'])->name('index');
+    Route::get('/create',[\App\Http\Controllers\Manager\ValueController::class , 'create'])->name('create');
+    Route::post('/store',[\App\Http\Controllers\Manager\ValueController::class , 'store'])->name('store');
+    Route::get('/edit/{value}',[\App\Http\Controllers\Manager\ValueController::class , 'edit'])->name('edit');
+    Route::put('/update/{value}',[\App\Http\Controllers\Manager\ValueController::class , 'update'])->name('update');
 });
