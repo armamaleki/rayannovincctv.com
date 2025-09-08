@@ -30,15 +30,17 @@ class ArticleController extends Controller
         $data['user_id'] = auth()->id();
         $data['slug'] = Str::slug($data['slug'], '-', '');
         $create = Article::create($data);
-        return redirect()->route('manager.article.edit', $create)->with('message',
-            [
-                'icon' => 'warning',
-                'text' => 'دسته بندی ایجاد شد  دقت کنید درحال ویرایش آن هستید!',
-            ]);
+        return redirect()->route('manager.article.edit', $create);
     }
 
     public function edit(Article $article)
     {
+        session()->flash('message',
+            [
+                'type' => 'warning',
+                'title' => 'ویرایش مقاله',
+                'text' => 'دقت کنید شما در حال ویرایش مقاله هستید پس از ذخیره هیچ راه بازگشتی نیست!!',
+            ]);
         return view('manager.article.edit', compact('article'));
     }
 
@@ -48,16 +50,17 @@ class ArticleController extends Controller
         $data['user_id'] = auth()->id();
         $data['slug'] = Str::slug($data['slug'], '-', '');
         $update = $article->update($data);
-        return redirect()->route('manager.article')->with('message',
+        return redirect()->route('manager.article.index')->with('message',
             [
-                'icon' => 'warning',
-                'text' => 'تغییرات اعمال شد',
+                'type' => 'success',
+                'title' => 'تعییرات اعمال شد',
+                'text' => 'تغییرات با موفقیت اعمال شد از این پس با تغییرات جدید در سایت دیده میشه!!!',
             ]);
     }
 
     public function destroy(Request $request)
     {
-        $article =Article::findOrFail($request->id);
+        $article = Article::findOrFail($request->id);
         if ($article) {
             $article->delete();
             return response()->json(['success' => true]);

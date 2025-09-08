@@ -10,7 +10,6 @@
                 @csrf
                 @method('PUT')
 
-                {{-- نام دسترسی --}}
                 <div class="mb-3 row">
                     <label class="col-md-3 form-label">
                         نام دسترسی
@@ -26,8 +25,6 @@
                                value="{{ old('name', $role->name) }}">
                     </div>
                 </div>
-
-                {{-- انتخاب دسترسی‌ها --}}
                 <div class="mb-3 row">
                     <label class="col-md-3 form-label">
                         دسترسی

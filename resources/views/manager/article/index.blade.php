@@ -32,7 +32,7 @@
                                         <a href="#" class="btn btn-green active" type="button">
                                             <i class="fa fa-eye fa-lg"></i>
                                         </a>
-                                        <a href="{{route('manager.role.edit' , $data)}}" class="btn btn-primary pd-x-25" type="button">
+                                        <a href="{{route('manager.article.edit' , $data)}}" class="btn btn-primary pd-x-25" type="button">
                                             <i class="fa fa-pencil fa-lg"></i>
                                         </a>
                                     </div>
@@ -49,3 +49,20 @@
 
     {{$articles->links()}}
 @endsection
+
+
+@push('js')
+    <script src="{{asset('assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatable/js/dataTables.bootstrap5.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatable/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatable/js/buttons.bootstrap5.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatable/js/jszip.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatable/pdfmake/pdfmake.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatable/pdfmake/vfs_fonts.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatable/js/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatable/js/buttons.print.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatable/js/buttons.colVis.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatable/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatable/responsive.bootstrap5.min.js')}}"></script>
+    <script src="{{asset('assets/js/datatables.js')}}"></script>
+@endpush
