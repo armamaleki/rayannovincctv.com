@@ -2,43 +2,75 @@
 @section('content')
     <div class="card mt-5">
         <div class="card-header">
-            اضافه کردن مقاله جدید
+            <h3 class="card-title">اضافه کردن محصول</h3>
         </div>
         <div class="card-body">
-            <form
-                action="{{route('manager.article.store')}}"
-                method="post">
+            <form action="{{route('manager.product.store')}}" method="post">
                 @csrf
                 <div class="mb-3 row">
                     <label class="col-md-3 form-label">
-                        نام مقاله
-                        @error('name')
-                        <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                        نام محصول
+                        @error('name') <span class="text-danger">{{$message}}</span> @enderror
                     </label>
                     <div class="col-md-9">
                         <input type="text"
                                name="name"
-                               class="form-control @error('name') is-invalid state-invalid @enderror"
-                               placeholder="نام مقاله باید منحصر به فرد باشد"
-                               value="{{ old('name') }}">
+                               class="form-control @error('name') is-invalid state-invalid @enderror "
+                               placeholder="نام محصول باید منحصر به فرد باشد"
+                               value="{{old('name')}}">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-md-3 form-label">
                         آدرس اینترنتی
-                        @error('slug')
+                        @error('slug') <span class="text-danger">{{$message}}</span> @enderror
+                    </label>
+                    <div class="col-md-9">
+                        <input type="text"
+                               name="slug"
+                               class="form-control @error('slug') is-invalid state-invalid @enderror "
+                               placeholder="آدرس اینترنتی باید منحصر به فرد باشد (بهتره انگلیسی باشه)"
+                               value="{{old('slug')}}">
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label class="col-md-3 form-label">
+                        قیمت محصول
+                        @error('price')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </label>
+                    <div class="col-md-9">
+                        <span id="showPrice">0</span> تومن
+                        <input
+                            name="price"
+                            type="number"
+                            pattern="\d*"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{old('price')}}"
+                            id="priceInput"
+                            class="form-control @error('price') is-invalid state-invalid @enderror"
+                            placeholder="قیمت محصول به تومان وارد شود">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-md-3 form-label">
+                        موجودی انبار
+                        @error('quantity')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </label>
                     <div class="col-md-9">
                         <input type="text"
-                               name="slug"
-                               class="form-control @error('name') is-invalid state-invalid @enderror"
-                               placeholder="آدرس اینترنتی باید منحصر به فرد باشد (بهتره انگلیسی باشه)"
-                               value="{{ old('slug') }}">
+                               name="quantity"
+                               class="form-control @error('quantity') is-invalid state-invalid @enderror"
+                               placeholder="موجودی انبار حتما باید وارد شود پس از خرید از این موجودی کم میشه."
+                               value="{{ old('quantity') }}">
                     </div>
                 </div>
+
+
                 <div class="mb-3 row">
                     <label class="col-md-3 form-label">
                         تیتر متا
@@ -87,29 +119,39 @@
             </form>
         </div>
     </div>
+
 @endsection
 @push('js')
     <script src="{{asset('assets/plugins/ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('assets/plugins/ckeditor/lang/fa.js')}}"></script>
     <script>
         const editor = CKEDITOR.replace('description', {
-{{--            filebrowserUploadUrl: `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`,--}}
+            {{--            filebrowserUploadUrl: `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`,--}}
             customConfig: 'editorConfig',
-            requires: 'widget',
+            requires: 'widget'
         });
-        CKEDITOR.editorConfig = function (config) {
+        CKEDITOR.editorConfig = function(config) {
             config.language = 'fa';
             config.uiColor = '#e9d5ff';
             config.allowedContent = true;
             config.extraPlugins = 'language';
             config.height = 500;
             config.extraPlugins = 'uploadimage';
-{{--            config.uploadUrl = `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`;--}}
-            config.toolbarCanCollapse = true;
+            {{--            config.uploadUrl = `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`;--}}
+                config.toolbarCanCollapse = true;
             config.extraPlugins = 'font';
             config.font_names =
                 'yekan;' +
-                'vazir;'
+                'vazir;';
         };
     </script>
+    <script>
+        const priceInput = document.getElementById('priceInput');
+        const showPrice = document.getElementById('showPrice');
+        priceInput.addEventListener('input', function(e) {
+            let formatted = Number(e.target.value).toLocaleString('fa-IR');
+            showPrice.textContent = formatted;
+        });
+    </script>
+
 @endpush

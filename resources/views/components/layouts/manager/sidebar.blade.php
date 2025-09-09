@@ -94,6 +94,11 @@
                             <a href="javascript:void(0)">محصولات</a>
                         </li>
                         <li>
+                            <a class="slide-item" href="{{route('manager.product.index')}}">
+                                <span>محصولات</span>
+                            </a>
+                        </li>
+                        <li>
                             <a class="slide-item" href="{{route('manager.attribute.index')}}">
                                 <span>ویژگی محصولات</span>
                             </a>

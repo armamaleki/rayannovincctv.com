@@ -41,3 +41,12 @@ Route::prefix('attribute')->name('attribute.')->group(function () {
     Route::get('/edit/{attribute}',[\App\Http\Controllers\Manager\AttributeController::class , 'edit'])->name('edit');
     Route::put('/update/{attribute}',[\App\Http\Controllers\Manager\AttributeController::class , 'update'])->name('update');
 });
+
+
+Route::prefix('product')->name('product.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Manager\ProductController::class , 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\ProductController::class , 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\ProductController::class , 'store'])->name('store');
+    Route::get('/edit/{product}',[\App\Http\Controllers\Manager\ProductController::class , 'edit'])->name('edit');
+    Route::put('/update/{product}',[\App\Http\Controllers\Manager\ProductController::class , 'update'])->name('update');
+});
