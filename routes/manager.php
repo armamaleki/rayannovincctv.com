@@ -32,3 +32,12 @@ Route::prefix('value')->name('value.')->group(function () {
     Route::get('/edit/{value}',[\App\Http\Controllers\Manager\ValueController::class , 'edit'])->name('edit');
     Route::put('/update/{value}',[\App\Http\Controllers\Manager\ValueController::class , 'update'])->name('update');
 });
+
+
+Route::prefix('attribute')->name('attribute.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Manager\AttributeController::class , 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\AttributeController::class , 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\AttributeController::class , 'store'])->name('store');
+    Route::get('/edit/{attribute}',[\App\Http\Controllers\Manager\AttributeController::class , 'edit'])->name('edit');
+    Route::put('/update/{attribute}',[\App\Http\Controllers\Manager\AttributeController::class , 'update'])->name('update');
+});
