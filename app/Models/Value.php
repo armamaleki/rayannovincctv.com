@@ -20,4 +20,9 @@ class Value extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function scopeLatestUpdated($query)
+    {
+        return $query->orderBy('updated_at', 'desc');
+    }
 }
