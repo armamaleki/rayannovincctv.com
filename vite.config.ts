@@ -11,7 +11,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/manager.css',
 
-                'resources/js/app.tsx',
+                'resources/js/app.js',
                 'resources/js/manager.js',
             ],
             ssr: 'resources/js/ssr.tsx',

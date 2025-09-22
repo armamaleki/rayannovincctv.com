@@ -8,6 +8,6 @@ Route::get('auth' , function () {
 })->name('login');
 
 Route::get('/', function () {
-    return Inertia::render('welcome');
+    return view('client.index');
 })->name('home');
 

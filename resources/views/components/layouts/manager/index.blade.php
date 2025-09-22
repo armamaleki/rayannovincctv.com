@@ -17,7 +17,6 @@
     <link href="{{asset('assets/plugins/web-fonts/icons.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/plugins/web-fonts/font-awesome/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/plugins/web-fonts/plugin.css')}}" rel="stylesheet" />
-{{--    @vite(['resources/css/manager.css','resources/js/manager.js'])--}}
 </head>
 <body class="main-body app sidebar-mini light-mode rtl">
 @include('components.layouts.manager.loader')
