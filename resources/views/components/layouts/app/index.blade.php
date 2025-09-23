@@ -7,10 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>رایان نوین</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
+    <link rel="stylesheet" href="{{asset('assets/plugins/aos/aos.css')}}">
 </head>
-<body>
+<body class="bg-gray-950 text-sky-50">
 @yield('content')
-
+@include('components.layouts.app.footer')
+<script src="{{asset('assets/plugins/aos/aos.js')}}"></script>
+<script>
+    AOS.init();
+</script>
 @stack('js')
 </body>
 </html>

@@ -39,6 +39,7 @@
         "sweetalert2": "^11.23.0",
         "tailwind-merge": "^3.0.1",
         "tailwindcss": "^4.1.13",
+        "textify.js": "^3.0.1",
         "typescript": "^5.7.2",
         "vite": "^7.0.4"
     },
