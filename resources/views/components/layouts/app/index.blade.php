@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="{{asset('assets/plugins/aos/aos.css')}}">
 </head>
 <body class="bg-gray-950 text-sky-50">
-@yield('content')
+<x-layouts.app.loader/>
+<x-layouts.app.header/>
+<div class="md:-mt-32">
+    @yield('content')
+</div>
+
 @include('components.layouts.app.footer')
 <script src="{{asset('assets/plugins/aos/aos.js')}}"></script>
 <script>

@@ -7,7 +7,13 @@ Route::get('auth' , function () {
     return view('auth.login');
 })->name('login');
 
-Route::get('/', function () {
-    return view('client.index');
-})->name('home');
+Route::name('client.')->group(function () {
+    Route::get('/', function () {
+        return view('client.index');
+    })->name('home');
 
+    Route::get('/about-us', function () {
+        return view('client.about-us');
+    })->name('about-us');
+
+});

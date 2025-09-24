@@ -272,11 +272,11 @@
     <section
         style="background-image: url('{{asset('assets/images/shape/about-photo.png')}}')"
         class="container mx-auto px-2 my-16 py-16 bg-center bg-cover">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
                 <swiper-container class="" effect="cards" grab-cursor="true">
                     <swiper-slide
-                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg bg-gray-700/70 outline-1 outline-sky-400 text-center space-y-4">
+                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-400 text-center space-y-4">
                         <div
                             class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-400">
                             <x-icons.user class="size-12" />
@@ -287,8 +287,9 @@
                             corporis deleniti deserunt dolorem excepturi illo ipsa iure, labore magni mollitia obcaecati
                             placeat qui repellendus sequi veniam voluptates.
                         </p>
-                    </swiper-slide> <swiper-slide
-                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg bg-gray-700/70 outline-1 outline-sky-400 text-center space-y-4">
+                    </swiper-slide>
+                    <swiper-slide
+                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-400 text-center space-y-4">
                         <div
                             class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-400">
                             <x-icons.user class="size-12" />
@@ -299,8 +300,9 @@
                             corporis deleniti deserunt dolorem excepturi illo ipsa iure, labore magni mollitia obcaecati
                             placeat qui repellendus sequi veniam voluptates.
                         </p>
-                    </swiper-slide> <swiper-slide
-                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg bg-gray-700/70 outline-1 outline-sky-400 text-center space-y-4">
+                    </swiper-slide>
+                    <swiper-slide
+                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-400 text-center space-y-4">
                         <div
                             class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-400">
                             <x-icons.user class="size-12" />
@@ -311,8 +313,9 @@
                             corporis deleniti deserunt dolorem excepturi illo ipsa iure, labore magni mollitia obcaecati
                             placeat qui repellendus sequi veniam voluptates.
                         </p>
-                    </swiper-slide> <swiper-slide
-                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg bg-gray-700/70 outline-1 outline-sky-400 text-center space-y-4">
+                    </swiper-slide>
+                    <swiper-slide
+                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-400 text-center space-y-4">
                         <div
                             class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-400">
                             <x-icons.user class="size-12" />
@@ -323,8 +326,9 @@
                             corporis deleniti deserunt dolorem excepturi illo ipsa iure, labore magni mollitia obcaecati
                             placeat qui repellendus sequi veniam voluptates.
                         </p>
-                    </swiper-slide> <swiper-slide
-                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg bg-gray-700/70 outline-1 outline-sky-400 text-center space-y-4">
+                    </swiper-slide>
+                    <swiper-slide
+                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-400 text-center space-y-4">
                         <div
                             class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-400">
                             <x-icons.user class="size-12" />
@@ -338,8 +342,18 @@
                     </swiper-slide>
                 </swiper-container>
             </div>
+            <div class="p-2 rounded-xl backdrop-blur shadow-md shadow-sky-400 space-y-4 ">
+                <h2 class="text-2xl font-bold">در مورد رایان نوین چه میشنویم؟</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consectetur corporis cum
+                    explicabo
+                    fugiat ipsa ipsum magni molestias nihil nobis praesentium rerum, sed tempore ut vel velit voluptate?
+                    Aliquam, animi!
+                </p>
+            </div>
         </div>
     </section>
+    <x-client.last-articles/>
 
 @endsection
 @push('js')
