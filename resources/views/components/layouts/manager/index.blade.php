@@ -9,7 +9,7 @@
     <meta name="keywords"
           content="" />
     <title>مدیریت فروشگاه رایان نوین</title>
-    <link rel="icon" href="../assets/images/brand/favicon.ico" type="image/x-icon" />
+{{--    <link rel="icon" href="../assets/images/brand/favicon.ico" type="image/x-icon" />--}}
     <link id="style" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/plugin.css')}}" rel="stylesheet" />
@@ -17,6 +17,8 @@
     <link href="{{asset('assets/plugins/web-fonts/icons.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/plugins/web-fonts/font-awesome/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/plugins/web-fonts/plugin.css')}}" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body class="main-body app sidebar-mini light-mode rtl">
 @include('components.layouts.manager.loader')

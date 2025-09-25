@@ -23,6 +23,8 @@ Route::prefix('article')->name('article.')->group(function () {
     Route::post('/store',[\App\Http\Controllers\Manager\ArticleController::class , 'store'])->name('store');
     Route::get('/edit/{article}',[\App\Http\Controllers\Manager\ArticleController::class , 'edit'])->name('edit');
     Route::put('/update/{article}',[\App\Http\Controllers\Manager\ArticleController::class , 'update'])->name('update');
+    Route::post('/article/avatar/', [\App\Http\Controllers\Manager\ArticleController::class, 'avatar'])->name('avatar');
+
 });
 
 Route::prefix('value')->name('value.')->group(function () {

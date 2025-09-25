@@ -1,0 +1,44 @@
+@extends('components.layouts.app.index')
+@section('content')
+    @php
+        $breads = [
+               [
+                   "route" => '',
+                   "name" => 'تماس با ما',
+               ],
+           ];
+    @endphp
+    <x-client.ui.breadcrumb title="درباره ما" :breads="$breads" />
+    <div class="space-y-4 my-16  container mx-auto p-2">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <a href="" class="flex gap-1 items-center">
+                        <x-icons.phone />
+                        091255555
+                    </a>
+                    <a href="" class="flex gap-1 items-center">
+                        <x-icons.phone />
+                        091255555
+                    </a>
+                    <a href="mailto:info@rayammovincctv.com" class="flex gap-1 items-center">
+                        <x-icons.envelope />
+                        info@rayammovincctv.com
+                    </a>
+                    <div class="flex gap-1 items-center">
+                        <x-icons.map />
+                        تهران پلاک 1 در دوم
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <iframe
+                    class="w-full h-96"
+                    src="https://balad.ir/embed?p=PRdqBp3eMUGgpo" title="مشاهده «بورس ساعت» روی نقشه بلد"
+                        frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
+@endsection

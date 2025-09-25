@@ -75,16 +75,16 @@ class ArticleController extends Controller
     }
 
 
-//    public function avatar(Request $request)
-//    {
-//        $request->validate([
-//            'croppedImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-//        ]);
-//        $article = Article::findOrFail($request->model);
-//        $article->clearMediaCollection('avatars');
-//        $name = $request->croppedImage->store('avatars/', 'public');
-//        $article->addMedia(storage_path('app/public/' . $name))
-//            ->toMediaCollection('avatars', 'public');
-//        return response()->json(['success' => true]);
-//    }
+    public function avatar(Request $request)
+    {
+        $request->validate([
+            'croppedImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+        $article = Article::findOrFail($request->model);
+        $article->clearMediaCollection('avatars');
+        $name = $request->croppedImage->store('avatars/', 'public');
+        $article->addMedia(storage_path('app/public/' . $name))
+            ->toMediaCollection('avatars', 'public');
+        return response()->json(['success' => true]);
+    }
 }

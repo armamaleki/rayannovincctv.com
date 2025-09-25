@@ -19,14 +19,24 @@
                     <table id="example" class="table table-bordered text-nowrap key-buttons">
                         <thead>
                         <tr>
+                            <th class="border-bottom-0">اواتار</th>
                             <th class="border-bottom-0">نام</th>
+                            <th class="border-bottom-0">وضعیت</th>
                             <th class="border-bottom-0">#</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($articles as $data)
                             <tr>
+                                <td>
+                                    @if($data->getMedia('avatars')->isNotEmpty())
+                                        <img class="avatar avatar-xxl brround"  src="{{ $data->getMedia('avatars')->first()->getUrl('thumb') }}" alt="">
+                                    @endif
+                                </td>
                                 <td>{{$data->name}}</td>
+                                <td>
+                                    <livewire:manager.article-status article="{{$data->id}}"/>
+                                </td>
                                 <td>
                                     <div aria-label="Basic example" class="btn-group ms-3 mb-3" role="group">
                                         <a href="#" class="btn btn-green active" type="button">

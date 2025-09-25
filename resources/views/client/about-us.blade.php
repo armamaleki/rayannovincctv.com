@@ -4,14 +4,14 @@
         $breads = [
                [
                    "route" => '',
-                   "name" => 'مقالات',
+                   "name" => 'درباره ما',
                ],
            ];
     @endphp
     <x-client.ui.breadcrumb title="درباره ما" :breads="$breads" />
     <div class="space-y-4 my-16  container mx-auto p-2">
         <div>
-            <h3 class="text-center text-2xl font-bold text-3xl">چرا رایان نوین؟</h3>
+            <h3 class="text-center   font-bold text-3xl">چرا رایان نوین؟</h3>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-content-center">
             <div>
