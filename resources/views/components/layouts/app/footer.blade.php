@@ -31,19 +31,19 @@
         </div>
         <div class="space-y-4 ">
             <h3 class="text-2xl">دسترسی سریع </h3>
-            <a href="" class="flex gap-1 items-center">
+            <a href="{{route('client.store.index')}}" class="flex gap-1 items-center">
                 <x-icons.building-storefront />
                 فروشگاه
             </a>
-            <a href="" class="flex gap-1 items-center">
+            <a href="{{route('client.articles.index')}}" class="flex gap-1 items-center">
                 <x-icons.pencil-square />
                 مقالات
             </a>
-            <a href="" class="flex gap-1 items-center">
+            <a href="{{route('client.privacy-policy')}}" class="flex gap-1 items-center">
                 <x-icons.shield-exclamation />
                 قوانین و مقررات
             </a>
-            <a href="" class="flex gap-1 items-center">
+            <a href="{{route('client.faq')}}" class="flex gap-1 items-center">
                 <x-icons.question-mark-circle />
                 سوالات متداول
             </a>

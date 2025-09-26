@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Manager;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Manager\Product\StoreProductRequest;
+use App\Http\Requests\Manager\Product\UpdateProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -55,5 +56,33 @@ class ProductController extends Controller
             ]);
         return view('manager.product.edit', compact('product'));
     }
+
+    public function update(UpdateproductRequest $request, Product $product)
+    {
+        $data = $request->all();
+        $data['user_id'] = auth()->id();
+        $data['slug'] = Str::slug($data['slug'], '-', '');
+        $update = $product->update($data);
+        return redirect()->route('manager.product.index')->with('message',
+            [
+                'type' => 'success',
+                'title' => 'تعییرات اعمال شد',
+                'text' => 'تغییرات با موفقیت اعمال شد از این پس با تغییرات جدید در سایت دیده میشه!!!',
+            ]);
+    }
+
+    public function avatar(Request $request)
+    {
+        $request->validate([
+            'croppedImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+        $product = Product::findOrFail($request->model);
+        $product->clearMediaCollection('avatars');
+        $name = $request->croppedImage->store('avatars/', 'public');
+        $product->addMedia(storage_path('app/public/' . $name))
+            ->toMediaCollection('avatars', 'public');
+        return response()->json(['success' => true]);
+    }
+
 
 }

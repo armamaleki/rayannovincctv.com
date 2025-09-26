@@ -16,6 +16,9 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
+        if ($article->status !== 'active') {
+            abort(404);
+        }
         return view('client.articles.show', compact('article'));
     }
 }

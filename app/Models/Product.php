@@ -6,12 +6,26 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
+use Spatie\Image\Enums\Fit;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Product extends Model
+class Product extends Model implements HasMedia
 {
-    /** @use HasFactory<\Database\Factories\ProductFactory> */
-    use HasFactory, SoftDeletes;
 
+    use HasFactory, SoftDeletes, InteractsWithMedia;
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('thumb')
+            ->fit(Fit::Contain, 150, 150)
+            ->nonQueued();
+        $this->addMediaConversion('watermark')
+            ->watermark(public_path('assets/images/logo-50.png'))
+            ->nonQueued();
+    }
     public static function boot()
     {
         parent::boot();

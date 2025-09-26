@@ -20,9 +20,18 @@ Route::name('client.')->group(function () {
         return view('client.contact-us');
     })->name('contact-us');
 
+    Route::get('/faq', function () {
+        return view('client.faq');
+    })->name('faq');
+
+    Route::get('/privacy-policy', function () {
+        return view('client.privacy-policy');
+    })->name('privacy-policy');
+
     Route::get('/articles', [\App\Http\Controllers\Client\ArticleController::class, 'index'])->name('articles.index');
-    Route::get('/articles/{slug}', [\App\Http\Controllers\Client\ArticleController::class, 'show'])->name('articles.show');
+    Route::get('/articles/{article}', [\App\Http\Controllers\Client\ArticleController::class, 'show'])->name('articles.show');
 
     Route::get('/store', [\App\Http\Controllers\Client\StoreController::class, 'index'])->name('store.index');
+    Route::get('/store/{product}', [\App\Http\Controllers\Client\StoreController::class, 'show'])->name('store.show');
 
 });

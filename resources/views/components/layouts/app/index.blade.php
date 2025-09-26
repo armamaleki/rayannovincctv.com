@@ -8,15 +8,19 @@
     <title>رایان نوین</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <link rel="stylesheet" href="{{asset('assets/plugins/aos/aos.css')}}">
+    @livewireStyles
+
 </head>
 <body class="bg-gray-950 text-sky-50">
-<x-layouts.app.loader/>
-<x-layouts.app.header/>
+<x-layouts.app.loader />
+<x-layouts.app.header />
 <div class="md:-mt-32">
     @yield('content')
 </div>
 
 @include('components.layouts.app.footer')
+@livewireScripts
+
 <script src="{{asset('assets/plugins/aos/aos.js')}}"></script>
 <script>
     AOS.init();

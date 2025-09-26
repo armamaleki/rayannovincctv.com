@@ -40,12 +40,9 @@
                     </a>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <x-client.ui.single-product/>
-                    <x-client.ui.single-product/>
-                    <x-client.ui.single-product/>
-                    <x-client.ui.single-product/>
-                    <x-client.ui.single-product/>
-
+                    @foreach($products as $product)
+                        <x-client.ui.single-product :product="$product"/>
+                    @endforeach
                 </div>
 
             </div>

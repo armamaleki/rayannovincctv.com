@@ -120,7 +120,7 @@
             </div>
         </div>
     </section>
-
+<x-client.last-products/>
     <section class="container mx-auto px-2 py-16 space-y-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center ">
             <div

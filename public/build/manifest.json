@@ -1,0 +1,122 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-CEbJwSG5.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/css/fonts/figtree/Figtree-VariableFont_wght.ttf": {
+    "file": "assets/Figtree-VariableFont_wght-Bm0mD-Tr.ttf",
+    "src": "resources/css/fonts/figtree/Figtree-VariableFont_wght.ttf"
+  },
+  "resources/css/fonts/woff/IRANSansX-Black.woff": {
+    "file": "assets/IRANSansX-Black-XP5sXO6M.woff",
+    "src": "resources/css/fonts/woff/IRANSansX-Black.woff"
+  },
+  "resources/css/fonts/woff/IRANSansX-Bold.woff": {
+    "file": "assets/IRANSansX-Bold-CBYBdDJ3.woff",
+    "src": "resources/css/fonts/woff/IRANSansX-Bold.woff"
+  },
+  "resources/css/fonts/woff/IRANSansX-DemiBold.woff": {
+    "file": "assets/IRANSansX-DemiBold-FWl81mne.woff",
+    "src": "resources/css/fonts/woff/IRANSansX-DemiBold.woff"
+  },
+  "resources/css/fonts/woff/IRANSansX-ExtraBlack.woff": {
+    "file": "assets/IRANSansX-ExtraBlack-SrNsqHyr.woff",
+    "src": "resources/css/fonts/woff/IRANSansX-ExtraBlack.woff"
+  },
+  "resources/css/fonts/woff/IRANSansX-ExtraBold.woff": {
+    "file": "assets/IRANSansX-ExtraBold-De-O8-f9.woff",
+    "src": "resources/css/fonts/woff/IRANSansX-ExtraBold.woff"
+  },
+  "resources/css/fonts/woff/IRANSansX-Heavy.woff": {
+    "file": "assets/IRANSansX-Heavy-DT90uprd.woff",
+    "src": "resources/css/fonts/woff/IRANSansX-Heavy.woff"
+  },
+  "resources/css/fonts/woff/IRANSansX-Light.woff": {
+    "file": "assets/IRANSansX-Light-B4HfWRyw.woff",
+    "src": "resources/css/fonts/woff/IRANSansX-Light.woff"
+  },
+  "resources/css/fonts/woff/IRANSansX-Medium.woff": {
+    "file": "assets/IRANSansX-Medium-C-Gjz0oQ.woff",
+    "src": "resources/css/fonts/woff/IRANSansX-Medium.woff"
+  },
+  "resources/css/fonts/woff/IRANSansX-Regular.woff": {
+    "file": "assets/IRANSansX-Regular-svuyfzzO.woff",
+    "src": "resources/css/fonts/woff/IRANSansX-Regular.woff"
+  },
+  "resources/css/fonts/woff/IRANSansX-Thin.woff": {
+    "file": "assets/IRANSansX-Thin-DmiMVDL-.woff",
+    "src": "resources/css/fonts/woff/IRANSansX-Thin.woff"
+  },
+  "resources/css/fonts/woff/IRANSansX-UltraLight.woff": {
+    "file": "assets/IRANSansX-UltraLight-D27sGttp.woff",
+    "src": "resources/css/fonts/woff/IRANSansX-UltraLight.woff"
+  },
+  "resources/css/fonts/woff2/IRANSansX-Black.woff2": {
+    "file": "assets/IRANSansX-Black-BFb6VCYD.woff2",
+    "src": "resources/css/fonts/woff2/IRANSansX-Black.woff2"
+  },
+  "resources/css/fonts/woff2/IRANSansX-Bold.woff2": {
+    "file": "assets/IRANSansX-Bold-DWpscwl7.woff2",
+    "src": "resources/css/fonts/woff2/IRANSansX-Bold.woff2"
+  },
+  "resources/css/fonts/woff2/IRANSansX-DemiBold.woff2": {
+    "file": "assets/IRANSansX-DemiBold-C8veyBBB.woff2",
+    "src": "resources/css/fonts/woff2/IRANSansX-DemiBold.woff2"
+  },
+  "resources/css/fonts/woff2/IRANSansX-ExtraBlack.woff2": {
+    "file": "assets/IRANSansX-ExtraBlack-mBvU4_ve.woff2",
+    "src": "resources/css/fonts/woff2/IRANSansX-ExtraBlack.woff2"
+  },
+  "resources/css/fonts/woff2/IRANSansX-ExtraBold.woff2": {
+    "file": "assets/IRANSansX-ExtraBold-Cvm8g8ep.woff2",
+    "src": "resources/css/fonts/woff2/IRANSansX-ExtraBold.woff2"
+  },
+  "resources/css/fonts/woff2/IRANSansX-Heavy.woff2": {
+    "file": "assets/IRANSansX-Heavy-D-h2I1O0.woff2",
+    "src": "resources/css/fonts/woff2/IRANSansX-Heavy.woff2"
+  },
+  "resources/css/fonts/woff2/IRANSansX-Light.woff2": {
+    "file": "assets/IRANSansX-Light-Di0XGbGd.woff2",
+    "src": "resources/css/fonts/woff2/IRANSansX-Light.woff2"
+  },
+  "resources/css/fonts/woff2/IRANSansX-Medium.woff2": {
+    "file": "assets/IRANSansX-Medium-CM_rDvr7.woff2",
+    "src": "resources/css/fonts/woff2/IRANSansX-Medium.woff2"
+  },
+  "resources/css/fonts/woff2/IRANSansX-Regular.woff2": {
+    "file": "assets/IRANSansX-Regular-JITyl92W.woff2",
+    "src": "resources/css/fonts/woff2/IRANSansX-Regular.woff2"
+  },
+  "resources/css/fonts/woff2/IRANSansX-Thin.woff2": {
+    "file": "assets/IRANSansX-Thin-ItjKZkfC.woff2",
+    "src": "resources/css/fonts/woff2/IRANSansX-Thin.woff2"
+  },
+  "resources/css/fonts/woff2/IRANSansX-UltraLight.woff2": {
+    "file": "assets/IRANSansX-UltraLight-BnEMnD0O.woff2",
+    "src": "resources/css/fonts/woff2/IRANSansX-UltraLight.woff2"
+  },
+  "resources/css/manager.css": {
+    "file": "assets/manager-erWOhBjM.css",
+    "src": "resources/css/manager.css",
+    "isEntry": true,
+    "names": [
+      "manager.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BF2iLJEP.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/manager.js": {
+    "file": "assets/manager-l0sNRNKZ.js",
+    "name": "manager",
+    "src": "resources/js/manager.js",
+    "isEntry": true
+  }
+}
