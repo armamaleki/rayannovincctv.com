@@ -40,7 +40,7 @@
 
 
 <div
-    class="flex justify-around items- center divide-x  md:hidden fixed bottom-0 w-full  bg-gray-800 rounded-t-xl p-2 shadow shadow-sky-400 ">
+    class="flex justify-around items-center divide-x  md:hidden fixed z-40 bottom-0 w-full  bg-gray-800 rounded-t-xl p-2 shadow shadow-sky-400 ">
     <a
         class="flex flex-col items-center text-center font-thin text-sm p-2 text-[10px] w-full"
         href="/">

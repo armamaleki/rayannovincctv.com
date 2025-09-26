@@ -38,3 +38,17 @@ document.addEventListener('alert', event => {
     })
 });
 
+document.addEventListener('success' , event=>{
+    Swal.fire({
+        title: "محصول به سبد خرید اضافه شد.",
+        icon: "success",
+        html: `به سبد خرید میرید و یا میخوایید به خرید ادامه بدین؟ `,
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText: `<a href="/checkout">ادامه روند خرید</a>`,
+        cancelButtonText: "هنوز کار دارم",
+    });
+})
+
+

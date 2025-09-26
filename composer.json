@@ -17,6 +17,7 @@
         "laravel/wayfinder": "^0.1.11",
         "livewire/livewire": "^3.6",
         "morilog/jalali": "^3.4",
+        "shetabit/payment": "^6.3",
         "spatie/laravel-medialibrary": "^11.15",
         "spatie/laravel-permission": "^6.21"
     },
