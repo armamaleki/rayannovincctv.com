@@ -10,6 +10,7 @@ use Exception;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Shetabit\Multipay\Exceptions\InvalidPaymentException;
 use Shetabit\Multipay\Exceptions\PurchaseFailedException;
 use Shetabit\Multipay\Invoice;
@@ -51,10 +52,11 @@ class OrderPurchaseController extends Controller
             });
             return $payment->pay()->render();
         } catch (PurchaseFailedException|Exception $exception) {
+            Log::error($exception->getMessage());
             $transaction->transaction_result = $exception;
             $transaction->status = 0;
             $transaction->save();
-            return to_route('dashboard.');
+            return to_route('dashboard.index');
         }
     }
 
@@ -68,7 +70,6 @@ class OrderPurchaseController extends Controller
                 ]);
         }
         $transaction = Transaction::where('payment_id', $request->payment_id)->first();
-//        dd($transaction);
         if (empty($transaction)) {
             return redirect()->route('dashboard.transactions')->with('message',
                 [
@@ -110,8 +111,9 @@ class OrderPurchaseController extends Controller
             $order->update([
                 'status' => 'paid',
             ]);
-            $response = $this->smsir->Send()->Verify($order->user->phone, '827717', array(['name' => 'order_no', 'value' => $order->order_number]));
-            return redirect()->route('dashboard.orders')
+//            $response = $this->smsir->Send()->Verify($order->user->phone, '827717', array(['name' => 'order_no', 'value' => $order->order_number]));
+
+            return to_route('dashboard.orders')
                 ->with('message',
                     [
                         'icon' => 'success',

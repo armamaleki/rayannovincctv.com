@@ -34,6 +34,22 @@
                 <x-icons.phone />
                 تماس با ما
             </a>
+            @if(auth()->check() )
+                <a
+                    class="flex gap-1 items-center font-bold text-lg hover:border-b hover:text-sky-500 transition-all delay-150 duration-300 {{request()->path() == 'dashboard' ? 'border-b text-sky-500' :'' }} "
+                    href="{{route('dashboard.index')}}">
+                    <x-icons.arrow-left-end-on-rectangle />
+                    حساب کاربری
+                </a>
+            @else
+                <a
+                    class="flex gap-1 items-center font-bold text-lg hover:border-b hover:text-sky-500 transition-all delay-150 duration-300"
+                    href="{{route('login')}}">
+                    <x-icons.arrow-left-end-on-rectangle />
+                    ورود|ثبت نام
+                </a>
+            @endif
+
         </div>
     </div>
 </div>
@@ -50,7 +66,7 @@
     <a
         class="flex flex-col items-center text-center font-thin text-sm p-2 text-[10px] w-full"
         href="{{route('client.store.index')}}">
-        <x-icons.building-storefront  class="size-9"/>
+        <x-icons.building-storefront class="size-9" />
         فروشگاه
     </a>
     <a
@@ -65,7 +81,6 @@
         <x-icons.user class="size-9" />
         حساب کاربری
     </a>
-
 
 
 </div>

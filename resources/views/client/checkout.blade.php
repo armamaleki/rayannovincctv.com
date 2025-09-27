@@ -56,7 +56,7 @@
                                 <td class="px-6 py-4">
                                     <form
                                         method="post"
-                                        action="{{route('client.checkout.remove-item')}}">
+                                        action="{{route('checkout.remove-item')}}">
                                         @csrf
                                         <input
                                             name="item"
@@ -122,7 +122,7 @@
                 </div>
                 <form
                     method="post"
-                    action="{{route('client.cart.store')}}"
+                    action="{{route('cart.store')}}"
                     class="mt-5 flex flex-col items-center">
                     @csrf
 

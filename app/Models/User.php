@@ -20,9 +20,29 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'phone',
         'email',
+        'email_verified_at',
         'password',
     ];
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+    public function scopeLatestUpdated($query)
+    {
+        return $query->orderBy('updated_at', 'desc');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

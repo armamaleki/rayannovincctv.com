@@ -18,6 +18,8 @@ class Login extends Component
     public $phone;
     public $authCode;
     public $code = '';
+    public $cart;
+    public $cartItems;
 
     public function register()
     {
@@ -84,7 +86,7 @@ class Login extends Component
                 }
                 return to_route('checkout');
             } else {
-                return to_route('dashboard.');
+                return to_route('dashboard.index');
             }
         }
     }

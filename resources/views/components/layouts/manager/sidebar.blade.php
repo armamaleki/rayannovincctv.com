@@ -3,10 +3,10 @@
 <div class="sticky">
     <aside class="app-sidebar sidebar-scroll">
         <div class="main-sidebar-header active">
-            <a class="desktop-logo logo-light active" href="index.html">
+            <a class="desktop-logo logo-light active" href="{{route('client.home')}}">
                 <img src="{{asset('assets/images/logo.png')}}" class="main-logo" alt="logo">
             </a>
-            <a class="desktop-logo logo-dark active" href="index.html">
+            <a class="desktop-logo logo-dark active" href="{{route('client.home')}}">
                 <img src="{{asset('assets/images/logoWith.png')}}" class="main-logo" alt="logo">
             </a>
 
