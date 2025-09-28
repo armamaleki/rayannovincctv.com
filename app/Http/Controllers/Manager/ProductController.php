@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Manager;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Manager\Product\StoreProductRequest;
 use App\Http\Requests\Manager\Product\UpdateProductRequest;
+use App\Models\Attribute;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -48,21 +49,35 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
+        $attributes = Attribute::with('values')->get();
+        $product->load(['attributes' => function($q) {
+            $q->withPivot('value_id', 'custom_value');
+        }]);
         session()->flash('message',
             [
                 'type' => 'warning',
                 'title' => 'ویرایش محصول',
                 'text' => 'دقت کنید شما در حال ویرایش محصول هستید پس از ذخیره هیچ راه بازگشتی نیست!!',
             ]);
-        return view('manager.product.edit', compact('product'));
+        return view('manager.product.edit', compact('product' , 'attributes'));
     }
 
     public function update(UpdateproductRequest $request, Product $product)
     {
+        dd($request->all());
         $data = $request->all();
         $data['user_id'] = auth()->id();
         $data['slug'] = Str::slug($data['slug'], '-', '');
         $update = $product->update($data);
+        if ($request->has('attributes')) {
+            $product->attributes()->detach();
+            foreach ($request->attributes as $attr) {
+                $product->attributes()->attach($attr['attribute_id'], [
+                    'value_id'     => $attr['value_id'] ?? null,
+                    'custom_value' => $attr['custom_value'] ?? null,
+                ]);
+            }
+        }
         return redirect()->route('manager.product.index')->with('message',
             [
                 'type' => 'success',
@@ -81,6 +96,18 @@ class ProductController extends Controller
         $name = $request->croppedImage->store('avatars/', 'public');
         $product->addMedia(storage_path('app/public/' . $name))
             ->toMediaCollection('avatars', 'public');
+        return response()->json(['success' => true]);
+    }
+    public function gallery(Request $request)
+    {
+        $request->validate([
+            'croppedImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+        $product = Product::findOrFail($request->model);
+//        $product->clearMediaCollection('galleries');
+        $name = $request->croppedImage->store('galleries/', 'public');
+        $product->addMedia(storage_path('app/public/' . $name))
+            ->toMediaCollection('galleries', 'public');
         return response()->json(['success' => true]);
     }
 

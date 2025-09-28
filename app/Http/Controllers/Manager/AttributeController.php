@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Manager;
 
 use App\Http\Controllers\Controller;
 use App\Models\Attribute;
+use App\Models\Value;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
@@ -47,13 +48,15 @@ class AttributeController extends Controller
 
     public function edit(Attribute $attribute)
     {
+        $values = Value::orderBy('sort_order')->get();
+        $selectedValues = $attribute->values()->pluck('values.id')->toArray();
         session()->flash('message',
             [
                 'type' => 'warning',
                 'title' => 'ویرایش مقدار',
                 'text' => 'دقت کنید شما در حال ویرایش ویژگی هستید پس از ذخیره هیچ راه بازگشتی نیست!!',
             ]);
-        return view('manager.attribute.edit', compact('attribute'));
+        return view('manager.attribute.edit', compact('attribute' , 'values' ,  'selectedValues'));
     }
 
     public function update(Request $request, Attribute $attribute)
@@ -70,6 +73,7 @@ class AttributeController extends Controller
         try {
             $data['user_id'] = auth()->user()->id;
             $attribute->update($data);
+            $attribute->values()->sync($request->values ?? []);
             session()->flash('message',
                 [
                     'type' => 'success',

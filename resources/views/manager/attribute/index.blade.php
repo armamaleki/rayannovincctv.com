@@ -21,6 +21,7 @@
                         <tr>
                             <th class="border-bottom-0">نام</th>
                             <th class="border-bottom-0">ایکون</th>
+                            <th class="border-bottom-0">مقدار ها</th>
                             <th class="border-bottom-0">#</th>
                         </tr>
 
@@ -29,6 +30,11 @@
                         @foreach($attributes as $data)
                             <tr>
                                 <td>{{$data->name}}</td>
+                                <td>
+                                    @foreach($data->values as $value)
+                                        {{$value->name}} |
+                                    @endforeach
+                                </td>
                                 <td>{!! $data->icon !!}</td>
                                 <td>
                                     <div aria-label="Basic example" class="btn-group ms-3 mb-3" role="group">

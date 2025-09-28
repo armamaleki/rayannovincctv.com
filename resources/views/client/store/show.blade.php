@@ -21,13 +21,24 @@
                      --swiper-pagination-color: #fff"
                     class="mySwiper"
                     thumbs-swiper=".mySwiper2" space-between="10" navigation="true">
-                    <swiper-slide>
-                        @foreach ($product->getMedia('avatars') as $media)
+                    @foreach ($product->getMedia('avatars') as $media)
+                        <swiper-slide>
+
                             <img
                                 class="rounded-xl w-full"
                                 src="{{ $media->getFullUrl('watermark') }}" alt="">
-                        @endforeach
-                    </swiper-slide>
+                        </swiper-slide>
+
+                    @endforeach
+                    @foreach ($product->getMedia('galleries') as $gallery)
+                        <swiper-slide>
+
+                            <img
+                                class="rounded-xl w-full"
+                                src="{{ $gallery->getFullUrl('watermark') }}" alt="">
+                        </swiper-slide>
+
+                    @endforeach
 
                 </swiper-container>
 
@@ -35,9 +46,19 @@
                                   watch-slides-progress="true">
                     <swiper-slide>
                         @if($product->getMedia('avatars')->isNotEmpty())
-                            <img class="rounded-xl"  src="{{ $product->getMedia('avatars')->first()->getUrl('thumb') }}" alt="">
+                            <img class="rounded-xl" src="{{ $product->getMedia('avatars')->first()->getUrl('thumb') }}"
+                                 alt="">
                         @endif
                     </swiper-slide>
+                    @foreach ($product->getMedia('galleries') as $gallery)
+                        <swiper-slide>
+
+                            <img
+                                class="rounded-xl"
+                                src="{{ $gallery->getUrl('thumb') }}" alt="">
+                        </swiper-slide>
+
+                    @endforeach
                 </swiper-container>
             </div>
             <div class="space-y-4 ">
@@ -113,7 +134,7 @@
                                       fill="currentColor"></path>
                             </svg>
                         </div>
-                        <livewire:client.add-product-to-cart :product="$product"/>
+                        <livewire:client.add-product-to-cart :product="$product" />
                     @else
                         <p class="text-pink-500">
                             اتمام موجودی

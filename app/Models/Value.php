@@ -21,6 +21,19 @@ class Value extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function attributes()
+    {
+        return $this->belongsToMany(Attribute::class, 'value_attribute')
+            ->withTimestamps();
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'product_attribute_value')
+            ->withPivot('attribute_id', 'custom_value')
+            ->withTimestamps();
+    }
+
     public function scopeLatestUpdated($query)
     {
         return $query->orderBy('updated_at', 'desc');

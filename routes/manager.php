@@ -52,5 +52,6 @@ Route::prefix('product')->name('product.')->group(function () {
     Route::get('/edit/{product}',[\App\Http\Controllers\Manager\ProductController::class , 'edit'])->name('edit');
     Route::put('/update/{product}',[\App\Http\Controllers\Manager\ProductController::class , 'update'])->name('update');
     Route::post('/product/avatar/', [\App\Http\Controllers\Manager\ProductController::class, 'avatar'])->name('avatar');
+    Route::post('/product/gallery/', [\App\Http\Controllers\Manager\ProductController::class, 'gallery'])->name('gallery');
 
 });

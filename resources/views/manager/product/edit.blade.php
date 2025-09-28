@@ -121,6 +121,7 @@
             <div class="row mt-4">
                 <div class="col">
                     <div class="mb-3">
+                        <h2>آواتار محصول</h2>
                         <div class="form-label">حد اکثر اندازه برای بارگزاری 2 مگابایت میباشد.</div>
                         <div class="form-file">
                             <input type="file" class="form-control form-file-input" id="imageInput" name="avatar" accept="image/*">
@@ -149,6 +150,41 @@
                         <img
                             class="rounded-lg"
                             src="{{ $media->getFullUrl('watermark') }}" alt="Image">
+                    @endforeach
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="mb-3">
+                        <h2>گالری محصول</h2>
+                        <div class="form-label">حد اکثر اندازه برای بارگزاری 2 مگابایت میباشد.</div>
+                        <div class="form-file">
+                            <input type="file" class="form-control form-file-input" id="imageInputGallery" name="gallery" accept="image/*">
+                        </div>
+                    </div>
+                    <p id="errorMessageGallery" class="text-red-800"></p>
+                    <button type="submit" class="btn btn-primary" id="cropButtonGallery">
+                        برش و آپلود
+                        <span style="display: none" id="loaderGallery">
+                     <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                </span>
+                    </button>
+                </div>
+                <div class="col">
+                    <img id="imagePreviewGallery" src="" class="">
+                </div>
+                <div class="col">
+                    @foreach ($product->getMedia('galleries') as $Gallery)
+                        <img
+                            class="rounded-lg"
+                            src="{{ $Gallery->getFullUrl('watermark') }}" alt="Image">
                     @endforeach
                 </div>
             </div>
@@ -186,10 +222,12 @@
 
         const priceInput = document.getElementById('priceInput');
         const showPrice = document.getElementById('showPrice');
-        priceInput.addEventListener('input', function(e) {
-            let formatted = Number(e.target.value).toLocaleString('fa-IR');
-            showPrice.textContent = formatted;
-        });
+        if (priceInput) {
+            priceInput.addEventListener('input', function(e) {
+                let v = e.target.value ? Number(e.target.value) : 0;
+                showPrice.textContent = v.toLocaleString('fa-IR');
+            });
+        }
 
         var cropper;
         document.getElementById('imageInput').addEventListener('change', function (event) {
@@ -239,6 +277,57 @@
                 });
             } else {
                 document.getElementById('errorMessage').innerText = 'ابتدا عکس خود را انتخاب کنید'
+            }
+        });
+
+
+        document.getElementById('imageInputGallery').addEventListener('change', function (event) {
+            var image = document.getElementById('imagePreviewGallery');
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                image.src = e.target.result;
+                if (cropper) {
+                    cropper.destroy();
+                }
+                cropper = new Cropper(image, {
+                    aspectRatio: 1,
+                    viewMode: 1
+                });
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        });
+        document.getElementById('cropButtonGallery').addEventListener('click', function () {
+            if (cropper) {
+                document.getElementById('loaderGallery').style.display = 'inline-block';
+                var canvas = cropper.getCroppedCanvas();
+                canvas.toBlob(function (blob) {
+                    console.log(blob)
+                    var formData = new FormData();
+                    formData.append('croppedImage', blob);
+                    formData.append('model', `{{$product->id}}`);
+                    var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                    formData.append('_token', csrfToken);
+                    fetch(`{{route('manager.product.gallery')}}`, {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': csrfToken,
+                        },
+                        body: formData,
+                    }).then(response => response.json())
+                        .then(data => {
+                            document.getElementById('loaderGallery').style.display = 'none';
+                            if (data.success) {
+
+                                location.reload();
+                            }
+                        })
+                        .catch(error => {
+
+                            document.getElementById('loaderGallery').style.display = 'none';
+                        });
+                });
+            } else {
+                document.getElementById('errorMessageGallery').innerText = 'ابتدا عکس خود را انتخاب کنید'
             }
         });
     </script>
