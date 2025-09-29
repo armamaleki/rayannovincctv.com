@@ -93,4 +93,16 @@ class AttributeController extends Controller
         };
 
     }
+
+
+    public function getValues(Request $request)
+    {
+        $data = $request->validate([
+            'name'=>'required|string|max:255',
+        ]);
+        $attr = Attribute::where('name' , $data['name'])->first();
+        return response([
+            'data'=>$attr->values()->pluck('value')->toArray(),
+        ]);
+    }
 }

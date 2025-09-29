@@ -5,6 +5,7 @@
             <h3 class="card-title">اضافه کردن محصول</h3>
         </div>
         <div class="card-body">
+            <div id="attributes" data-attributes="{{ json_encode(\App\Models\Attribute::all()->pluck('name')) }}"></div>
             <form action="{{route('manager.product.store')}}" method="post">
                 @csrf
                 <div class="mb-3 row">
@@ -114,8 +115,23 @@
                                 placeholder="توضیح کوتاه نهایتا 250 کارکتر">{{ old('short_description') }}</textarea>
                     </div>
                 </div>
+                <div class="mb-3 row">
+                    <label class="col-md-3 form-label">
+                        ویژگی محصول
+                        <button class="btn btn-sm btn-danger" type="button" id="add_product_attribute">ویژگی جدید
+                        </button>
+                        @error('attributes')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+
+                    </label>
+                    <div class="col-md-9">
+                        <div id="attribute_section"></div>
+                    </div>
+                </div>
+
                 <textarea id="description" name="description">{{ old('description')  }}</textarea>
-                <button type="submit" class="btn btn-primary btn-block mt-5">ذخیره مقاله</button>
+                <button type="submit" class="btn btn-primary btn-block mt-5">ذخیره محصول</button>
             </form>
         </div>
     </div>
@@ -124,6 +140,7 @@
 @push('js')
     <script src="{{asset('assets/plugins/ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('assets/plugins/ckeditor/lang/fa.js')}}"></script>
+    <script src="{{asset('assets/plugins/select2/select2.full.min.js')}}"></script>
     <script>
         const editor = CKEDITOR.replace('description', {
             {{--            filebrowserUploadUrl: `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`,--}}
@@ -152,6 +169,86 @@
             let formatted = Number(e.target.value).toLocaleString('fa-IR');
             showPrice.textContent = formatted;
         });
+
+        let changeAttributeValues = (event, id) => {
+            let valueBox = $(`select[name='attributes[${id}][value]']`);
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: '/manager/attribute/values',
+                data: JSON.stringify({
+                    name: event.target.value
+                }),
+                success: function(data) {
+                    valueBox.html(`
+                            <option value="" selected>انتخاب کنید</option>
+                            ${
+                        data.data.map(function(item) {
+                            return `<option value="${item}">${item}</option>`;
+                        })
+                    }`
+                    );
+
+                }
+            });
+        };
+
+        let createNewAttr = ({ attributes, id }) => {
+            return `
+                    <div class="row" id="attribute-${id}">
+                        <div class="col-5">
+                            <div class="form-group">
+                                 <label>عنوان ویژگی</label>
+                                 <select name="attributes[${id}][name]" onchange="changeAttributeValues(event, ${id});" class="attribute-select form-control">
+                                    <option value="">انتخاب کنید</option>
+                                    ${
+                attributes.map(function(item) {
+                    return `<option value="${item}">${item}</option>`;
+                })
+            }
+                                 </select>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group">
+                                 <label>مقدار ویژگی</label>
+                                 <select name="attributes[${id}][value]" class="attribute-select form-control">
+                                        <option value="">انتخاب کنید</option>
+                                 </select>
+                            </div>
+                        </div>
+                         <div class="col-2">
+                            <label >اقدامات</label>
+                            <div>
+                                <button type="button" class="btn btn-sm btn-warning" onclick="document.getElementById('attribute-${id}').remove()">حذف</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        };
+
+        $('#add_product_attribute').click(function() {
+            let attributesSection = $('#attribute_section');
+            let id = attributesSection.children().length;
+            let attributes = $('#attributes').data('attributes');
+            attributesSection.append(
+                createNewAttr({
+                    attributes,
+                    id
+                })
+            );
+
+            $('.attribute-select').select2({ tags: true });
+        });
+
+
     </script>
 
 @endpush

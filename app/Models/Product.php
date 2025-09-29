@@ -67,9 +67,7 @@ class Product extends Model implements HasMedia
 
     public function attributes()
     {
-        return $this->belongsToMany(Attribute::class, 'product_attribute_value')
-            ->withPivot('value_id', 'custom_value')
-            ->withTimestamps();
+        return $this->belongsToMany(Attribute::class)->withPivot(['value_id']);
     }
 
     public function scopeLatestUpdated($query)

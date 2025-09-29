@@ -10,6 +10,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use function PHPUnit\Framework\isNull;
 
 class ProductController extends Controller
 {
@@ -30,10 +31,28 @@ class ProductController extends Controller
     {
         try {
             $data = $request->validated();
+
             $data['user_id'] = auth()->id();
             $data['slug'] = Str::slug($data['slug'], '-', '');
-            $create = Product::create($data);
-            return redirect()->route('manager.product.edit', $create);
+            $product = Product::create($data);
+            $attributes = collect($data['attributes']);
+            $attributes->each(function ($item) use ($product) {
+                if (is_null($item['name']) || is_null($item['value'])) {
+                    return;
+                }
+                $attr = Attribute::firstOrCreate([
+                    'name' => $item['name'],
+                    'user_id' => auth()->id(),
+                ]);
+
+                $attr_value = $attr->values()->firstOrCreate([
+                    'value' => $item['value'],
+                ]);
+                $product->attributes()->attach($attr->id, ['value_id' => $attr_value->id]);
+            });
+
+
+            return redirect()->route('manager.product.edit', $product);
         } catch (\Exception $exception) {
             Log::error($exception);
             session()->flash('message',
@@ -49,35 +68,22 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        $attributes = Attribute::with('values')->get();
-        $product->load(['attributes' => function($q) {
-            $q->withPivot('value_id', 'custom_value');
-        }]);
         session()->flash('message',
             [
                 'type' => 'warning',
                 'title' => 'ویرایش محصول',
                 'text' => 'دقت کنید شما در حال ویرایش محصول هستید پس از ذخیره هیچ راه بازگشتی نیست!!',
             ]);
-        return view('manager.product.edit', compact('product' , 'attributes'));
+        return view('manager.product.edit', compact('product'));
     }
 
     public function update(UpdateproductRequest $request, Product $product)
     {
-        dd($request->all());
+//        dd($request->all());
         $data = $request->all();
         $data['user_id'] = auth()->id();
         $data['slug'] = Str::slug($data['slug'], '-', '');
         $update = $product->update($data);
-        if ($request->has('attributes')) {
-            $product->attributes()->detach();
-            foreach ($request->attributes as $attr) {
-                $product->attributes()->attach($attr['attribute_id'], [
-                    'value_id'     => $attr['value_id'] ?? null,
-                    'custom_value' => $attr['custom_value'] ?? null,
-                ]);
-            }
-        }
         return redirect()->route('manager.product.index')->with('message',
             [
                 'type' => 'success',
@@ -98,6 +104,7 @@ class ProductController extends Controller
             ->toMediaCollection('avatars', 'public');
         return response()->json(['success' => true]);
     }
+
     public function gallery(Request $request)
     {
         $request->validate([

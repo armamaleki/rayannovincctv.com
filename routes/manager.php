@@ -42,6 +42,9 @@ Route::prefix('attribute')->name('attribute.')->group(function () {
     Route::post('/store', [\App\Http\Controllers\Manager\AttributeController::class , 'store'])->name('store');
     Route::get('/edit/{attribute}',[\App\Http\Controllers\Manager\AttributeController::class , 'edit'])->name('edit');
     Route::put('/update/{attribute}',[\App\Http\Controllers\Manager\AttributeController::class , 'update'])->name('update');
+
+
+    Route::post('/values' , [\App\Http\Controllers\Manager\AttributeController::class , 'getValues'])->name('value');
 });
 
 

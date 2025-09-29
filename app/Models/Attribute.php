@@ -23,15 +23,7 @@ class Attribute extends Model
 
     public function values()
     {
-        return $this->belongsToMany(Value::class, 'value_attribute')
-            ->withTimestamps();
-    }
-
-    public function products()
-    {
-        return $this->belongsToMany(Product::class, 'product_attribute_value')
-            ->withPivot('value_id', 'custom_value')
-            ->withTimestamps();
+        return $this->hasMany(AttributeValue::class);
     }
 
     public function scopeLatestUpdated($query)
