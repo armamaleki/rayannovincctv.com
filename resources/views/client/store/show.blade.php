@@ -74,36 +74,21 @@
                                 <th scope="col" class="px-6 py-3">
                                     ویژگی های کلیدی
                                 </th>
-                                <th scope="col" class="px-6 py-3">
-                                    #
-                                </th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="border-b">
-                                <th scope="row" class="px-6 py-4 border-l">
-                                    Apple M
-                                </th>
-                                <td class="px-6 py-4">
-                                    Silver
-                                </td>
-                            </tr>
-                            <tr class="border-b">
-                                <th scope="row" class="px-6 py-4 border-l">
-                                    Apple MacBook Pr
-                                </th>
-                                <td class="px-6 py-4">
-                                    Silver
-                                </td>
-                            </tr>
-                            <tr class="border-b">
-                                <th scope="row" class="px-6 py-4 border-l">
-                                    App
-                                </th>
-                                <td class="px-6 py-4">
-                                    Silver
-                                </td>
-                            </tr>
+                            @foreach($product->attributes as $attribute)
+                                <tr class="border-b">
+                                    <th scope="row" class="px-6 py-4 border-l">
+                                        {{ $attribute->name }}
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        {{ $attribute->values->firstWhere('id', $attribute->pivot->value_id)?->value }}
+                                    </td>
+                                </tr>
+                            @endforeach
+
+
                             </tbody>
                         </table>
                     </div>

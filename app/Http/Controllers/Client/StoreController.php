@@ -19,6 +19,10 @@ class StoreController extends Controller
         if ($product->status !== 'active') {
             abort(404);
         }
+        $product->load([
+            'attributes.values',   // Attribute ها و value هاشون
+            'attributeValues'      // مقادیر انتخاب شده برای این محصول
+        ]);
         return view('client.store.show', compact('product'));
     }
 }
