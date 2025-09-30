@@ -34,39 +34,8 @@
                                value="{{$attribute->icon}}">
                     </div>
                 </div>
-
-                <div class="mb-3 row">
-                    <label class="col-md-3 form-label">
-                        مقدار های ویژگی
-                        @error('icon') <span class="text-danger">{{$message}}</span> @enderror
-                    </label>
-                    <div class="col-md-9">
-                        <select name="values[]" class="form-control select2" multiple data-placeholder="انتخاب مقدار">
-                            @foreach($values as $value)
-                                <option value="{{ $value->id }}"
-                                    {{ in_array($value->id, $selectedValues) ? 'selected' : '' }}>
-                                    {{ $value->name }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
                 <button type="submit" class="btn btn-primary btn-block">ذخیره تغییرات</button>
-
             </form>
-
         </div>
     </div>
 @endsection
-@push('js')
-    <script src="{{asset('assets/plugins/select2/select2.full.min.js')}}"></script>
-    <script>
-        $(document).ready(function() {
-            'use strict';
-            $('.select2').select2({
-                minimumResultsForSearch: Infinity
-            });
-
-        });
-    </script>
-@endpush

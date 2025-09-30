@@ -160,7 +160,7 @@
                                         </div>
                                     </div>
                                     <div class="col-2">
-                                        <label>اقدامات</label>
+                                            <label>اقدامات</label>
                                         <div>
                                             <button type="button" class="btn btn-sm btn-warning"
                                                     onclick="document.getElementById('attribute-{{$loop->index}}').remove()">

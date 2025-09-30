@@ -21,13 +21,15 @@
                         <thead>
                         <tr>
                             <th class="border-bottom-0">نام</th>
+                            <th class="border-bottom-0">ویژگی</th>
+                            <th class="border-bottom-0">#</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($values as $data)
                             <tr>
-                                <td>{{$data->name}}</td>
-
+                                <td>{{$data->value}}</td>
+                                <td>{{$data->attribute->name}}</td>
                                 <td>
                                     <div aria-label="Basic example" class="btn-group ms-3 mb-3" role="group">
                                         <a href="#" class="btn btn-green active" type="button">

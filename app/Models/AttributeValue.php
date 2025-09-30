@@ -13,10 +13,15 @@ class AttributeValue extends Model
     protected $fillable = [
         'value',
         'sort_order',
+        'attribute_id',
     ];
 
     public function attribute()
     {
         return $this->belongsTo(Attribute::class);
+    }
+    public function scopeLatestUpdated($query)
+    {
+        return $query->orderBy('updated_at', 'desc');
     }
 }

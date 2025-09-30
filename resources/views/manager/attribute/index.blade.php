@@ -20,8 +20,8 @@
                         <thead>
                         <tr>
                             <th class="border-bottom-0">نام</th>
-                            <th class="border-bottom-0">ایکون</th>
                             <th class="border-bottom-0">مقدار ها</th>
+                            <th class="border-bottom-0">ایکون</th>
                             <th class="border-bottom-0">#</th>
                         </tr>
 
