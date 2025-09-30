@@ -164,7 +164,7 @@
                     cropper.destroy();
                 }
                 cropper = new Cropper(image, {
-                    aspectRatio: 1,
+                    aspectRatio: 16/9,
                     viewMode: 1
                 });
             };

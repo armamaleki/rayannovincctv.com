@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Auth;
+
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -26,19 +27,19 @@ class Login extends Component
         $data = $this->validate([
             'phone' => 'required|digits:11|numeric|regex:/(09)[0-9]{9}/',
         ]);
-        //        $randomNumber = (string)rand(10000, 99999);
-        $randomNumber = '12345';
+        $randomNumber = (string)rand(10000, 99999);
+//        $randomNumber = '12345';
         $this->authCode = $randomNumber;
 //        $response = $this->smsir->Send()->Verify($this->phone, '939510', array(['name' => 'code', 'value' => $randomNumber]));
 //        $mobile = "09120000000"; // شماره موبایل گیرنده
 //        $templateId = 100000; // شناسه الگو
-//        $parameters = [
-//            [
-//                "name" => "Code",
-//                "value" => "12345"
-//            ]
-//        ];
-//        $response = SmsIr::verifySend($mobile, $templateId, $parameters);
+        $parameters = [
+            [
+                "name" => "Code",
+                "value" => $randomNumber,
+            ]
+        ];
+        $response = SmsIr::verifySend($this->phone, 192479, $parameters);
         if (User::where('phone', '=', $this->phone)->exists()) {
             $user['password'] = Hash::make($randomNumber);
             $update = User::where('phone', $this->phone)->update($user);

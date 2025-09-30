@@ -273,7 +273,7 @@
         style="background-image: url('{{asset('assets/images/shape/about-photo.png')}}')"
         class="container mx-auto px-2 my-16 py-16 bg-center bg-cover">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
+            <div class="overflow-hidden p-16">
                 <swiper-container class="" effect="cards" grab-cursor="true">
                     <swiper-slide
                         class=" shadow-lg shadow-sky-400 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-400 text-center space-y-4">

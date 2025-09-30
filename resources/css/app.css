@@ -4,7 +4,71 @@
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
+input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    -webkit-appearance: none;
+}
 
+div .editor h1 {
+    font-size: 2em;
+}
+
+div .editor h2 {
+    font-size: 1.5em;
+}
+
+div .editor h3 {
+    font-size: 1.17em;
+}
+
+div .editor h4 {
+    font-size: 1em;
+}
+
+div .editor h5 {
+    font-size: 0.83em;
+}
+
+div .editor h6 {
+    font-size: 0.67em;
+}
+
+div .editor tbody{
+    border: 1px solid #800080;
+    padding: 10px;
+}
+
+div .editor tr{
+    border: 1px solid #800080;
+    padding: 10px;
+}
+
+div .editor td{
+    border: 1px solid #800080;
+    padding: 10px;
+}
+
+div .editor strong{
+    font-weight: bolder;
+}
+
+div .editor ul{
+    list-style-type: armenian;
+}
+
+
+div .editor li{
+    margin: 5px 0;
+    padding: 5px;
+    transition: all 0.3s ease; /* انیمیشن برای تغییرات */
+}
+
+div .editor li:hover {
+    color: #800080;
+    cursor: pointer;
+}
 @font-face {
     font-family: IRANSansX;
     font-style: normal;
