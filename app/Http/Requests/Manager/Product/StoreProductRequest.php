@@ -30,7 +30,7 @@ class StoreProductRequest extends FormRequest
             "description" => 'nullable|string',
             "price" => 'nullable',
             "quantity" => 'nullable',
-            "attributes" => 'array',
+            "attributes" => 'required|array',
         ];
     }
 }

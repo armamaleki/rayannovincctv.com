@@ -248,7 +248,6 @@
             $('.attribute-select').select2({ tags: true });
         });
 
-
     </script>
 
 @endpush

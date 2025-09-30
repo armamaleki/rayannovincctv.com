@@ -31,7 +31,6 @@ class ProductController extends Controller
     {
         try {
             $data = $request->validated();
-
             $data['user_id'] = auth()->id();
             $data['slug'] = Str::slug($data['slug'], '-', '');
             $product = Product::create($data);
@@ -50,8 +49,6 @@ class ProductController extends Controller
                 ]);
                 $product->attributes()->attach($attr->id, ['value_id' => $attr_value->id]);
             });
-
-
             return redirect()->route('manager.product.edit', $product);
         } catch (\Exception $exception) {
             Log::error($exception);
@@ -84,6 +81,22 @@ class ProductController extends Controller
         $data['user_id'] = auth()->id();
         $data['slug'] = Str::slug($data['slug'], '-', '');
         $update = $product->update($data);
+        $product->attributes()->detach();
+        $attributes = collect($data['attributes']);
+        $attributes->each(function ($item) use ($product) {
+            if (is_null($item['name']) || is_null($item['value'])) {
+                return;
+            }
+            $attr = Attribute::firstOrCreate([
+                'name' => $item['name'],
+                'user_id' => auth()->id(),
+            ]);
+
+            $attr_value = $attr->values()->firstOrCreate([
+                'value' => $item['value'],
+            ]);
+            $product->attributes()->attach($attr->id, ['value_id' => $attr_value->id]);
+        });
         return redirect()->route('manager.product.index')->with('message',
             [
                 'type' => 'success',

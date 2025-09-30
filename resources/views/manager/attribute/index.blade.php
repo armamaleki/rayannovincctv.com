@@ -32,7 +32,7 @@
                                 <td>{{$data->name}}</td>
                                 <td>
                                     @foreach($data->values as $value)
-                                        {{$value->name}} |
+                                        {{$value->value}} |
                                     @endforeach
                                 </td>
                                 <td>{!! $data->icon !!}</td>
