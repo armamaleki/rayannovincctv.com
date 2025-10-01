@@ -5,7 +5,7 @@
     <div class="absolute top-10 md:top-1/2 right-5 md:right-15 z-30 space-y-2">
         <h1 class="hidden md:block text-3xl font-bold text-sky-500">{{ $title ?? '' }}</h1>
         <nav class="flex" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center gap-1 backdrop-blur-md p-2 rounded-md">
+            <ol class="inline-flex items-center gap-1 backdrop-blur-md p-2 rounded-md text-nowrap overflow-x-scroll w-60 md:w-fit">
                 <li>
                     <a href="{{ route('client.home') }}" class="flex gap-1 items-center hover:text-sky-500">
                         <x-icons.home />
@@ -14,7 +14,7 @@
                 </li>
                 <x-icons.chevron-left />
                 @foreach($breads as $bread)
-                    <li class="inline-flex items-center">
+                    <li class="inline-flex items-center ">
                         @if($bread['route'])
                             <a class="flex items-center  hover:text-sky-500 gap-2  "
                                href="{{$bread['route'] ? route($bread['route']) : ''}}">

@@ -12,7 +12,7 @@
            ];
     @endphp
     <x-client.ui.breadcrumb title="{{$product->name}}" :breads="$breads" />
-    <div class="space-y-4 my-16  container mx-auto p-2">
+    <div class="space-y-4 my-0 md:my-16  container mx-auto p-2">
         <div
             class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center bg-gray-800 p-2 rounded-xl shadow-lg shadow-sky-400">
             <div class="space-y-4">

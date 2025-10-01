@@ -8,14 +8,14 @@
                     id="phone"
                     wire:model="phone"
                     type="text"
-                    class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+                    class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-50 focus:outline-none focus:borer-rose-600"
                     placeholder="0912...."
                     inputmode="numeric"
                     pattern="\d*"
                     oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                     autofocus autocomplete required />
                 <label for="phone"
-                       class="absolute right-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+                       class="absolute right-0 -top-3.5 text-gray-50 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                     تلفن همراه
 
                 </label>
@@ -47,14 +47,14 @@
                     id="code"
                     wire:model="code"
                     type="text"
-                    class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+                    class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-50 focus:outline-none focus:borer-rose-600"
                     placeholder="12345"
                     inputmode="numeric"
                     pattern="\d*"
                     oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                     autofocus autocomplete required />
                 <label for="code"
-                       class="absolute right-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+                       class="absolute right-0 -top-3.5 text-gray-50  text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                     کد ورود
                 </label>
             </div>

@@ -9,7 +9,7 @@
            ];
     @endphp
     <x-client.ui.breadcrumb title="فروشگاه راین نوین" :breads="$breads" />
-    <div class="space-y-4 md:my-16  container mx-auto p-2">
+    <div class="space-y-4 my-0 md:my-16  container mx-auto p-2">
 
         <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-4 ">
             <div
@@ -88,7 +88,7 @@
                                         $isActive = request($attribute->name) == $value->value;
                                     @endphp
                                     <a href="{{ $url }}"
-                                       class="inline-block px-3 py-1 rounded-lg mr-2 mb-2 transition
+                                       class="inline-block text-nowrap px-3 py-1 rounded-lg mr-2 mb-2 transition
                                        {{ $isActive ? 'bg-sky-500 text-white' : 'bg-gray-700 text-gray-300 hover:bg-sky-500 hover:text-white' }}">
                                         {{ $value->value }}
                                     </a>
