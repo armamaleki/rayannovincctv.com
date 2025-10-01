@@ -68,7 +68,14 @@ class RoleAndUserSeeder extends Seeder
             'attribute-delete',
             'attribute-create',
             'attribute-update',
-            'attribute-status',
+
+            'attribute-value-list',
+            'attribute-value-show',
+            'attribute-value-edit',
+            'attribute-value-delete',
+            'attribute-value-create',
+            'attribute-value-update',
+
 
             'article-list',
             'article-show',
@@ -91,10 +98,6 @@ class RoleAndUserSeeder extends Seeder
         $permissions = Permission::pluck('id', 'id')->all();
         $role->syncPermissions($permissions);
         $user->assignRole([$role->id]);
-
-        foreach ($permissions as $permission) {
-            Permission::create(['name' => $permission]);
-        }
         $roleUser = Role::create(['name' => 'user']);
     }
 }

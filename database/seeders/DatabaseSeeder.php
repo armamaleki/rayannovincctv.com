@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Article;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Value;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 //         Article::factory(100)->create();
-        Value::factory(100)->create();
+
 
 //        User::factory()->create([
 //            'name' => 'Test User',

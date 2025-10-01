@@ -10,6 +10,7 @@
                     type="text"
                     class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
                     placeholder="0912...."
+                    inputmode="numeric"
                     pattern="\d*"
                     oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                     autofocus autocomplete required />

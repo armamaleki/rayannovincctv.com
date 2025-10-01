@@ -7,6 +7,7 @@ Route::get('/', function () {
 
 Route::prefix('user')->name('user.')->group(function () {
     Route::get('/',[\App\Http\Controllers\Manager\UserController::class , 'index'])->name('index');
+    Route::get('/create',[\App\Http\Controllers\Manager\UserController::class , 'create'])->name('create');
 });
 
 Route::prefix('role')->name('role.')->group(function () {

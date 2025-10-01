@@ -2,10 +2,10 @@
     <img class="transform scale-x-[-1]" src="{{ asset('/assets/images/breadcrumb.jpg') }}" alt="">
     <div class="absolute z-10 top-0 left-0 w-full h-full bg-sky-400/20"></div>
 
-    <div class="absolute top-1/2 right-15 z-30 space-y-2">
-        <h1 class="text-3xl font-bold text-sky-500">{{ $title ?? '' }}</h1>
+    <div class="absolute top-10 md:top-1/2 right-5 md:right-15 z-30 space-y-2">
+        <h1 class="hidden md:block text-3xl font-bold text-sky-500">{{ $title ?? '' }}</h1>
         <nav class="flex" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center gap-1">
+            <ol class="inline-flex items-center gap-1 backdrop-blur-md p-2 rounded-md">
                 <li>
                     <a href="{{ route('client.home') }}" class="flex gap-1 items-center hover:text-sky-500">
                         <x-icons.home />

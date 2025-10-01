@@ -28,14 +28,9 @@
                             <tr>
                                 <td>{{$data->name}}</td>
                                 <td>
-                                    <div aria-label="Basic example" class="btn-group ms-3 mb-3" role="group">
-                                        <a href="#" class="btn btn-green active" type="button">
-                                            <i class="fa fa-eye fa-lg"></i>
-                                        </a>
-                                        <a href="{{route('manager.role.edit' , $data)}}" class="btn btn-primary pd-x-25" type="button">
-                                            <i class="fa fa-pencil fa-lg"></i>
-                                        </a>
-                                    </div>
+                                    <a href="{{route('manager.role.edit' , $data)}}" class="btn btn-primary pd-x-25" type="button">
+                                        <i class="fa fa-pencil fa-lg"></i>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
