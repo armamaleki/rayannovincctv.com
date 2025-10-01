@@ -77,7 +77,7 @@
     </a>
     <a
         class="flex flex-col items-center text-center font-thin text-sm p-2 text-[10px] w-full"
-        href="/">
+        href="{{route('dashboard.index')}}">
         <x-icons.user class="size-9" />
         حساب کاربری
     </a>
