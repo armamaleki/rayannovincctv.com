@@ -1,4 +1,8 @@
 @extends('components.layouts.app.index')
+@section('meta')
+    <title>فروشگاه اینترنتی رایان نوین</title>
+    <meta name="description" content="فروشگاه اینترنتی رایان نوین">
+@endsection
 @section('content')
     @php
         $images = [

@@ -1,4 +1,8 @@
 @extends('components.layouts.app.index')
+@section('meta')
+    <title>تماس رایان نوین</title>
+    <meta name="description" content="تماس رایان نوین">
+@endsection
 @section('content')
     @php
         $breads = [

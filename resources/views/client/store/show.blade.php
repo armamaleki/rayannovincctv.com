@@ -1,4 +1,8 @@
 @extends('components.layouts.app.index')
+@section('meta')
+    <title>{{$product->meta_title}}</title>
+    <meta name="description" content="{{$product->meta_description}}">
+@endsection
 @section('content')
     @php
         $breads = [
