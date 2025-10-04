@@ -106,6 +106,14 @@
                     <a href="tel:123456" class="flex gap-2">
                         مشاوره رایگان : <span class="text-sky-500">123456</span>
                     </a>
+                    @if($product->getFirstMediaUrl('data_sheet'))
+                        <a href="{{ URL::signedRoute('client.data-sheet.download', $product) }}"
+                           download
+                           class="flex gap-1 w-fit items-center bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 shadow-lg shadow-cyan-500/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                            دانلود دیتاشیت
+                        </a>
+                    @endif
+
                 </div>
 
                 <div class="py-8 space-y-4">

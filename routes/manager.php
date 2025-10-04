@@ -57,5 +57,7 @@ Route::prefix('product')->name('product.')->group(function () {
     Route::put('/update/{product}',[\App\Http\Controllers\Manager\ProductController::class , 'update'])->name('update');
     Route::post('/product/avatar/', [\App\Http\Controllers\Manager\ProductController::class, 'avatar'])->name('avatar');
     Route::post('/product/gallery/', [\App\Http\Controllers\Manager\ProductController::class, 'gallery'])->name('gallery');
-
+    Route::delete('/product/media/{media}', [\App\Http\Controllers\Manager\ProductController::class, 'deleteAvatar'])->name('delete-avatar');
+    Route::delete('/product/gallery/{media}', [\App\Http\Controllers\Manager\ProductController::class, 'deleteGallery'])->name('delete-gallery');
+    Route::post('/{product}/data-sheet', [\App\Http\Controllers\Manager\ProductController::class, 'dataSheet'])->name('data-sheet');
 });

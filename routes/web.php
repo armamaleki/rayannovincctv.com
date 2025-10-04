@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 Route::get('auth', function () {
     return view('auth.login');
@@ -33,6 +33,13 @@ Route::name('client.')->group(function () {
 
     Route::get('/store', [\App\Http\Controllers\Client\StoreController::class, 'index'])->name('store.index');
     Route::get('/store/{product}', [\App\Http\Controllers\Client\StoreController::class, 'show'])->name('store.show');
+    Route::get('/{product}/data-sheet/download', function (product $product) {
+        $media = $product->getFirstMedia('data_sheet');
+        if (!$media) {
+            abort(404);
+        }
+        return response()->download($media->getPath(), $product->slug . '.pdf');
+    })->name('data-sheet.download')->middleware('signed');
 });
 
 Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'purchase'], function () {
@@ -47,10 +54,9 @@ Route::get('/checkout', [\App\Http\Controllers\Client\CheckoutController::class,
 Route::post('/checkout/remove-item', [\App\Http\Controllers\Client\CheckoutController::class, 'remove'])->name('checkout.remove-item');
 
 
-
 Route::prefix('dashboard')->middleware('auth')->name('dashboard.')->group(function () {
-    Route::get('/' , [App\Http\Controllers\Client\Dashboard\DashboardController::class ,'index'])->name('index');
-    Route::get('/orders' , [App\Http\Controllers\Client\Dashboard\DashboardController::class ,'orders'])->name('orders');
-    Route::get('/transactions' , [App\Http\Controllers\Client\Dashboard\DashboardController::class ,'transactions'])->name('transactions');
+    Route::get('/', [App\Http\Controllers\Client\Dashboard\DashboardController::class, 'index'])->name('index');
+    Route::get('/orders', [App\Http\Controllers\Client\Dashboard\DashboardController::class, 'orders'])->name('orders');
+    Route::get('/transactions', [App\Http\Controllers\Client\Dashboard\DashboardController::class, 'transactions'])->name('transactions');
 });
 

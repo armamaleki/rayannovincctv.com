@@ -118,6 +118,18 @@ class ProductController extends Controller
         return response()->json(['success' => true]);
     }
 
+    public function deleteAvatar(\Spatie\MediaLibrary\MediaCollections\Models\Media $media)
+    {
+        $media->delete();
+        return back()->with('message',
+            [
+                'type' => 'success',
+                'title' => 'انجام شد',
+                'text' => 'تصویر مورد نظر با موفقیت پاک شد!!!',
+            ]);
+    }
+
+
     public function gallery(Request $request)
     {
         $request->validate([
@@ -130,6 +142,35 @@ class ProductController extends Controller
             ->toMediaCollection('galleries', 'public');
         return response()->json(['success' => true]);
     }
+
+    public function deleteGallery(\Spatie\MediaLibrary\MediaCollections\Models\Media $media)
+    {
+        $media->delete();
+        return back()->with('message',
+            [
+                'type' => 'success',
+                'title' => 'انجام شد',
+                'text' => 'تصویر مورد نظر با موفقیت پاک شد!!!',
+            ]);
+    }
+
+
+    public function dataSheet(Request $request, Product $product)
+    {
+        $request->validate([
+            'data_sheet' => 'required|mimes:pdf|max:5120',
+        ]);
+        $product->clearMediaCollection('data_sheet');
+        $product->addMediaFromRequest('data_sheet')
+            ->toMediaCollection('data_sheet');
+        return back()->with('message',
+            [
+                'type' => 'success',
+                'title' => 'انجام شد',
+                'text' => 'دیتا شیت با موفیت اپلود شد.',
+            ]);
+    }
+
 
 
 }

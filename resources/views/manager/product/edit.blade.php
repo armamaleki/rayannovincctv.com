@@ -182,6 +182,33 @@
             <div class="row mt-4">
                 <div class="col">
                     <div class="mb-3">
+                        <h2>دیتا شیت (دقت کنید حتما pdf باشه چیز دیگه ای نباشه )</h2>
+                        <div class="form-label">
+                            حد اکثر اندازه برای بارگزاری 5 مگابایت میباشد.
+                            @error('data_sheet')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <form action="{{ route('manager.product.data-sheet'  , $product) }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <input type="file" name="data_sheet" accept=".pdf,application/pdf">
+                            <button
+                                class="btn btn-primary"
+                                type="submit">آپلود</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col">
+                    @if($product->getFirstMediaUrl('data_sheet'))
+                        <a href="{{ $product->getFirstMediaUrl('data_sheet') }}" target="_blank" class="btn btn-primary">
+                            دانلود دیتاشیت
+                        </a>
+                    @endif
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="mb-3">
                         <h2>آواتار محصول</h2>
                         <div class="form-label">حد اکثر اندازه برای بارگزاری 2 مگابایت میباشد.</div>
                         <div class="form-file">
@@ -207,11 +234,16 @@
                 <div class="col">
                     <img id="imagePreview" src="" class=" ">
                 </div>
-                <div class="col">
+                <div class="col" >
                     @foreach ($product->getMedia('avatars') as $media)
                         <img
                             class="rounded-lg"
                             src="{{ $media->getFullUrl('watermark') }}" alt="Image">
+                        <form action="{{ route('manager.product.delete-avatar', $media->id) }}" method="POST" style="display:inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">پاک کردن این تصویر</button>
+                        </form>
                     @endforeach
                 </div>
             </div>
@@ -248,6 +280,11 @@
                         <img
                             class="rounded-lg"
                             src="{{ $Gallery->getFullUrl('watermark') }}" alt="Image">
+                        <form action="{{ route('manager.product.delete-avatar', $Gallery->id) }}" method="POST" style="display:inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">پاک کردن این تصویر</button>
+                        </form>
                     @endforeach
                 </div>
             </div>

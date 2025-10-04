@@ -22,7 +22,7 @@ class LastProducts extends Component
      */
     public function render(): View|Closure|string
     {
-        $products = Product::where('status' , 'active')->latest()->take(10)->get();
+        $products = Product::where('status' , 'active')->latest()->take(3)->get();
         return view('components.client.last-products' , compact('products'));
     }
 }
