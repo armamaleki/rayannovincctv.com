@@ -2,6 +2,7 @@
 
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 Route::get('auth', function () {
     return view('auth.login');
@@ -38,7 +39,7 @@ Route::name('client.')->group(function () {
         if (!$media) {
             abort(404);
         }
-        return response()->download($media->getPath(), $product->slug . '.pdf');
+        return response()->download($media->getPath(), Str::slug($product->name , '-' ,'') . '.pdf');
     })->name('data-sheet.download')->middleware('signed');
 });
 
