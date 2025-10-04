@@ -136,6 +136,10 @@
                 </div>
             </div>
         </div>
+
+        <div class="bg-gray-800 p-2 rounded-xl shadow-lg shadow-sky-400">
+             {!! $product->description !!}
+        </div>
     </div>
 @endsection
 
