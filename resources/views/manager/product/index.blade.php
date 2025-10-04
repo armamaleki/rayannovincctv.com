@@ -39,7 +39,7 @@
                                 </td>
                                 <td>
                                     <div aria-label="Basic example" class="btn-group ms-3 mb-3" role="group">
-                                        <a href="#" class="btn btn-green active" type="button">
+                                        <a href="{{route('client.store.show' , $data)}}" target="_blank" class="btn btn-green active" type="button">
                                             <i class="fa fa-eye fa-lg"></i>
                                         </a>
                                         <a href="{{route('manager.product.edit' , $data)}}" class="btn btn-primary pd-x-25" type="button">
