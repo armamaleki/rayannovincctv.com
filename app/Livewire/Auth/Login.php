@@ -30,9 +30,6 @@ class Login extends Component
         $randomNumber = (string)rand(10000, 99999);
 //        $randomNumber = '12345';
         $this->authCode = $randomNumber;
-//        $response = $this->smsir->Send()->Verify($this->phone, '939510', array(['name' => 'code', 'value' => $randomNumber]));
-//        $mobile = "09120000000"; // شماره موبایل گیرنده
-//        $templateId = 100000; // شناسه الگو
         $parameters = [
             [
                 "name" => "Code",

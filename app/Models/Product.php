@@ -26,6 +26,7 @@ class Product extends Model implements HasMedia
             ->watermark(public_path('assets/images/logo-250.png'))
             ->nonQueued();
     }
+
     public static function boot()
     {
         parent::boot();
@@ -58,6 +59,7 @@ class Product extends Model implements HasMedia
         'product_category_id',
         'user_id',
         'quantity',
+        'granite_id',
     ];
 
     public function user()
@@ -69,6 +71,7 @@ class Product extends Model implements HasMedia
     {
         return $this->belongsToMany(Attribute::class)->withPivot(['value_id']);
     }
+
     public function attributeValues()
     {
         return $this->belongsToMany(
@@ -78,6 +81,12 @@ class Product extends Model implements HasMedia
             'value_id'
         );
     }
+
+    public function grantie()
+    {
+        return $this->belongsTo(Granite::class , 'granite_id');
+    }
+
 
     public function scopeLatestUpdated($query)
     {

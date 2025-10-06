@@ -37,7 +37,7 @@ class UpdateProductRequest extends FormRequest
             "price" => 'nullable',
             "quantity" => 'nullable',
             "attributes" => 'required|array',
-
+            "granite" => 'required|numeric',
         ];
     }
 }

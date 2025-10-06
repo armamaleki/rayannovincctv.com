@@ -70,6 +70,26 @@
                                value="{{ old('quantity') }}">
                     </div>
                 </div>
+                <div class="mb-3 row">
+                    <label class="col-md-3 form-label">
+                        گارانتی
+                        @error('granite')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </label>
+                    <div class="col-md-9">
+                        <div class="selectgroup selectgroup-pills">
+                            @foreach($granities as $granite)
+                                <label class="selectgroup-item">
+                                    <input type="radio" name="granite"
+                                           {{ old('granite') == $granite->id ? 'checked' : '' }}
+                                           value="{{$granite->id}}" class="selectgroup-input">
+                                    <span class="selectgroup-button">{{$granite->name}}</span>
+                                </label>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
 
 
                 <div class="mb-3 row">
@@ -190,10 +210,10 @@
                     valueBox.html(`
                             <option value="" selected>انتخاب کنید</option>
                             ${
-                        data.data.map(function(item) {
-                            return `<option value="${item}">${item}</option>`;
-                        })
-                    }`
+                            data.data.map(function(item) {
+                                return `<option value="${item}">${item}</option>`;
+                            })
+                        }`
                     );
 
                 }

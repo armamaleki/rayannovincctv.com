@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Manager\Product\StoreProductRequest;
 use App\Http\Requests\Manager\Product\UpdateProductRequest;
 use App\Models\Attribute;
+use App\Models\Granite;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
-use function PHPUnit\Framework\isNull;
 
 class ProductController extends Controller
 {
@@ -19,12 +19,14 @@ class ProductController extends Controller
         $products = Product::latestUpdated()
             ->where('name', 'LIKE', '%' . $request->q . '%')
             ->paginate(100);
+
         return view('manager.product.index', compact('products'));
     }
 
     public function create()
     {
-        return view('manager.product.create');
+        $granities = Granite::latestUpdated()->get();
+        return view('manager.product.create'  , compact('granities'));
     }
 
     public function store(StoreProductRequest $request)
@@ -32,6 +34,7 @@ class ProductController extends Controller
         try {
             $data = $request->validated();
             $data['user_id'] = auth()->id();
+            $data['granite_id'] = $request->granite;
             $data['slug'] = Str::slug($data['slug'], '-', '');
             $product = Product::create($data);
             $attributes = collect($data['attributes']);
@@ -71,7 +74,8 @@ class ProductController extends Controller
                 'title' => 'ویرایش محصول',
                 'text' => 'دقت کنید شما در حال ویرایش محصول هستید پس از ذخیره هیچ راه بازگشتی نیست!!',
             ]);
-        return view('manager.product.edit', compact('product'));
+        $granities = Granite::latestUpdated()->get();
+        return view('manager.product.edit', compact('product', 'granities'));
     }
 
     public function update(UpdateproductRequest $request, Product $product)
@@ -79,6 +83,7 @@ class ProductController extends Controller
 //        dd($request->all());
         $data = $request->all();
         $data['user_id'] = auth()->id();
+        $data['granite_id'] = $request->granite;
         $data['slug'] = Str::slug($data['slug'], '-', '');
         $update = $product->update($data);
         $product->attributes()->detach();

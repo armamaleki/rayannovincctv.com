@@ -102,7 +102,7 @@
                         کد کالا: {{$product->sku}}
                     </div>
                     <div class="flex gap-2">
-                        گارانتی : باید بزارم
+                        گارانتی : {{ $product->grantie->name ?? 'ندارد' }}
                     </div>
                     <div class="flex gap-2 font-bold">
                         امکان خرید حضوری : دارد

@@ -61,3 +61,12 @@ Route::prefix('product')->name('product.')->group(function () {
     Route::delete('/product/gallery/{media}', [\App\Http\Controllers\Manager\ProductController::class, 'deleteGallery'])->name('delete-gallery');
     Route::post('/{product}/data-sheet', [\App\Http\Controllers\Manager\ProductController::class, 'dataSheet'])->name('data-sheet');
 });
+
+
+Route::prefix('granite')->name('granite.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Manager\GraniteController::class , 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\GraniteController::class , 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\GraniteController::class , 'store'])->name('store');
+    Route::get('/edit/{granite}' , [\App\Http\Controllers\Manager\GraniteController::class , 'edit'])->name('edit');
+    Route::put('/update/{granite}',[\App\Http\Controllers\Manager\GraniteController::class , 'update'])->name('update');
+});

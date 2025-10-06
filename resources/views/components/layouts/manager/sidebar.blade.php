@@ -108,6 +108,11 @@
                                 <span>مقدار های ویژگی</span>
                             </a>
                         </li>
+                        <li>
+                            <a class="slide-item" href="{{route('manager.granite.index')}}">
+                                <span>گارانتی محصولات</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
