@@ -22,16 +22,12 @@
                 <p>
                     <span class="text-sky-400 text-2xl">01</span>
                     <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deserunt dolor doloribus fugiat illo
-                    magnam nam nesciunt quo tempora velit? Doloremque ex ipsa laboriosam maxime nostrum obcaecati
-                    quaerat quas quibusdam?
+                    رایان نوین با بیش از ۱۲ سال سابقه‌ی فعالیت تخصصی در حوزه‌ی سیستم‌های امنیتی و نظارت تصویری، امروز یکی از مجموعه‌های معتبر و خوش‌نام در این صنعت است. در طول این سال‌ها، با اجرای صدها پروژه‌ی موفق در سازمان‌ها، شرکت‌ها و واحدهای صنعتی و تجاری، توانسته‌ایم اعتماد گسترده‌ای را به دست آوریم.
                 </p>
                 <p>
                     <span class="text-sky-400 text-2xl">02</span>
                     <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deserunt dolor doloribus fugiat illo
-                    magnam nam nesciunt quo tempora velit? Doloremque ex ipsa laboriosam maxime nostrum obcaecati
-                    quaerat quas quibusdam?
+                    این مجموعه به عنوان نماینده و عاملیت رسمی دو برند بین‌المللی هایک‌ویژن (Hikvision) و داهوا (Dahua)، طیف کاملی از محصولات و راهکارهای حفاظتی را با اصالت کالا، قیمت رقابتی و خدمات پس از فروش واقعی ارائه می‌دهد.
                 </p>
             </div>
             <img src="{{asset('assets/images/about-us-monitor.jpg')}}" alt="">
@@ -39,16 +35,12 @@
                 <p>
                     <span class="text-sky-400 text-2xl">03</span>
                     <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deserunt dolor doloribus fugiat illo
-                    magnam nam nesciunt quo tempora velit? Doloremque ex ipsa laboriosam maxime nostrum obcaecati
-                    quaerat quas quibusdam?
+                    آنچه رایان نوین را متمایز می‌کند، تنها فروش تجهیزات نیست؛ بلکه ارائه‌ی مشاوره تخصصی، طراحی و اجرای راهکارهای جامع امنیتی و پشتیبانی مطمئن است. ما معتقدیم امنیت، یک خرید ساده نیست؛ بلکه سرمایه‌ای پایدار برای آینده‌ی سازمان‌ها و کسب‌وکارهاست.
                 </p>
                 <p>
                     <span class="text-sky-400 text-2xl">04</span>
                     <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deserunt dolor doloribus fugiat illo
-                    magnam nam nesciunt quo tempora velit? Doloremque ex ipsa laboriosam maxime nostrum obcaecati
-                    quaerat quas quibusdam?
+                    انتخاب رایان نوین یعنی تکیه بر ۱۲ سال تجربه، اعتبار و تعهد؛ همراهی که می‌توانید با اطمینان برای سال‌ها روی آن حساب کنید
                 </p>
             </div>
         </div>
