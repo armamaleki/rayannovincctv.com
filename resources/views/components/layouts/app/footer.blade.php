@@ -3,29 +3,31 @@
         <div class="space-y-4 ">
             <h3 class="text-2xl">درباره رایان نوین</h3>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequuntur deleniti error
-                molestiae nulla numquam, obcaecati, quia quibusdam reiciendis sint, sit suscipit voluptates. Incidunt
-                modi nemo nobis nostrum, reprehenderit suscipit.
+                این مجموعه به عنوان نماینده و عاملیت رسمی دو برند بین‌المللی هایک‌ویژن (Hikvision) و داهوا (Dahua)، طیف کاملی از محصولات و راهکارهای حفاظتی را با اصالت کالا، قیمت رقابتی و خدمات پس از فروش واقعی ارائه می‌دهد.
+                <br>
+                آنچه رایان نوین را متمایز می‌کند، تنها فروش تجهیزات نیست؛ بلکه ارائه‌ی مشاوره تخصصی، طراحی و اجرای راهکارهای جامع امنیتی و پشتیبانی مطمئن است. ما معتقدیم امنیت، یک خرید ساده نیست؛ بلکه سرمایه‌ای پایدار برای آینده‌ی سازمان‌ها و کسب‌وکارهاست.
             </p>
         </div>
         <div class="space-y-4 ">
             <h3 class="text-2xl">تماس با رایان نوین</h3>
             <div class="space-y-2">
-                <a href="" class="flex gap-1 items-center">
+                <a href="tel:09129494234" class="flex gap-1 items-center">
                     <x-icons.phone />
-                    091255555
+                    09129494234
                 </a>
-                <a href="" class="flex gap-1 items-center">
+                <a href="tel:09902706257" class="flex gap-1 items-center">
                     <x-icons.phone />
-                    091255555
+                    09902706257
                 </a>
                 <a href="mailto:info@rayammovincctv.com" class="flex gap-1 items-center">
                     <x-icons.envelope />
                     info@rayammovincctv.com
                 </a>
                 <div class="flex gap-1 items-center">
-                    <x-icons.map/>
-                    تهران پلاک 1 در دوم
+                    <div>
+                        <x-icons.map/>
+                    </div>
+                    دفتر مرکزی: تهران خیابان جمهوری تقاطع شیخ هادی پاساژ پاساژ یگانه طبقه دوم
                 </div>
             </div>
         </div>

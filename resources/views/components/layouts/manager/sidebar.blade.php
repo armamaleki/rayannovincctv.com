@@ -115,7 +115,13 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a class="slide-item" href="{{route('manager.projects')}}">
+                        <span>درخواست های پروژه</span>
+                    </a>
+                </li>
             </ul>
+
             <div class="app-sidebar-help">
                 <div class="dropdown text-center">
                     <div class="help d-flex">

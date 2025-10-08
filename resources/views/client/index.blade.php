@@ -44,12 +44,12 @@
             </div>
             <div class="z-30 absolut ">
                 <h1 class="text-4xl md:text-6xl   font-bold text-center">
-                    دوربین مداربسته
+                    عاملیت محصولات
                     <br>
-                    و
+
                     <br>
                     <div class="typewrite" data-period="2000"
-                         data-type='[ "تجهیزات نظارتی"  , "سیستم های حفاظتی" ]'>
+                         data-type='[ "سیستم های حفاظتی"  , "پایش تصویری" ]'>
                         <h1 class="wrap"></h1>
                     </div>
                 </h1>
@@ -87,13 +87,10 @@
                         <span class="letters">درباره رایان نوین</span>
                     </h2>
                 </div>
-                <h3 class="text-2xl ">دوربین مداربسته برای امنیت شما</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dolorem exercitationem nostrum?
-                    Ab
-                    accusantium aspernatur beatae dolores ducimus ea eaque illo maiores nihil officia rem saepe sequi
-                    soluta
-                    velit, voluptate!
+                    رایان نوین با بیش از ۱۲ سال سابقه‌ی فعالیت تخصصی در حوزه‌ی سیستم‌های امنیتی و نظارت تصویری، امروز
+                    یکی از مجموعه‌های معتبر و خوش‌نام در این صنعت است. در طول این سال‌ها، با اجرای صدها پروژه‌ی موفق در
+                    سازمان‌ها، شرکت‌ها و واحدهای صنعتی و تجاری، توانسته‌ایم اعتماد گسترده‌ای را به دست آوریم.
                 </p>
             </div>
             <img
@@ -112,166 +109,30 @@
                 data-aos="fade-up"
                 data-aos-delay="600"
                 class="p-8 flex flex-col items-center bg-gray-700 rounded-xl">
-                <span class="text-6xl">+15</span>
+                <span class="text-6xl">+1400</span>
                 پروژه انجام شده
             </div>
             <div
                 data-aos="fade-up"
                 data-aos-delay="700"
                 class="p-8 flex flex-col items-center bg-gray-700 rounded-xl">
-                <span class="text-6xl">+15</span>
+                <span class="text-6xl">+50</span>
                 کارمند
             </div>
         </div>
     </section>
-<x-client.last-products/>
-    <section class="container mx-auto px-2 py-16 space-y-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center ">
-            <div
-                style="background-image: url('{{asset('assets/images/form-bg.jpg')}}')"
-                class="bg-center bg-cover rounded-xl p-4 space-y-4 ">
-                <div class="flex gap-2 items-center">
-                    <x-ui.ping-dot />
-                    <h2 class="ml1 text-xl font-bold">
-                        <span class="letters">درخواست پروژه</span>
-                    </h2>
-                </div>
-                <p class="text-justify">
-                    Sed sed tortor lobortis, dictum lacus sed, mollis enim. Aenean ullamcorper accumsan sem sit amet
-                    aliquam. Cras euismod mauris felis, eget bibendum nibh facilisis ac.
-                </p>
-                <div class="space-y-6">
-                    <div class="flex items-center gap-2 ">
-                        <span
-                            class="flex items-center justify-center w-10 h-10 outline-4 rounded-full bg-sky-400 text-2xl font-bold text-white">
-                            01
-                        </span>
-                        <p class="text-xl font-bold ">
-                            ثبت فرم درخواست
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-2 ">
-                        <span
-                            class="flex items-center justify-center w-10 h-10 outline-4 rounded-full bg-sky-400 text-2xl font-bold text-white">
-                            02
-                        </span>
-                        <p class="text-xl font-bold ">
-                            ثبت فرم درخواست
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-2 ">
-                        <span
-                            class="flex items-center justify-center w-10 h-10 outline-4 rounded-full bg-sky-400 text-2xl font-bold text-white">
-                            03
-                        </span>
-                        <p class="text-xl font-bold ">
-                            ثبت فرم درخواست
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-2 ">
-                        <span
-                            class="flex items-center justify-center w-10 h-10 outline-4 rounded-full bg-sky-400 text-2xl font-bold text-white">
-                            04
-                        </span>
-                        <p class="text-xl font-bold ">
-                            ثبت فرم درخواست
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-2 ">
-                        <span
-                            class="flex items-center justify-center w-10 h-10 outline-4 rounded-full bg-sky-400 text-2xl font-bold text-white">
-                            05
-                        </span>
-                        <p class="text-xl font-bold ">
-                            ثبت فرم درخواست
-                        </p>
-                    </div>
+    <x-client.last-products />
+   <livewire:client.request-project/>
 
-                </div>
-            </div>
-
-            <div class="bg-gray-800 h-full p-4 rounded-xl shadow-lg shadow-sky-400">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae dolores doloribus in nulla
-                    voluptas. Delectus enim eum eveniet fuga incidunt. A aliquam exercitationem expedita ipsum
-                    perferendis, rem sequi tenetur?
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-                    <div>
-                        <label for="input-group-1" class="block mb-2 text-sm font-medium">Your Email</label>
-                        <div class="relative mb-6">
-                            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                                <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                     fill="currentColor" viewBox="0 0 20 16">
-                                    <path
-                                        d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
-                                    <path
-                                        d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
-                                </svg>
-                            </div>
-                            <input
-                                type="text"
-                                id="input-group-1"
-                                class="bg-gray-700 border border-gray-100 text-sm rounded-lg outline-0  focus:border-sky-400  block w-full ps-10 p-2.5"
-                                placeholder="نام و نام خوانداگی">
-                        </div>
-                    </div>
-                    <div>
-                        <label for="input-group-1" class="block mb-2 text-sm font-medium">Your Email</label>
-                        <div class="relative mb-6">
-                            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                                <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                     fill="currentColor" viewBox="0 0 20 16">
-                                    <path
-                                        d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
-                                    <path
-                                        d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
-                                </svg>
-                            </div>
-                            <input
-                                type="text"
-                                id="input-group-1"
-                                class="bg-gray-700 border border-gray-100 text-sm rounded-lg outline-0  focus:border-sky-400  block w-full ps-10 p-2.5"
-                                placeholder="نام و نام خوانداگی">
-                        </div>
-                    </div>
-
-                </div>
-                <div>
-                    <label for="input-group-1" class="block mb-2 text-sm font-medium">Your Email</label>
-                    <div class="relative mb-6">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                 fill="currentColor" viewBox="0 0 20 16">
-                                <path
-                                    d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
-                                <path
-                                    d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
-                            </svg>
-                        </div>
-                        <input
-                            type="text"
-                            id="input-group-1"
-                            class="bg-gray-700 border border-gray-100 text-sm rounded-lg outline-0  focus:border-sky-400  block w-full ps-10 p-2.5"
-                            placeholder="نام و نام خوانداگی">
-                    </div>
-                </div>
-                <button type="button"
-                        class="bg-gradient-to-r w-full from-sky-500 via-sky-600 to-sky-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-sky-300  shadow-lg shadow-sky-500/50  font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
-                    ثبت درخواست
-                </button>
-            </div>
-
-        </div>
-    </section>
-
-    <a href="tel:1245"
+    <a href="tel:09129494234"
        class="container mx-auto px-2 py-16 space-y-1 flex flex-col items-center bg-gray-600 rounded-xl shadow-lg shadow-sky-400 relative">
         <x-icons.device-phone-mobile
             class="size-48 phone-shake absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-25" />
 
         <p class="text-2xl font-bold text-sky-400">درخواست رایگان مشاوره</p>
-        <p class="text-3xl font-bold">09122454545</p>
+        <p class="text-3xl font-bold">09129494234</p>
+        <br>
+        <p class="text-3xl font-bold">09902706257</p>
     </a>
     <section
         style="background-image: url('{{asset('assets/images/shape/about-photo.png')}}')"
@@ -280,16 +141,25 @@
             <div class="overflow-hidden p-16">
                 <swiper-container class="" effect="cards" grab-cursor="true">
                     <swiper-slide
-                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-400 text-center space-y-4">
+                        class=" shadow-lg shadow-sky-200 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-200 text-center space-y-4">
                         <div
-                            class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-400">
+                            class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-200">
                             <x-icons.user class="size-12" />
                         </div>
-                        <h4>محمد ملکی</h4>
+                        <h4>علی محمدی</h4>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aspernatur assumenda, atque
-                            corporis deleniti deserunt dolorem excepturi illo ipsa iure, labore magni mollitia obcaecati
-                            placeat qui repellendus sequi veniam voluptates.
+                            نصب دوربین‌های مدار بسته توسط تیم رایان نوین واقعاً حرفه‌ای بود. از لحظه مشاوره تا اجرای نهایی، همه چیز دقیق و منظم انجام شد. سیستم دوربین‌ها بسیار با کیفیت و قابل اعتماد است و باعث شده احساس امنیت بیشتری در محل کارم داشته باشم. واقعاً خوشحالم که با یک تیم حرفه‌ای کار کردم
+                        </p>
+                    </swiper-slide>
+                    <swiper-slide
+                        class=" shadow-lg shadow-sky-300 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-300 text-center space-y-4">
+                        <div
+                            class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-300">
+                            <x-icons.user class="size-12" />
+                        </div>
+                        <h4>سارا حسینی</h4>
+                        <p>
+                            تیم رایان نوین دزدگیر شبکه دفتر کارمان را نصب کردند و تجربه‌ای فراتر از انتظار داشتیم. از مشاوره اولیه تا راه‌اندازی سیستم، همه مراحل با دقت و صبر انجام شد. حالا مطمئن هستیم که اطلاعات و دارایی‌هایمان تحت حفاظت کامل قرار دارند. واقعاً به تخصص این تیم اعتماد دارم.
                         </p>
                     </swiper-slide>
                     <swiper-slide
@@ -298,50 +168,42 @@
                             class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-400">
                             <x-icons.user class="size-12" />
                         </div>
-                        <h4>محمد ملکی</h4>
+                        <h4>رضا کاظمی</h4>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aspernatur assumenda, atque
-                            corporis deleniti deserunt dolorem excepturi illo ipsa iure, labore magni mollitia obcaecati
-                            placeat qui repellendus sequi veniam voluptates.
+                            پشتیبانی و مشاوره رایان نوین بی‌نظیر است. قبل از شروع پروژه، نیازهای ما را به دقت بررسی کردند و بهترین راهکار را پیشنهاد دادند. نصب سیستم‌های حفاظتی دقیقاً طبق برنامه انجام شد و بدون هیچ مشکلی تحویل داده شد. از تجربه همکاری با چنین تیم حرفه‌ای کاملاً راضی هستم.
                         </p>
                     </swiper-slide>
                     <swiper-slide
-                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-400 text-center space-y-4">
+                        class=" shadow-lg shadow-sky-500 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-500 text-center space-y-4">
                         <div
-                            class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-400">
+                            class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-500">
                             <x-icons.user class="size-12" />
                         </div>
-                        <h4>محمد ملکی</h4>
+                        <h4>نرگس صادقی</h4>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aspernatur assumenda, atque
-                            corporis deleniti deserunt dolorem excepturi illo ipsa iure, labore magni mollitia obcaecati
-                            placeat qui repellendus sequi veniam voluptates.
+                            من همیشه در انتخاب شرکت‌های خدماتی سخت‌گیر هستم، اما رایان نوین اعتمادم را جلب کرد. تیم پشتیبانی با حوصله تمام سوالات من را پاسخ داد و حتی پس از نصب سیستم‌ها، همراه و پاسخگو بودند. این سطح از پشتیبانی و مسئولیت‌پذیری واقعاً ارزشمند است.
                         </p>
                     </swiper-slide>
                     <swiper-slide
-                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-400 text-center space-y-4">
+                        class=" shadow-lg shadow-sky-600 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-600 text-center space-y-4">
                         <div
-                            class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-400">
+                            class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-600">
                             <x-icons.user class="size-12" />
                         </div>
-                        <h4>محمد ملکی</h4>
+                        <h4>محمدرضا ایزدی</h4>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aspernatur assumenda, atque
-                            corporis deleniti deserunt dolorem excepturi illo ipsa iure, labore magni mollitia obcaecati
-                            placeat qui repellendus sequi veniam voluptates.
+                            سیستم‌های حفاظتی رایان نوین فوق‌العاده دقیق و قابل اطمینان هستند. نصب و راه‌اندازی کاملاً حرفه‌ای انجام شد و آموزش‌های لازم هم داده شد. حس امنیتی که الان دارم، واقعاً ارزش سرمایه‌گذاری را داشته است. پیشنهاد می‌کنم هر کسی که به دنبال امنیت واقعی است، حتماً با این تیم همکاری کند.
                         </p>
                     </swiper-slide>
                     <swiper-slide
-                        class=" shadow-lg shadow-sky-400 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-400 text-center space-y-4">
+                        class=" shadow-lg shadow-sky-700 p-4 rounded-lg backdrop-blur-xl outline-1 outline-sky-700 text-center space-y-4">
                         <div
-                            class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-400">
+                            class=" mx-auto p-1 outline-4 rounded-full flex flex-col items-center bg-gray-600 w-16 h-16 outline-sky-700">
                             <x-icons.user class="size-12" />
                         </div>
-                        <h4>محمد ملکی</h4>
+                        <h4>مریم فتحی</h4>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aspernatur assumenda, atque
-                            corporis deleniti deserunt dolorem excepturi illo ipsa iure, labore magni mollitia obcaecati
-                            placeat qui repellendus sequi veniam voluptates.
+                            تجربه‌ای امن، راحت و حرفه‌ای با رایان نوین داشتم. از اولین تماس تا تحویل پروژه، همه چیز به صورت کاملاً منظم و شفاف انجام شد. کیفیت خدمات و سرعت اجرای پروژه عالی بود و تیم واقعاً به نیازهای مشتری اهمیت می‌دهد. خوشحالم که با یک تیم متخصص کار کردم
                         </p>
                     </swiper-slide>
                 </swiper-container>
@@ -349,15 +211,14 @@
             <div class="p-2 rounded-xl backdrop-blur shadow-md shadow-sky-400 space-y-4 ">
                 <h2 class="text-2xl font-bold">در مورد رایان نوین چه میشنویم؟</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consectetur corporis cum
-                    explicabo
-                    fugiat ipsa ipsum magni molestias nihil nobis praesentium rerum, sed tempore ut vel velit voluptate?
-                    Aliquam, animi!
+                    مشتریان ما بهترین گواه کیفیت خدمات ما هستند. ببینید چگونه سیستم‌های حفاظتی، دوربین مدار بسته و
+                    دزدگیر شبکه ما امنیت محل کار و منزل آنها را تضمین کرده است. نظرات واقعی کاربران، نشان از اعتماد و
+                    رضایت بالای مشتریان رایان نوین دارد.
                 </p>
             </div>
         </div>
     </section>
-    <x-client.last-articles/>
+    <x-client.last-articles />
 
 @endsection
 @push('js')

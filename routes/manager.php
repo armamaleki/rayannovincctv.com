@@ -70,3 +70,10 @@ Route::prefix('granite')->name('granite.')->group(function () {
     Route::get('/edit/{granite}' , [\App\Http\Controllers\Manager\GraniteController::class , 'edit'])->name('edit');
     Route::put('/update/{granite}',[\App\Http\Controllers\Manager\GraniteController::class , 'update'])->name('update');
 });
+
+
+
+Route::get('projects' , function (){
+    $projects =\App\Models\ProjectRequest::orderBy('created_at', 'desc')->get();
+    return view('manager.projects.index', compact('projects'));
+})->name('projects');
