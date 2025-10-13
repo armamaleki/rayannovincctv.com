@@ -23,6 +23,7 @@
                         <tr>
                             <th class="border-bottom-0">آواتار</th>
                             <th class="border-bottom-0">نام</th>
+                            <th class="border-bottom-0">قیمت محصول</th>
                             <th class="border-bottom-0">وضعیت</th>
                             <th class="border-bottom-0">#</th>
                         </tr>
@@ -36,6 +37,9 @@
                                     @endif
                                 </td>
                                 <td>{{$data->name}}</td>
+                                <td>
+                                    <livewire:manager.update-price product="{{$data->id}}"/>
+                                </td>
                                 <td>
                                     @can('products-status')
                                     <livewire:manager.product-status product="{{$data->id}}"/>
