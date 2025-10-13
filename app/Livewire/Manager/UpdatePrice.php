@@ -21,7 +21,11 @@ class UpdatePrice extends Component
     }
 
     public function update(){
-        $this->product->price = $this->price;
+        if ($this->price == null){
+            $this->product->price = null;
+        }else{
+            $this->product->price = (int)$this->price;
+        }
         $this->product->save();
         $this->updateForm = false;
     }
