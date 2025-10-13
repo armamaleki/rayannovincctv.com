@@ -28,33 +28,40 @@
                     <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" />
                 </svg>
             </div>
-            <ul class="side-menu">
-                <li class="slide">
-                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
-                        <svg class="side-menu__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="26"
-                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                             stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
-                        <span class="side-menu__label">حساب کاربری</span><i class="angle fe fe-chevron-right"></i></a>
-                    <ul class="slide-menu">
-                        <li class="side-menu-label1">
-                            <a href="{{route('manager.user.index')}}">حساب کاربری</a>
-                        </li>
-                        <li>
-                            <a class="slide-item" href="{{route('manager.user.index')}}">
-                                <span>کاربران</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="slide-item" href="{{route('manager.role.index')}}">
-                                <span>دسترسی ها</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+            @can('manage-users')
+                <ul class="side-menu">
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                            <svg class="side-menu__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="26"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span class="side-menu__label">حساب کاربری</span><i
+                                class="angle fe fe-chevron-right"></i></a>
+                        <ul class="slide-menu">
+                            <li class="side-menu-label1">
+                                <a href="{{route('manager.user.index')}}">حساب کاربری</a>
+                            </li>
+                            @can('list-users')
+                                <li>
+                                    <a class="slide-item" href="{{route('manager.user.index')}}">
+                                        <span>کاربران</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('role-list')
+                                <li>
+                                    <a class="slide-item" href="{{route('manager.role.index')}}">
+                                        <span>دسترسی ها</span>
+                                    </a>
+                                </li>
+                            @endcanany
+                        </ul>
+                    </li>
+                </ul>
+            @endcan
             <ul class="side-menu">
                 <li class="slide">
                     <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
@@ -69,11 +76,13 @@
                         <li class="side-menu-label1">
                             <a href="{{route('manager.article.index')}}">مقالات</a>
                         </li>
+                        @can('article-list')
                         <li>
                             <a class="slide-item" href="{{route('manager.article.index')}}">
                                 <span>مقالات</span>
                             </a>
                         </li>
+                        @endcan
                     </ul>
                 </li>
             </ul>
@@ -93,21 +102,27 @@
                         <li class="side-menu-label1">
                             <a href="javascript:void(0)">محصولات</a>
                         </li>
-                        <li>
-                            <a class="slide-item" href="{{route('manager.product.index')}}">
-                                <span>محصولات</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="slide-item" href="{{route('manager.attribute.index')}}">
-                                <span>ویژگی محصولات</span>
-                            </a>
-                        </li>
+                        @can('products-list')
+                            <li>
+                                <a class="slide-item" href="{{route('manager.product.index')}}">
+                                    <span>محصولات</span>
+                                </a>
+                            </li>
+                        @endcan
+                        @can('attribute-list')
+                            <li>
+                                <a class="slide-item" href="{{route('manager.attribute.index')}}">
+                                    <span>ویژگی محصولات</span>
+                                </a>
+                            </li>
+                        @endcan
+                        @can('attribute-value-list')
                         <li>
                             <a class="slide-item" href="{{route('manager.value.index')}}">
                                 <span>مقدار های ویژگی</span>
                             </a>
                         </li>
+                        @endcan
                         <li>
                             <a class="slide-item" href="{{route('manager.granite.index')}}">
                                 <span>گارانتی محصولات</span>

@@ -7,11 +7,13 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">مدیریت دسترسی ها</h3>
+            @can('role-create')
             <div class="card-options">
                 <a href="{{route('manager.role.create')}}" class="btn btn-primary btn-sm">
                     اضافه کردن
                 </a>
             </div>
+            @endcan
         </div>
         <div class="card-body">
             <div class="">
@@ -28,9 +30,11 @@
                             <tr>
                                 <td>{{$data->name}}</td>
                                 <td>
+                                    @can('role-edit')
                                     <a href="{{route('manager.role.edit' , $data)}}" class="btn btn-primary pd-x-25" type="button">
                                         <i class="fa fa-pencil fa-lg"></i>
                                     </a>
+                                    @endcan
                                 </td>
                             </tr>
                         @endforeach

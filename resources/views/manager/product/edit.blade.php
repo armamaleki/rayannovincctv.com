@@ -180,7 +180,7 @@
                                         </div>
                                     </div>
                                     <div class="col-2">
-                                            <label>اقدامات</label>
+                                        <label>اقدامات</label>
                                         <div>
                                             <button type="button" class="btn btn-sm btn-warning"
                                                     onclick="document.getElementById('attribute-{{$loop->index}}').remove()">
@@ -197,7 +197,9 @@
 
 
                 <textarea id="description" name="description">{{ $product->description  }}</textarea>
-                <button type="submit" class="btn btn-primary btn-block mt-5">ذخیره مقاله</button>
+                @can('products-update')
+                    <button type="submit" class="btn btn-primary btn-block mt-5">ذخیره مقاله</button>
+                @endcan
             </form>
             <div class="row mt-4">
                 <div class="col">
@@ -209,18 +211,21 @@
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-                        <form action="{{ route('manager.product.data-sheet'  , $product) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('manager.product.data-sheet'  , $product) }}" method="POST"
+                              enctype="multipart/form-data">
                             @csrf
                             <input type="file" name="data_sheet" accept=".pdf,application/pdf">
                             <button
                                 class="btn btn-primary"
-                                type="submit">آپلود</button>
+                                type="submit">آپلود
+                            </button>
                         </form>
                     </div>
                 </div>
                 <div class="col">
                     @if($product->getFirstMediaUrl('data_sheet'))
-                        <a href="{{ $product->getFirstMediaUrl('data_sheet') }}" target="_blank" class="btn btn-primary">
+                        <a href="{{ $product->getFirstMediaUrl('data_sheet') }}" target="_blank"
+                           class="btn btn-primary">
                             دانلود دیتاشیت
                         </a>
                     @endif
@@ -254,12 +259,13 @@
                 <div class="col">
                     <img id="imagePreview" src="" class=" ">
                 </div>
-                <div class="col" >
+                <div class="col">
                     @foreach ($product->getMedia('avatars') as $media)
                         <img
                             class="rounded-lg"
                             src="{{ $media->getFullUrl('watermark') }}" alt="Image">
-                        <form action="{{ route('manager.product.delete-avatar', $media->id) }}" method="POST" style="display:inline">
+                        <form action="{{ route('manager.product.delete-avatar', $media->id) }}" method="POST"
+                              style="display:inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">پاک کردن این تصویر</button>
@@ -300,7 +306,8 @@
                         <img
                             class="rounded-lg"
                             src="{{ $Gallery->getFullUrl('watermark') }}" alt="Image">
-                        <form action="{{ route('manager.product.delete-avatar', $Gallery->id) }}" method="POST" style="display:inline">
+                        <form action="{{ route('manager.product.delete-avatar', $Gallery->id) }}" method="POST"
+                              style="display:inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">پاک کردن این تصویر</button>

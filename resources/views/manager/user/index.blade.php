@@ -32,16 +32,18 @@
                             <tr>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->phone}}</td>
-                                <td>{{$user->getRoleNames()}}</td>
+                                <td>
+                                    <livewire:manager.user-role user="{{$user->id}}" />
+                                </td>
                                 <td>{{jdate($user->updated_at)->ago()}}</td>
                                 <td>{{jdate($user->created_at)}}</td>
                                 <td>
                                     <div aria-label="Basic example" class="btn-group ms-3 mb-3" role="group">
                                         <a href="#" class="btn btn-green active" type="button">
-                                            <i class="fa fa-eye fa-lg"    ></i>
+                                            <i class="fa fa-eye fa-lg"></i>
                                         </a>
                                         <a href="#" class="btn btn-primary pd-x-25" type="button">
-                                            <i class="fa fa-pencil fa-lg"    ></i>
+                                            <i class="fa fa-pencil fa-lg"></i>
                                         </a>
                                     </div>
                                 </td>

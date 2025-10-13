@@ -84,7 +84,9 @@
                     </div>
                 </div>
                 <textarea id="description" name="description">{{ $article->description  }}</textarea>
-                <button type="submit" class="btn btn-primary btn-block mt-5">ذخیره مقاله</button>
+                @can('article-update')
+                    <button type="submit" class="btn btn-primary btn-block mt-5">ذخیره مقاله</button>
+                @endcan
             </form>
 
             <div class="row mt-4">
@@ -92,7 +94,8 @@
                     <div class="mb-3">
                         <div class="form-label">حد اکثر اندازه برای بارگزاری 2 مگابایت میباشد.</div>
                         <div class="form-file">
-                            <input type="file" class="form-control form-file-input" id="imageInput" name="avatar" accept="image/*">
+                            <input type="file" class="form-control form-file-input" id="imageInput" name="avatar"
+                                   accept="image/*">
                         </div>
                     </div>
                     <p id="errorMessage" class="text-red-800"></p>
@@ -135,47 +138,47 @@
 
     <script>
         const editor = CKEDITOR.replace('description', {
-{{--            filebrowserUploadUrl: `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`,--}}
+            {{--            filebrowserUploadUrl: `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`,--}}
             customConfig: 'editorConfig',
-            requires: 'widget',
+            requires: 'widget'
         });
-        CKEDITOR.editorConfig = function (config) {
+        CKEDITOR.editorConfig = function(config) {
             config.language = 'fa';
             config.uiColor = '#e9d5ff';
             config.allowedContent = true;
             config.extraPlugins = 'language';
             config.height = 500;
             config.extraPlugins = 'uploadimage';
-{{--            config.uploadUrl = `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`;--}}
-            config.toolbarCanCollapse = true;
+            {{--            config.uploadUrl = `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`;--}}
+                config.toolbarCanCollapse = true;
             config.extraPlugins = 'font';
             config.font_names =
                 'yekan;' +
-                'vazir;'
+                'vazir;';
         };
 
         var cropper;
-        document.getElementById('imageInput').addEventListener('change', function (event) {
+        document.getElementById('imageInput').addEventListener('change', function(event) {
             var image = document.getElementById('imagePreview');
             var reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 image.src = e.target.result;
                 if (cropper) {
                     cropper.destroy();
                 }
                 cropper = new Cropper(image, {
-                    aspectRatio: 16/9,
+                    aspectRatio: 16 / 9,
                     viewMode: 1
                 });
             };
             reader.readAsDataURL(event.target.files[0]);
         });
-        document.getElementById('cropButton').addEventListener('click', function () {
+        document.getElementById('cropButton').addEventListener('click', function() {
             if (cropper) {
                 document.getElementById('loader').style.display = 'inline-block';
                 var canvas = cropper.getCroppedCanvas();
-                canvas.toBlob(function (blob) {
-                    console.log(blob)
+                canvas.toBlob(function(blob) {
+                    console.log(blob);
                     var formData = new FormData();
                     formData.append('croppedImage', blob);
                     formData.append('model', `{{$article->id}}`);
@@ -184,9 +187,9 @@
                     fetch(`{{route('manager.article.avatar')}}`, {
                         method: 'POST',
                         headers: {
-                            'X-CSRF-TOKEN': csrfToken,
+                            'X-CSRF-TOKEN': csrfToken
                         },
-                        body: formData,
+                        body: formData
                     }).then(response => response.json())
                         .then(data => {
                             document.getElementById('loader').style.display = 'none';
@@ -201,7 +204,7 @@
                         });
                 });
             } else {
-                document.getElementById('errorMessage').innerText = 'ابتدا عکس خود را انتخاب کنید'
+                document.getElementById('errorMessage').innerText = 'ابتدا عکس خود را انتخاب کنید';
             }
         });
     </script>

@@ -19,9 +19,9 @@
                     <x-icons.phone />
                     09902706257
                 </a>
-                <a href="mailto:info@rayammovincctv.com" class="flex gap-1 items-center">
+                <a href="mailto:info@rayannovincctv.com" class="flex gap-1 items-center">
                     <x-icons.envelope />
-                    info@rayammovincctv.com
+                    info@rayannovincctv.com
                 </a>
                 <div class="flex gap-1 items-center">
                     <div>

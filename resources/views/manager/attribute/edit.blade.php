@@ -34,7 +34,9 @@
                                value="{{$attribute->icon}}">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">ذخیره تغییرات</button>
+                @can('attribute-update')
+                    <button type="submit" class="btn btn-primary btn-block">ذخیره تغییرات</button>
+                @endcan
             </form>
         </div>
     </div>

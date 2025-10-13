@@ -7,12 +7,13 @@
     <div class="card">
         <div class="card-header">
             <div class="card-title">مقدار های ویژگی</div>
-
-            <div class="card-options">
-                <a href="{{route('manager.value.create')}}" class="btn btn-primary btn-sm">
-                    اضافه کردن
-                </a>
-            </div>
+            @can('attribute-value-create')
+                <div class="card-options">
+                    <a href="{{route('manager.value.create')}}" class="btn btn-primary btn-sm">
+                        اضافه کردن
+                    </a>
+                </div>
+            @endcan
         </div>
         <div class="card-body">
             <div class="">
@@ -32,12 +33,17 @@
                                 <td>{{$data->attribute->name}}</td>
                                 <td>
                                     <div aria-label="Basic example" class="btn-group ms-3 mb-3" role="group">
-                                        <a href="#" class="btn btn-green active" type="button">
-                                            <i class="fa fa-eye fa-lg" ></i>
-                                        </a>
-                                        <a href="{{route('manager.value.edit' , $data)}}" class="btn btn-primary pd-x-25" type="button">
-                                            <i class="fa fa-pencil fa-lg"></i>
-                                        </a>
+                                        @can('attribute-value-show')
+                                            <a href="#" class="btn btn-green active" type="button">
+                                                <i class="fa fa-eye fa-lg"></i>
+                                            </a>
+                                        @endcan
+                                        @can('attribute-value-edit')
+                                            <a href="{{route('manager.value.edit' , $data)}}"
+                                               class="btn btn-primary pd-x-25" type="button">
+                                                <i class="fa fa-pencil fa-lg"></i>
+                                            </a>
+                                        @endcan
                                     </div>
                                 </td>
                             </tr>

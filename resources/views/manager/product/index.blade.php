@@ -7,11 +7,13 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">مدیریت محصول</h3>
+            @can('products-create')
             <div class="card-options">
                 <a href="{{route('manager.product.create')}}" class="btn btn-primary btn-sm">
                     اضافه کردن
                 </a>
             </div>
+            @endcan
         </div>
         <div class="card-body">
             <div class="">
@@ -35,16 +37,22 @@
                                 </td>
                                 <td>{{$data->name}}</td>
                                 <td>
+                                    @can('products-status')
                                     <livewire:manager.product-status product="{{$data->id}}"/>
+                                    @endcan
                                 </td>
                                 <td>
                                     <div aria-label="Basic example" class="btn-group ms-3 mb-3" role="group">
+                                        @can('products-show')
                                         <a href="{{route('client.store.show' , $data)}}" target="_blank" class="btn btn-green active" type="button">
                                             <i class="fa fa-eye fa-lg"></i>
                                         </a>
+                                        @endcan
+                                        @can('products-edit')
                                         <a href="{{route('manager.product.edit' , $data)}}" class="btn btn-primary pd-x-25" type="button">
                                             <i class="fa fa-pencil fa-lg"></i>
                                         </a>
+                                        @endcan
                                     </div>
                                 </td>
                             </tr>
