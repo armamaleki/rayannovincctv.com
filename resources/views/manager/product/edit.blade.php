@@ -329,7 +329,7 @@
 
     <script>
         const editor = CKEDITOR.replace('description', {
-            {{--            filebrowserUploadUrl: `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`,--}}
+            filebrowserUploadUrl: `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`,
             customConfig: 'editorConfig',
             requires: 'widget'
         });
@@ -340,8 +340,8 @@
             config.extraPlugins = 'language';
             config.height = 500;
             config.extraPlugins = 'uploadimage';
-            {{--            config.uploadUrl = `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`;--}}
-                config.toolbarCanCollapse = true;
+            config.uploadUrl = `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`;
+            config.toolbarCanCollapse = true;
             config.extraPlugins = 'font';
             config.font_names =
                 'yekan;' +

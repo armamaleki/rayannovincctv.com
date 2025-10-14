@@ -93,23 +93,23 @@
     <script src="{{asset('assets/plugins/ckeditor/lang/fa.js')}}"></script>
     <script>
         const editor = CKEDITOR.replace('description', {
-{{--            filebrowserUploadUrl: `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`,--}}
+            filebrowserUploadUrl: `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`,
             customConfig: 'editorConfig',
-            requires: 'widget',
+            requires: 'widget'
         });
-        CKEDITOR.editorConfig = function (config) {
+        CKEDITOR.editorConfig = function(config) {
             config.language = 'fa';
             config.uiColor = '#e9d5ff';
             config.allowedContent = true;
             config.extraPlugins = 'language';
             config.height = 500;
             config.extraPlugins = 'uploadimage';
-{{--            config.uploadUrl = `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`;--}}
+            config.uploadUrl = `{{route('manager.imageUploader' , ['_token' => csrf_token()])}}`;
             config.toolbarCanCollapse = true;
             config.extraPlugins = 'font';
             config.font_names =
                 'yekan;' +
-                'vazir;'
+                'vazir;';
         };
     </script>
 @endpush

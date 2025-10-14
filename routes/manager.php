@@ -1,4 +1,6 @@
 <?php
+
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -77,3 +79,15 @@ Route::get('projects' , function (){
     $projects =\App\Models\ProjectRequest::orderBy('created_at', 'desc')->get();
     return view('manager.projects.index', compact('projects'));
 })->name('projects');
+
+
+Route::post('/image-uploader', function (Request $request) {
+    $request->validate([
+        'upload' => 'required|image|mimes:jpg,jpeg,png,bmp,gif,svg,webp|max:2048',
+    ]);
+    $name = $request->upload->getClientOriginalName();
+    $now = \Carbon\Carbon::now()->format('Y-m-d');
+    $path = $request->file('upload')->store('images/' . $now, 'public');
+    return response()->json(['fileName' => $name, 'uploaded' => 1, 'url' => '/storage/' . $path]);
+})->name('imageUploader');
+
