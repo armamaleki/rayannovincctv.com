@@ -36,17 +36,17 @@ div .editor h6 {
 }
 
 div .editor tbody{
-    border: 1px solid #800080;
+    border: 1px solid #00a6f4;
     padding: 10px;
 }
 
 div .editor tr{
-    border: 1px solid #800080;
+    border: 1px solid #00a6f4;
     padding: 10px;
 }
 
 div .editor td{
-    border: 1px solid #800080;
+    border: 1px solid #00a6f4;
     padding: 10px;
 }
 
@@ -66,7 +66,7 @@ div .editor li{
 }
 
 div .editor li:hover {
-    color: #800080;
+    color: #00a6f4;
     cursor: pointer;
 }
 /* width */
