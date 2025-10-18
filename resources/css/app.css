@@ -21,7 +21,9 @@ div .editor img {
     float: none !important;
 }
 
-
+.editor{
+    text-align: justify;
+}
 div .editor h1 {
     font-size: 2em;
 
