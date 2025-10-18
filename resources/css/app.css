@@ -10,29 +10,47 @@ input[type=range]::-webkit-slider-thumb {
     height: 24px;
     -webkit-appearance: none;
 }
+div .editor table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+}
+div .editor img {
+    display: block !important;
+    margin: 0 auto !important;
+    float: none !important;
+}
+
 
 div .editor h1 {
     font-size: 2em;
+
+    color: #00a6f4;
 }
 
 div .editor h2 {
     font-size: 1.5em;
+    color: #00a6f4;
 }
 
 div .editor h3 {
     font-size: 1.17em;
+    color: #00a6f4;
 }
 
 div .editor h4 {
     font-size: 1em;
+    color: #00a6f4;
 }
 
 div .editor h5 {
     font-size: 0.83em;
+    color: #00a6f4;
 }
 
 div .editor h6 {
     font-size: 0.67em;
+    color: #00a6f4;
 }
 
 div .editor tbody{
