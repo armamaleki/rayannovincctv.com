@@ -49,7 +49,7 @@
                     ورود|ثبت نام
                 </a>
             @endif
-
+            <livewire:client.product-search />
         </div>
     </div>
 </div>
