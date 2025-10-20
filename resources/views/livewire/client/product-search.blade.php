@@ -18,7 +18,7 @@
         </button>
     </div>
     @if($this->products)
-        <div class="bg-gray-800 absolute z-10 top-20 w-full rounded-md ">
+        <div class="bg-gray-800 absolute z-10 top-20 w-full rounded-md h-96 overflow-x-scroll">
             @foreach($this->products as $product)
                 <div class="flex flex-col ">
                     <a
