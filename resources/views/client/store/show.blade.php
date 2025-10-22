@@ -107,8 +107,8 @@
                     <div class="flex gap-2 font-bold">
                         امکان خرید حضوری : دارد
                     </div>
-                    <a href="tel:123456" class="flex gap-2">
-                        مشاوره رایگان : <span class="text-sky-500">123456</span>
+                    <a href="tel:09902706257" class="flex gap-2">
+                        مشاوره رایگان : <span class="text-sky-500">09902706257</span>
                     </a>
                     @if($product->getFirstMediaUrl('data_sheet'))
                         <a href="{{ URL::signedRoute('client.data-sheet.download', $product) }}"

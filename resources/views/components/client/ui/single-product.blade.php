@@ -50,7 +50,7 @@
     </div>
 
     <a href="{{route('client.store.show' , $product)}}">
-        <h2 class="text-2xl font-bold group-hover:text-sky-400 transition delay-150 duration-300  ease-in-out">این
+        <h2 class="text-2xl font-bold group-hover:text-sky-400 transition delay-150 duration-300  ease-in-out">
             {{$product->name}}
         </h2>
     </a>
