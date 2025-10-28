@@ -18,7 +18,7 @@
             </h2>
         </a>
 
-        <p>
+        <p class="text-justify">
             {{$article->short_description}}
         </p>
         <div class="p-2 rounded-full bg-sky-400 flex justify-between">

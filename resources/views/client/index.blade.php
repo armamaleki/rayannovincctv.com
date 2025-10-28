@@ -59,23 +59,50 @@
     </div>
     <div
         class="container mx-auto p-8 rounded-xl grid grid-cols-1 md:grid-cols-2 md:divide-x-2 divide-y-2 md:divide-y-0 divide-dashed divide-sky-200 lg:grid-cols-4 gap-4 items-center bg-gray-800 -mt-10 relative z-30 shadow-lg shadow-sky-500">
-        <a href="#" class="flex flex-col items-center space-y-2 h-full">
-            <img src="{{asset('assets/images/shape/top-icon-1.png')}}" alt="">
-            <h2 class="font-bold text-xl">ایفون تصویری</h2>
+        <a href="https://rayannovincctv.com/store" class="flex flex-col items-center space-y-2 h-full">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16"
+                 class="size-20 text-sky-500" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1M3 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"></path>
+                <path
+                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8.5v3a1.5 1.5 0 0 1 1.5 1.5h5.5a.5.5 0 0 1 0 1H10A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5H.5a.5.5 0 0 1 0-1H6A1.5 1.5 0 0 1 7.5 10V7H2a2 2 0 0 1-2-2zm1 0v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1m6 7.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5"></path>
+            </svg>
+            <h2 class="font-bold text-xl">سوئیچ</h2>
         </a>
-        <a href="#" class="flex flex-col items-center space-y-2 h-full">
-            <img src="{{asset('assets/images/shape/top-icon-2.png')}}" alt="">
-            <h2 class="font-bold text-xl">ایفون تصویری</h2>
+        <a href="https://rayannovincctv.com/store" class="flex flex-col items-center space-y-2 h-full">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                 stroke-linejoin="round" class="size-20 text-sky-500" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.75 12h3.632a1 1 0 0 1 .894 1.447l-2.034 4.069a1 1 0 0 1-1.708.134l-2.124-2.97"></path>
+                <path
+                    d="M17.106 9.053a1 1 0 0 1 .447 1.341l-3.106 6.211a1 1 0 0 1-1.342.447L3.61 12.3a2.92 2.92 0 0 1-1.3-3.91L3.69 5.6a2.92 2.92 0 0 1 3.92-1.3z"></path>
+                <path d="M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15"></path>
+                <path d="M2 21v-4"></path>
+                <path d="M7 9h.01"></path>
+            </svg>
+            <h2 class="font-bold text-xl">دوربین مداربسته</h2>
+        </a>
+        <a href="https://rayannovincctv.com/store" class="flex flex-col items-center space-y-2 h-full">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16"
+                 class="size-20 text-sky-500" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-7.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1M5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M8 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2"></path>
+                <path
+                    d="M12 7a4 4 0 0 1-3.937 4c-.537.813-1.02 1.515-1.181 1.677a1.102 1.102 0 0 1-1.56-1.559c.1-.098.396-.314.795-.588A4 4 0 0 1 8 3a4 4 0 0 1 4 4m-1 0a3 3 0 1 0-3.891 2.865c.667-.44 1.396-.91 1.955-1.268.224-.144.483.115.34.34l-.62.96A3 3 0 0 0 11 7"></path>
+                <path
+                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path>
+            </svg>
+            <h2 class="font-bold text-xl">هارد</h2>
 
         </a>
-        <a href="#" class="flex flex-col items-center space-y-2 h-full">
-            <img src="{{asset('assets/images/shape/top-icon-3.png')}}" alt="">
-            <h2 class="font-bold text-xl">ایفون تصویری</h2>
-
-        </a>
-        <a href="#" class="flex flex-col items-center space-y-2 h-full">
-            <img src="{{asset('assets/images/shape/top-icon-4.png')}}" alt="">
-            <h2 class="font-bold text-xl">ایفون تصویری</h2>
+        <a href="https://rayannovincctv.com/store" class="flex flex-col items-center space-y-2 h-full">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                 stroke-linejoin="round" class="size-20 text-sky-500" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 21v-2a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1"></path>
+                <path d="M19 15V6.5a1 1 0 0 0-7 0v11a1 1 0 0 1-7 0V9"></path>
+                <path d="M21 21v-2h-4"></path>
+                <path d="M3 5h4V3"></path>
+                <path d="M7 5a1 1 0 0 1 1 1v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1V3"></path>
+            </svg>
+            <h2 class="font-bold text-xl">لوازم جانبی</h2>
         </a>
     </div>
     <section class="container mx-auto px-2 py-16 space-y-8">
