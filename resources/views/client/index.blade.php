@@ -106,7 +106,7 @@
         </a>
     </div>
     <section class="container mx-auto px-2 py-16 space-y-8">
-        <div class=" grid grid-cols-1 md:grid-cols-2 items-center">
+        <div class=" grid grid-cols-1 md:grid-cols-2 items-center gap-4">
             <div class="space-y-4">
                 <div class="flex gap-2 items-center">
                     <x-ui.ping-dot />
@@ -114,7 +114,7 @@
                         <span class="letters">درباره رایان نوین</span>
                     </h2>
                 </div>
-                <p>
+                <p class="text-justify">
                     بیش از چندین  سال تجربه‌ی تخصصی در طراحی، تأمین و اجرای سیستم‌های نظارت تصویری و امنیتی، ما را به یکی از نام‌های شاخص و مورد اعتماد این صنعت تبدیل کرده است.
                     <br>
                     در طول این سال‌ها، افتخار همکاری با برندهای بین‌المللی هایک‌ویژن (Hikvision) و داهوا (Dahua) را داشته‌ایم؛ برندهایی که استانداردهای جهانی امنیت را تعریف می‌کنند.
