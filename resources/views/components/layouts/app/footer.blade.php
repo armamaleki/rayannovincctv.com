@@ -53,6 +53,7 @@
         </div>
         <div class="space-y-4 ">
             <h3 class="text-2xl">مجوز ها</h3>
+            <div id="enamad"></div>
         </div>
     </div>
     <div class="flex flex-col items-center font-thin">
@@ -64,3 +65,32 @@
            href="https://bariz.tech/">طراحی و توسعه با تیم باریز</a>
     </div>
 </div>
+
+@push('js')
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('ddd');
+            var enamad = document.createElement('a');
+            enamad.setAttribute('referrerpolicy', 'origin');
+            enamad.setAttribute('target', '_blank');
+            enamad.setAttribute('href', 'https://trustseal.enamad.ir/?id=667972&Code=XNhWc5JWT3Tvrhvzc6Ezjyxl64Z3pMYp');
+
+            var img = document.createElement('img');
+            img.setAttribute('referrerpolicy', 'origin');
+            img.setAttribute('src', 'https://trustseal.enamad.ir/logo.aspx?id=667972&Code=XNhWc5JWT3Tvrhvzc6Ezjyxl64Z3pMYp');
+            img.setAttribute('alt', '');
+            img.style.cursor = 'pointer';
+
+            enamad.appendChild(img);
+
+            var target = document.getElementById('enamad');
+            if (target) {
+                target.appendChild(enamad);
+            } else {
+                console.warn('div#enamad not found');
+            }
+        });
+    </script>
+@endpush
+
