@@ -13,6 +13,10 @@ Route::name('client.')->group(function () {
         return view('client.index');
     })->name('home');
 
+    Route::get('/disk-calculator', function () {
+        return view('client.calculator');
+    })->name('calculator');
+
     Route::get('/about-us', function () {
         return view('client.about-us');
     })->name('about-us');

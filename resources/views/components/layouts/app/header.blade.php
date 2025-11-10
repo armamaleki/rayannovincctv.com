@@ -23,6 +23,12 @@
                 مقالات
             </a>
             <a
+                class="flex gap-1 items-center font-bold text-lg hover:border-b hover:text-sky-500 transition-all delay-150 duration-300 {{request()->path() == 'articles' ? 'border-b text-sky-500' :'' }} "
+                href="{{route('client.calculator')}}">
+                <x-icons.pencil-square />
+                محاسبه فضای هارد دوربین
+            </a>
+            <a
                 class="flex gap-1 items-center font-bold text-lg hover:border-b hover:text-sky-500 transition-all delay-150 duration-300 {{request()->path() == 'about-us' ? 'border-b text-sky-500' :'' }} "
                 href="{{route('client.about-us')}}">
                 <x-icons.user-group />
