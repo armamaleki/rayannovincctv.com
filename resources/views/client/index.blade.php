@@ -292,6 +292,80 @@
             </div>
         </div>
     </section>
+    <section class="container mx-auto px-4 my-16 space-y-8 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <div class="space-y-8">
+            <div data-aos="fade-up" class="border rounded-full w-fit px-4 py-2 flex gap-1">
+                <span>//</span>
+                <h2>درباره دیجی امیتیس</h2>
+            </div>
+            <p
+                data-aos="fade-up"
+                data-aos-delay="300"
+                class="text-4xl">
+                <span
+                    class="inline-block font-bold bg-gradient-to-r from-indigo-500 to-pink-600 bg-clip-text text-transparent">آمیتیس</span>
+                یک تحولی در صنعیت دوربین مدار بسته
+            </p>
+            <p data-aos="fade-up"
+               data-aos-delay="400"
+               class="text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem necessitatibus nihil obcaecati sequi,
+                tempora totam! Aspernatur autem, beatae facere hic ipsam minima non omnis placeat, possimus ratione
+                reprehenderit veritatis, voluptates.
+            </p>
+            <div class="md:flex gap-2 w-full">
+                <div>
+                    <div
+                        data-aos="fade-up"
+                        data-aos-delay="500"
+                        class="flex items-center gap-2 p-4 border-b border-gray-700">
+
+                        <p>
+                            Access control systems - Fire detection alarms
+                        </p>
+                    </div>
+                    <div
+                        data-aos="fade-up"
+                        data-aos-delay="600"
+                        class="flex items-center gap-2 p-4 border-b border-gray-700">
+
+                        <p>
+                            Access control systems - Fire detection alarms
+                        </p>
+                    </div>
+                    <div
+                        data-aos="fade-up"
+                        data-aos-delay="700"
+                        class="flex items-center gap-2 p-4">
+
+                        <p>
+                            Access control systems - Fire detection alarms
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    data-aos="fade-up"
+                    data-aos-delay="800"
+                    class="image-anime w-fit rounded-3xl shadow-lg shadow-purple-800 dark:shadow-gray-700">
+                    <img src="{{asset('assets/images/about-bg04.jpg')}}" alt="">
+                </div>
+            </div>
+            <a href="#"
+               data-aos="fade-up"
+               data-aos-delay="900"
+               class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                درباره ما
+            </a>
+        </div>
+        <div class="beforeAfter overflow-hidden">
+            <img src="{{asset('assets/images/day-vision01.png')}}" alt="">
+            <img src="{{asset('assets/images/night-vision01.png')}}" alt="">
+        </div>
+        <div>
+
+        </div>
+    </section>
     <x-client.last-articles />
 
 @endsection
@@ -310,5 +384,33 @@
         });
     </script>
     <script src="{{asset('assets/plugins/swiper-element-bundle.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/beforeafter/beforeafter.jquery.min.js')}}"></script>
+    <script>
+        $('.beforeAfter').beforeAfter({
 
+            // is draggable/swipeable
+            movable: true,
+            // click image to move the slider
+            clickMove: true,
+
+            // intial position of the slider
+            position: 50,
+
+            // opacity between 0 and 1
+            opacity: 0.4,
+            activeOpacity: 1,
+            hoverOpacity: 0.8,
+
+            // slider colors
+            separatorColor: '#ffffff',
+            bulletColor: '#ffffff',
+            arrowColor: '#333333',
+
+            // Callback functions
+            onMoveStart: function() {},
+            onMoving: function() {},
+            onMoveEnd: function() {}
+
+        });
+    </script>
 @endpush

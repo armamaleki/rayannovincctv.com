@@ -1,7 +1,8 @@
 @extends('components.layouts.app.index')
 @section('meta')
     <title>محاسبه گر فضای هارد دوربین مدار بسته | محاسبه میزان حافظه DVR و NVR</title>
-    <meta name="description" content="با استفاده از محاسبه‌گر فضای هارد دوربین مدار بسته، به‌راحتی بفهمید برای ضبط تصاویر چند روزه سیستم نظارتی خود چقدر حافظه لازم دارید. آموزش کامل محاسبه میزان فضای ذخیره‌سازی DVR و NVR با فرمول و مثال واقعی." />
+    <meta name="description"
+          content="با استفاده از محاسبه‌گر فضای هارد دوربین مدار بسته، به‌راحتی بفهمید برای ضبط تصاویر چند روزه سیستم نظارتی خود چقدر حافظه لازم دارید. آموزش کامل محاسبه میزان فضای ذخیره‌سازی DVR و NVR با فرمول و مثال واقعی." />
 
 @endsection
 @section('content')
@@ -15,14 +16,140 @@
     @endphp
     <x-client.ui.breadcrumb title="محاسبه آنلاین ظرفیت هارد دوربین مداربسته" :breads="$breads" />
     <div class="space-y-4 my-16  p-2 container mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center gap-4">
             <div class="col-span-1 md:col-span-2 lg:col-span-3">
-
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                    <x-input.select
+                        id="frame"
+                        name="frame"
+                        label="چند فریم بر ثانیه تصویر برداری میکنید؟">
+                        <option value="1">1</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                        <option value="60">60</option>
+                    </x-input.select>
+                    <x-input.select
+                        id="format"
+                        name="format"
+                        label="با چه فرمتی فشرده سازی میکنید؟">
+                        <option value="H265+">H265+ (Smart 265)</option>
+                        <option value="H265">H265</option>
+                        <option value="H264+">H264+ (Smart 264)</option>
+                        <option value="H264">H264</option>
+                    </x-input.select>
+                    <x-input.select
+                        id="mic"
+                        name="mic"
+                        label="دوربین های استفاده شده میروفون دارند؟">
+                        <option value="1">بله</option>
+                        <option value="0">خیر</option>
+                    </x-input.select>
+                    <x-input.select
+                        id="quality"
+                        name="quality"
+                        label="از چه کیفیت دوربینی استفاده میکنید؟">
+                        <option value="D1">D1 (آنالوگ)</option>
+                        <option value="1">1MP</option>
+                        <option value="1.3">1.3MP</option>
+                        <option value="2" >2MP</option>
+                        <option value="3">3MP</option>
+                        <option value="4">4MP</option>
+                        <option value="5">5MP</option>
+                        <option value="6">6MP</option>
+                        <option value="8">8MP</option>
+                        <option value="12">12MP</option>
+                    </x-input.select>
+                    <x-input.select
+                        id="camera"
+                        name="camera"
+                        label="از چند دوربین استفاده میکنید؟">
+                        @for ($i = 1; $i < 67; $i++)
+                            <option value="{{ $i }}">{{ $i }} دوربین</option>
+                        @endfor
+                    </x-input.select>
+                    <x-input.select
+                        id="day"
+                        name="day"
+                        label="برای چند روز میخواهید ذخیره داشته باشید؟">
+                        @for ($i = 1; $i < 181; $i++)
+                            <option value="{{ $i }}">{{ $i }} روز </option>
+                        @endfor
+                    </x-input.select>
+                </div>
             </div>
-            <div class="">
+            <div class="p-2 bg-gray-800 rounded-2xl divide-y divide-dashed divide-sky-400">
+                <div class="flex justify-between py-2">
+                    <p class="font-bold py-2">موارد انتخاب شده</p>
 
+                </div>
+                <div class="flex justify-between py-2">
+                    <p>
+                        فریم بر ثانیه:
+                    </p>
+
+                    <p id="frameValueSelected">
+                        انتخاب نشده
+                    </p>
+
+                </div>
+                <div class="flex justify-between py-2">
+                    <p>
+                        فرمت فشرده سازی:
+                    </p>
+
+                    <p id="formatValueSelected">
+                        انتخاب نشده
+                    </p>
+
+                </div>
+                <div class="flex justify-between py-2">
+                    <p>
+                        استفاده از میکروفون دوربین:
+                    </p>
+
+                    <p id="micValueSelected">
+                        انتخاب نشده
+                    </p>
+
+                </div>
+                <div class="flex justify-between py-2">
+                    <p>
+                        کیفیت دوربین های استفاده شده:
+                    </p>
+
+                    <p id="qualityValueSelected">
+                        انتخاب نشده
+                    </p>
+
+                </div>
+                <div class="flex justify-between py-2">
+                    <p>
+                        تعداد دوربین مورد استفاده:
+                    </p>
+
+                    <p id="cameraValueSelected">
+                        انتخاب نشده
+                    </p>
+
+                </div>
+                <div class="flex justify-between py-2">
+                    <p>
+                        تعداد روز های انتخاب شده:
+                    </p>
+
+                    <p id="dayValueSelected">
+                        انتخاب نشده
+                    </p>
+
+                </div>
             </div>
         </div>
+
         <div class="max-w-5xl mx-auto px-4 py-8  leading-relaxed text-justify space-y-6">
             <h2 class="text-3xl font-bold  mb-4">
                 دوربین های مداربسته تا چند روز فیلم نگه میداره؟
@@ -31,14 +158,17 @@
             <p>
                 وقتی از یه سیستم نظارتی استفاده می‌کنی، یکی از اولین سوال‌هایی که برات پیش میاد اینه که
                 <strong>دوربین‌های مداربسته تا چند روز فیلم نگه میدارن؟</strong>
-                جواب این سوال به چند تا عامل مهم بستگی داره که اگه باهاشون آشنا بشی، خیلی راحت می‌تونی بفهمی سیستم فعلیت چند روز بک‌آپ نگه می‌داره یا اگه بخوای مدت زمان بیشتری ذخیره بشه، باید چه کاری انجام بدی.
+                جواب این سوال به چند تا عامل مهم بستگی داره که اگه باهاشون آشنا بشی، خیلی راحت می‌تونی بفهمی سیستم فعلیت
+                چند روز بک‌آپ نگه می‌داره یا اگه بخوای مدت زمان بیشتری ذخیره بشه، باید چه کاری انجام بدی.
             </p>
 
             <h2 class="text-2xl font-bold  mt-8">حافظه دوربین مدار بسته یعنی چی؟</h2>
             <p>
                 منظور از حافظه دوربین مدار بسته، همون فضاییه که تصاویر ضبط‌شده داخلش ذخیره می‌شن. این حافظه معمولاً روی
                 <strong>هارد دستگاه DVR یا NVR</strong>
-                قرار داره. بعضی از دوربین‌های تحت شبکه هم خودشون داخلشون کارت حافظه Micro SD دارن که بدون نیاز به دستگاه ضبط‌کننده هم می‌تونن فیلم‌ها رو ذخیره کنن. هرچقدر ظرفیت هارد یا کارت حافظه بیشتر باشه، مدت زمان نگهداری تصاویر هم بیشتر میشه.
+                قرار داره. بعضی از دوربین‌های تحت شبکه هم خودشون داخلشون کارت حافظه Micro SD دارن که بدون نیاز به دستگاه
+                ضبط‌کننده هم می‌تونن فیلم‌ها رو ذخیره کنن. هرچقدر ظرفیت هارد یا کارت حافظه بیشتر باشه، مدت زمان نگهداری
+                تصاویر هم بیشتر میشه.
             </p>
 
             <h2 class="text-2xl font-bold  mt-8">
@@ -50,25 +180,32 @@
             <ul class="list-disc list-inside space-y-3">
                 <li>
                     <strong>بیت‌ریت ضبط (Bitrate):</strong>
-                    هرچی کیفیت تصویر، رزولوشن و فریم‌ریت بالاتر باشه، بیت‌ریت هم بیشتر میشه و طبیعیه که فضای بیشتری از هارد اشغال بشه.
+                    هرچی کیفیت تصویر، رزولوشن و فریم‌ریت بالاتر باشه، بیت‌ریت هم بیشتر میشه و طبیعیه که فضای بیشتری از
+                    هارد اشغال بشه.
                 </li>
                 <li>
                     <strong>تعداد دوربین‌ها:</strong>
-                    هر دوربین بخشی از حافظه هارد رو مصرف می‌کنه، پس هرچقدر تعداد دوربین‌ها زیادتر بشه، مدت زمان نگهداری کاهش پیدا می‌کنه.
+                    هر دوربین بخشی از حافظه هارد رو مصرف می‌کنه، پس هرچقدر تعداد دوربین‌ها زیادتر بشه، مدت زمان نگهداری
+                    کاهش پیدا می‌کنه.
                 </li>
                 <li>
                     <strong>کدک فشرده‌سازی (مثل H.264 یا H.265):</strong>
-                    اگه دستگاهت از فشرده‌سازی H.265 استفاده کنه، تقریباً تا ۵۰٪ فضای کمتری مصرف می‌کنه و مدت ذخیره فیلم‌ها بیشتر میشه.
+                    اگه دستگاهت از فشرده‌سازی H.265 استفاده کنه، تقریباً تا ۵۰٪ فضای کمتری مصرف می‌کنه و مدت ذخیره
+                    فیلم‌ها بیشتر میشه.
                 </li>
                 <li>
                     <strong>نوع ضبط (پیوسته یا حرکتی):</strong>
-                    اگه ضبط دائم فعاله، سریع‌تر هارد پر میشه. ولی اگه روی حالت تشخیص حرکت بذاری، فقط وقتی حرکت تشخیص داده بشه ضبط می‌کنه، و همین باعث میشه چند برابر مدت زمان بیشتری ذخیره بشه.
+                    اگه ضبط دائم فعاله، سریع‌تر هارد پر میشه. ولی اگه روی حالت تشخیص حرکت بذاری، فقط وقتی حرکت تشخیص
+                    داده بشه ضبط می‌کنه، و همین باعث میشه چند برابر مدت زمان بیشتری ذخیره بشه.
                 </li>
             </ul>
 
             <h2 class="text-2xl font-bold  mt-8">نهایت حافظه دوربین مدار بسته چقدره؟</h2>
             <p>
-                ظرفیت نهایی بستگی به نوع دستگاه ضبط داره. مثلاً دستگاه‌های DVR معمولی از یک تا چهار هارد پشتیبانی می‌کنن، ولی مدل‌های حرفه‌ای‌تر ممکنه تا ۸ یا حتی ۱۲ هارد ساپورت کنن. هر هارد هم معمولاً می‌تونه از 1 ترابایت تا 20 ترابایت باشه. پس اگه یه دستگاه ۸ هاردی داشته باشی و از هاردهای 10 ترابایتی استفاده کنی، در مجموع تا 80 ترابایت حافظه ذخیره‌سازی خواهی داشت که می‌تونه هفته‌ها یا حتی ماه‌ها فیلم رو نگه داره.
+                ظرفیت نهایی بستگی به نوع دستگاه ضبط داره. مثلاً دستگاه‌های DVR معمولی از یک تا چهار هارد پشتیبانی
+                می‌کنن، ولی مدل‌های حرفه‌ای‌تر ممکنه تا ۸ یا حتی ۱۲ هارد ساپورت کنن. هر هارد هم معمولاً می‌تونه از 1
+                ترابایت تا 20 ترابایت باشه. پس اگه یه دستگاه ۸ هاردی داشته باشی و از هاردهای 10 ترابایتی استفاده کنی، در
+                مجموع تا 80 ترابایت حافظه ذخیره‌سازی خواهی داشت که می‌تونه هفته‌ها یا حتی ماه‌ها فیلم رو نگه داره.
             </p>
 
             <h2 class="text-2xl font-bold  mt-8">
@@ -76,7 +213,8 @@
             </h2>
 
             <p>
-                ساده‌ترین روش برای حساب کردن میزان فضای لازم برای ضبط، استفاده از یه فرمول ساده محاسبه فضای هارده که توی بخش پایین توضیح دادم.
+                ساده‌ترین روش برای حساب کردن میزان فضای لازم برای ضبط، استفاده از یه فرمول ساده محاسبه فضای هارده که توی
+                بخش پایین توضیح دادم.
             </p>
 
             <div class="bg-gray-100 border border-gray-300 rounded-lg p-4 text-center font-mono text-sm text-gray-700">
@@ -99,8 +237,10 @@
                 نرم افزار آنلاین محاسبه میزان فضای هارد دوربین مدار بسته
             </h2>
             <p>
-                اگه نمی‌خوای دستی حساب کنی، می‌تونی از نرم‌افزارهای آنلاین محاسبه فضای هارد دوربین مدار بسته استفاده کنی.
-                این ابزارها فقط با وارد کردن چند تا عدد ساده (تعداد دوربین، کیفیت، روزهای نگهداری و نوع فشرده‌سازی) بهت می‌گن چه حجمی از هارد لازمه.
+                اگه نمی‌خوای دستی حساب کنی، می‌تونی از نرم‌افزارهای آنلاین محاسبه فضای هارد دوربین مدار بسته استفاده
+                کنی.
+                این ابزارها فقط با وارد کردن چند تا عدد ساده (تعداد دوربین، کیفیت، روزهای نگهداری و نوع فشرده‌سازی) بهت
+                می‌گن چه حجمی از هارد لازمه.
             </p>
 
             <p>
@@ -113,13 +253,16 @@
             </p>
 
             <p>
-                بعضی برندها مثل <strong>داهوا (Dahua)</strong> و <strong>هایلوک (Hilook)</strong> ابزارهای رسمی خودشون رو هم روی سایت قرار دادن که دقیق‌تر از بقیه حساب می‌کنن.
+                بعضی برندها مثل <strong>داهوا (Dahua)</strong> و <strong>هایلوک (Hilook)</strong> ابزارهای رسمی خودشون
+                رو هم روی سایت قرار دادن که دقیق‌تر از بقیه حساب می‌کنن.
             </p>
 
             <h2 class="text-2xl font-bold  mt-8">دوربین مدار بسته تا چند روز فیلم نگه می‌داره؟</h2>
 
             <p>
-                بیایم واقع‌بین باشیم: توی یه سیستم معمولی با ۴ تا ۸ دوربین و یه هارد 2 یا 4 ترابایتی، مدت نگهداری بین ۵ تا ۳۰ روز متغیره. ولی اگه کیفیت ضبط رو کاهش بدی، ضبط حرکتی فعال باشه یا از کدک H.265 استفاده کنی، حتی می‌تونی تا دو ماه یا بیشتر فیلم‌هات رو نگه داری.
+                بیایم واقع‌بین باشیم: توی یه سیستم معمولی با ۴ تا ۸ دوربین و یه هارد 2 یا 4 ترابایتی، مدت نگهداری بین ۵
+                تا ۳۰ روز متغیره. ولی اگه کیفیت ضبط رو کاهش بدی، ضبط حرکتی فعال باشه یا از کدک H.265 استفاده کنی، حتی
+                می‌تونی تا دو ماه یا بیشتر فیلم‌هات رو نگه داری.
             </p>
 
             <h2 class="text-2xl font-bold  mt-8">نکات مهم برای افزایش مدت زمان ذخیره تصاویر</h2>
@@ -184,9 +327,55 @@
             <h2 class="text-2xl font-bold  mt-8">جمع‌بندی</h2>
 
             <p>
-                پس اگه می‌خوای بدونی دوربین های مداربسته تا چند روز فیلم نگه می‌دارن، باید بدونی که جواب ثابتی نداره. چون همه‌چیز به تعداد دوربین‌ها، کیفیت تصویر، نوع کدک، نوع ضبط و ظرفیت هارد بستگی داره. اما با یه نگاه به جدول بالا یا با استفاده از یه نرم‌افزار آنلاین محاسبه فضای هارد دوربین مدار بسته، خیلی راحت می‌تونی مدت نگهداری دقیق سیستم خودت رو حساب کنی و بدونی برای ضبط تصاویر دوربین مدار بسته چقدر هارد لازم است.
+                پس اگه می‌خوای بدونی دوربین های مداربسته تا چند روز فیلم نگه می‌دارن، باید بدونی که جواب ثابتی نداره.
+                چون همه‌چیز به تعداد دوربین‌ها، کیفیت تصویر، نوع کدک، نوع ضبط و ظرفیت هارد بستگی داره. اما با یه نگاه به
+                جدول بالا یا با استفاده از یه نرم‌افزار آنلاین محاسبه فضای هارد دوربین مدار بسته، خیلی راحت می‌تونی مدت
+                نگهداری دقیق سیستم خودت رو حساب کنی و بدونی برای ضبط تصاویر دوربین مدار بسته چقدر هارد لازم است.
             </p>
         </div>
     </div>
-
 @endsection
+@push('js')
+    <script>
+        const frameSelect = document.getElementById('frame');
+        const formatSelect = document.getElementById('format');
+        const micSelect = document.getElementById('mic');
+        const qualitySelect = document.getElementById('quality');
+        const cameraSelect = document.getElementById('camera');
+        const daySelect = document.getElementById('day');
+
+        function calculateHard() {
+            const frameValue = frameSelect.value;
+            const formatValue = formatSelect.value;
+            const micValue = micSelect.value;
+            const qualityValue = qualitySelect.value;
+            const cameraValue = cameraSelect.value;
+            const dayValue = daySelect.value;
+            if (frameValue){
+                document.getElementById('frameValueSelected').textContent=frameValue;
+            }
+            if(formatValue){
+                document.getElementById('formatValueSelected').textContent=formatValue
+            }
+            if(micValue){
+                document.getElementById('micValueSelected').textContent=micValue
+            }
+            if(qualityValue){
+                document.getElementById('qualityValueSelected').textContent=`${qualityValue}MP`
+            }
+            if(cameraValue){
+                document.getElementById('cameraValueSelected').textContent=cameraValue
+            }
+            if(dayValue){
+                document.getElementById('dayValueSelected').textContent=`${dayValue} روز`
+            }
+        }
+
+        frameSelect.addEventListener('change', calculateHard);
+        formatSelect.addEventListener('change', calculateHard);
+        micSelect.addEventListener('change', calculateHard);
+        qualitySelect.addEventListener('change', calculateHard);
+        cameraSelect.addEventListener('change', calculateHard);
+        daySelect.addEventListener('change', calculateHard);
+    </script>
+@endpush
