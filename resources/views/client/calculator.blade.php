@@ -20,34 +20,12 @@
             <div class="col-span-1 md:col-span-2 lg:col-span-3">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
                     <x-input.select
-                        id="frame"
-                        name="frame"
-                        label="چند فریم بر ثانیه تصویر برداری میکنید؟">
-                        <option value="1">1</option>
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="20">20</option>
-                        <option value="25">25</option>
-                        <option value="30">30</option>
-                        <option value="45">45</option>
-                        <option value="60">60</option>
-                    </x-input.select>
-                    <x-input.select
-                        id="format"
-                        name="format"
-                        label="با چه فرمتی فشرده سازی میکنید؟">
-                        <option value="H265+">H265+ (Smart 265)</option>
-                        <option value="H265">H265</option>
-                        <option value="H264+">H264+ (Smart 264)</option>
-                        <option value="H264">H264</option>
-                    </x-input.select>
-                    <x-input.select
-                        id="mic"
-                        name="mic"
-                        label="دوربین های استفاده شده میروفون دارند؟">
-                        <option value="1">بله</option>
-                        <option value="0">خیر</option>
+                        id="camera"
+                        name="camera"
+                        label="از چند دوربین استفاده میکنید؟">
+                        @for ($i = 1; $i < 67; $i++)
+                            <option value="{{ $i }}" {{$i == 4 ? 'selected': ''}}>{{ $i }} دوربین</option>
+                        @endfor
                     </x-input.select>
                     <x-input.select
                         id="quality"
@@ -56,7 +34,7 @@
                         <option value="D1">D1 (آنالوگ)</option>
                         <option value="1">1MP</option>
                         <option value="1.3">1.3MP</option>
-                        <option value="2" >2MP</option>
+                        <option value="2" selected >2MP</option>
                         <option value="3">3MP</option>
                         <option value="4">4MP</option>
                         <option value="5">5MP</option>
@@ -65,27 +43,51 @@
                         <option value="12">12MP</option>
                     </x-input.select>
                     <x-input.select
-                        id="camera"
-                        name="camera"
-                        label="از چند دوربین استفاده میکنید؟">
-                        @for ($i = 1; $i < 67; $i++)
-                            <option value="{{ $i }}">{{ $i }} دوربین</option>
+                        id="mic"
+                        name="mic"
+                        label="از چند میکروفون استفاده میکنید؟">
+                        @for ($i = 0; $i < 67; $i++)
+                            <option value="{{ $i }}" {{$i == 4 ? 'selected': ''}}>{{ $i }} میکروفون </option>
                         @endfor
+                    </x-input.select>
+                    <x-input.select
+                        id="frame"
+                        name="frame"
+                        label="چند فریم بر ثانیه تصویر برداری میکنید؟">
+                        <option value="1">1</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20" selected>20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                        <option value="60">60</option>
+                    </x-input.select>
+
+                    <x-input.select
+                        id="format"
+                        name="format"
+                        label="با چه فرمتی فشرده سازی میکنید؟">
+                        <option value="H265+">H265+ (Smart 265)</option>
+                        <option value="H265">H265</option>
+                        <option value="H264+">H264+ (Smart 264)</option>
+                        <option value="H264" selected>H264</option>
                     </x-input.select>
                     <x-input.select
                         id="day"
                         name="day"
                         label="برای چند روز میخواهید ذخیره داشته باشید؟">
                         @for ($i = 1; $i < 181; $i++)
-                            <option value="{{ $i }}">{{ $i }} روز </option>
+                            <option value="{{ $i }}" {{$i == 30 ? 'selected': ''}}>{{ $i }} روز </option>
                         @endfor
                     </x-input.select>
                 </div>
+
             </div>
             <div class="p-2 bg-gray-800 rounded-2xl divide-y divide-dashed divide-sky-400">
                 <div class="flex justify-between py-2">
                     <p class="font-bold py-2">موارد انتخاب شده</p>
-
                 </div>
                 <div class="flex justify-between py-2">
                     <p>
@@ -144,6 +146,15 @@
 
                     <p id="dayValueSelected">
                         انتخاب نشده
+                    </p>
+
+                </div>
+                <div class="flex justify-between py-2">
+                    <p>
+                        حجم تقریبی موردنیاز:
+                    </p>
+                    <p id="result">
+                        4.65 ترابایت
                     </p>
 
                 </div>
@@ -343,39 +354,69 @@
         const qualitySelect = document.getElementById('quality');
         const cameraSelect = document.getElementById('camera');
         const daySelect = document.getElementById('day');
+        const bitrateTable = {
+            H264:   { D1: 0.6, 1: 1.8, 1.3: 2.5, 2: 4, 3: 5, 4: 6, 5: 7, 6: 8, 8: 12, 12: 16 },
+            'H264+':{ D1: 0.4, 1: 1.3, 1.3: 1.9, 2: 2.8, 3: 3.5, 4: 4.5, 5: 5, 6: 6, 8: 9, 12: 12 },
+            H265:   { D1: 0.35, 1: 1, 1.3: 1.5, 2: 2, 3: 2.8, 4: 3.5, 5: 4.5, 6: 5.5, 8: 8, 12: 10 },
+            'H265+':{ D1: 0.25, 1: 0.7, 1.3: 1, 2: 1.4, 3: 1.8, 4: 2.2, 5: 2.8, 6: 3.2, 8: 5, 12: 6.5 },
+        };
+
+        const audioBitrate = 0.064; // Mbps برای هر میکروفون
+        const overhead = 0.10; // 10 درصد ضریب اضافه
 
         function calculateHard() {
-            const frameValue = frameSelect.value;
+            const frameValue = parseFloat(frameSelect.value);
             const formatValue = formatSelect.value;
-            const micValue = micSelect.value;
+            const micValue = parseInt(micSelect.value);
             const qualityValue = qualitySelect.value;
-            const cameraValue = cameraSelect.value;
-            const dayValue = daySelect.value;
-            if (frameValue){
-                document.getElementById('frameValueSelected').textContent=frameValue;
+            const cameraValue = parseInt(cameraSelect.value);
+            const dayValue = parseInt(daySelect.value);
+
+            // نمایش مقادیر انتخاب‌شده
+            if (frameValue) document.getElementById('frameValueSelected').textContent = frameValue;
+            if (formatValue) document.getElementById('formatValueSelected').textContent = formatValue;
+            if (micValue) document.getElementById('micValueSelected').textContent = micValue;
+            if (qualityValue) document.getElementById('qualityValueSelected').textContent = `${qualityValue}MP`;
+            if (cameraValue) document.getElementById('cameraValueSelected').textContent = cameraValue;
+            if (dayValue) document.getElementById('dayValueSelected').textContent = `${dayValue} روز`;
+
+            // اگه همه ورودی‌ها پر بودن محاسبه انجام بده
+            if (!frameValue || !formatValue || !micValue || !qualityValue || !cameraValue || !dayValue) return;
+
+            // گرفتن بیت‌ریت مرجع از جدول
+            const baseBitrate = bitrateTable[formatValue][qualityValue];
+            if (!baseBitrate) {
+                document.getElementById('result').textContent = 'مقدار بیت‌ریت پیدا نشد!';
+                return;
             }
-            if(formatValue){
-                document.getElementById('formatValueSelected').textContent=formatValue
-            }
-            if(micValue){
-                document.getElementById('micValueSelected').textContent=micValue
-            }
-            if(qualityValue){
-                document.getElementById('qualityValueSelected').textContent=`${qualityValue}MP`
-            }
-            if(cameraValue){
-                document.getElementById('cameraValueSelected').textContent=cameraValue
-            }
-            if(dayValue){
-                document.getElementById('dayValueSelected').textContent=`${dayValue} روز`
-            }
+
+            // مرحله به مرحله محاسبه
+            const videoBitratePerCam = baseBitrate * (frameValue / 25);
+            const totalVideoBitrate = videoBitratePerCam * cameraValue;
+            const totalAudioBitrate = micValue * audioBitrate;
+            const totalRawBitrate = totalVideoBitrate + totalAudioBitrate;
+            const totalBitrate = totalRawBitrate * (1 + overhead); // با ضریب اضافه
+
+            // محاسبه حجم بر اساس روز
+            const bitsPerSecond = totalBitrate * 1_000_000;
+            const totalBits = bitsPerSecond * 86400 * dayValue;
+            const totalBytes = totalBits / 8;
+            const totalGB = totalBytes / 1_000_000_000; // GB دهدهی
+            const totalTB = totalGB / 1000;
+
+            // گرد کردن و نمایش
+            const resultText =
+                totalTB >= 1
+                    ? `${totalTB.toFixed(2)} ترابایت`
+                    : `${totalGB.toFixed(2)} گیگابایت`;
+
+            document.getElementById('result').textContent = `${resultText}`;
         }
 
-        frameSelect.addEventListener('change', calculateHard);
-        formatSelect.addEventListener('change', calculateHard);
-        micSelect.addEventListener('change', calculateHard);
-        qualitySelect.addEventListener('change', calculateHard);
-        cameraSelect.addEventListener('change', calculateHard);
-        daySelect.addEventListener('change', calculateHard);
+        // رویدادها
+        [frameSelect, formatSelect, micSelect, qualitySelect, cameraSelect, daySelect].forEach(sel => {
+            sel.addEventListener('change', calculateHard);
+        });
     </script>
+
 @endpush

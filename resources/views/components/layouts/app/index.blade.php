@@ -27,6 +27,7 @@
 <script src="{{asset('assets/plugins/jQuery.min.js')}}"></script>
 <script src="{{asset('assets/plugins/aos/aos.js')}}"></script>
 <x-layouts.errors/>
+<x-layouts.app.contact-action/>
 
 <script>
     AOS.init();
