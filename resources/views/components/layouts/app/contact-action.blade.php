@@ -6,14 +6,14 @@
     </button>
 
     <a
-        href="tel:9129494234"
+        href="tel:+989902706257"
         id="callBtn"
         class="absolute flex justify-center items-center w-full h-full rounded-full shadow-md bg-blue-500 text-white transition-all duration-700 invisible top-0 left-0 opacity-0">
         <x-icons.phone-call class="size-10"/>
     </a>
 
     <a
-        href="https://wa.me/+989129494234"
+        href="https://wa.me/+989902706257"
         target="_blank"
         id="waBtn"
         class="absolute flex justify-center items-center w-full h-full rounded-full shadow-md bg-green-500 text-white transition-all duration-700 invisible top-0 left-0 opacity-0"
