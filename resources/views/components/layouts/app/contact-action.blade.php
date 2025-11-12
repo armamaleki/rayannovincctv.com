@@ -6,7 +6,7 @@
     </button>
 
     <a
-        href="tel:+09129494234"
+        href="tel:9129494234"
         id="callBtn"
         class="absolute flex justify-center items-center w-full h-full rounded-full shadow-md bg-blue-500 text-white transition-all duration-700 invisible top-0 left-0 opacity-0">
         <x-icons.phone-call class="size-10"/>
