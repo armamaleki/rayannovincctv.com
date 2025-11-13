@@ -1,4 +1,7 @@
-<div class="flex flex-col items-center space-y-2 group text-center">
+<div
+    data-aos="fade-up"
+    data-aos-delay="{{$aos +1 *2}}00"
+    class="flex flex-col items-center space-y-2 group text-center">
     <a href="{{route('client.articles.show' , $article)}}">
 
         <div class="rounded-xl overflow-hidden">
@@ -11,7 +14,7 @@
     </a>
 
     <div class="p-4 space-y-2">
-        <a  href="{{route('client.articles.show' , $article)}}">
+        <a href="{{route('client.articles.show' , $article)}}">
 
             <h2 class="text-2xl font-bold group-hover:text-sky-400 transition delay-150 duration-300  ease-in-out">
                 {{$article->name}}

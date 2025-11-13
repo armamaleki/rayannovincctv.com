@@ -31,7 +31,10 @@
             <div class="absolute left-10 transform z-20 top-4/5">
                 <div
                     class="-rotate-90 origin-left text-white font-bold text-sm tracking-widest pl-6 flex items-center gap-2">
-                    <p>SMART SOLUTIONS FOR <span class="text-sky-400">YOUR SECURITY</span></p>
+                    <div class="text-center">
+                        <p class="uppercase">Always Beyond <span class="text-sky-400">Expectation</span></p>
+                        <p class="text-xl font-bold">همیشه چیزی فراتر از <span class="text-sky-400">انتظار</span></p>
+                    </div>
                     <span class="p-1 rounded-full bg-gray-50 h-fit w-25"></span>
                 </div>
             </div>
@@ -115,13 +118,17 @@
                     </h2>
                 </div>
                 <p class="text-justify">
-                    بیش از چندین  سال تجربه‌ی تخصصی در طراحی، تأمین و اجرای سیستم‌های نظارت تصویری و امنیتی، ما را به یکی از نام‌های شاخص و مورد اعتماد این صنعت تبدیل کرده است.
+                    بیش از چندین سال تجربه‌ی تخصصی در طراحی، تأمین و اجرای سیستم‌های نظارت تصویری و امنیتی، ما را به یکی
+                    از نام‌های شاخص و مورد اعتماد این صنعت تبدیل کرده است.
                     <br>
-                    در طول این سال‌ها، افتخار همکاری با برندهای بین‌المللی هایک‌ویژن (Hikvision) و داهوا (Dahua) را داشته‌ایم؛ برندهایی که استانداردهای جهانی امنیت را تعریف می‌کنند.
+                    در طول این سال‌ها، افتخار همکاری با برندهای بین‌المللی هایک‌ویژن (Hikvision) و داهوا (Dahua) را
+                    داشته‌ایم؛ برندهایی که استانداردهای جهانی امنیت را تعریف می‌کنند.
                     <br>
-                    امروز به عنوان عامل رسمی فروش و پخش این برندها، مأموریت ما ارائه‌ی تجربه‌ای فراتر از فروش است — تجربه‌ای از اعتماد، اصالت و آرامش ذهنی.
+                    امروز به عنوان عامل رسمی فروش و پخش این برندها، مأموریت ما ارائه‌ی تجربه‌ای فراتر از فروش است —
+                    تجربه‌ای از اعتماد، اصالت و آرامش ذهنی.
                     <br>
-                    پروژه‌های اجرا شده توسط ما، در سازمان‌ها، بانک‌ها و شرکت‌های بزرگ کشور، بازتابی از نگاه دقیق ما به جزئیات و احترام به استانداردهای جهانی است.
+                    پروژه‌های اجرا شده توسط ما، در سازمان‌ها، بانک‌ها و شرکت‌های بزرگ کشور، بازتابی از نگاه دقیق ما به
+                    جزئیات و احترام به استانداردهای جهانی است.
                     <br>
                     در هر پروژه، از انتخاب قطعه تا آخرین مرحله‌ی اجرا، فلسفه‌ی ما یک چیز است:
                     <br>
@@ -131,7 +138,8 @@
                     <br>
                     امنیت یعنی خیالت راحت باشد، چون هر لحظه در کنترل توست.
                     <br>
-                    همین نگاه، لامچری را از یک تأمین‌کننده‌ی تجهیزات، به برندی قابل اعتماد در دنیای سیستم‌های نظارتی تبدیل کرده است.
+                    همین نگاه، لامچری را از یک تأمین‌کننده‌ی تجهیزات، به برندی قابل اعتماد در دنیای سیستم‌های نظارتی
+                    تبدیل کرده است.
                     <br>
                     در نهایت، ما نه‌فقط سیستم می‌سازیم، بلکه احساس امنیت را طراحی می‌کنیم
                 </p>
@@ -294,52 +302,61 @@
     </section>
     <section class="container mx-auto px-4 my-16 space-y-8 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
         <div class="space-y-8">
-            <div data-aos="fade-up" class="border rounded-full w-fit px-4 py-2 flex gap-1">
-                <span>//</span>
-                <h2>درباره دیجی امیتیس</h2>
+            <div data-aos="fade-up" class="rounded-full w-fit">
+                <h2>وضوح قاطع یا ابهام شب :</h2>
             </div>
             <p
                 data-aos="fade-up"
                 data-aos-delay="300"
                 class="text-4xl">
                 <span
-                    class="inline-block font-bold bg-gradient-to-r from-indigo-500 to-pink-600 bg-clip-text text-transparent">آمیتیس</span>
-                یک تحولی در صنعیت دوربین مدار بسته
+                    class="inline-block font-bold bg-gradient-to-r from-sky-200 to-sky-500 bg-clip-text text-transparent">از حدس زدن دست بکشید.</span>
+                کنترل شناسایی را در دست بگیرید.
             </p>
-            <p data-aos="fade-up"
+            <P data-aos="fade-up"
                data-aos-delay="400"
                class="text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem necessitatibus nihil obcaecati sequi,
-                tempora totam! Aspernatur autem, beatae facere hic ipsam minima non omnis placeat, possimus ratione
-                reprehenderit veritatis, voluptates.
-            </p>
+                این فقط یک اسکرول نیست؛ این تفاوت میان "دیدن" و "حفاظت از دارایی" است.
+            </P>
+
             <div class="md:flex gap-2 w-full">
                 <div>
                     <div
                         data-aos="fade-up"
                         data-aos-delay="500"
                         class="flex items-center gap-2 p-4 border-b border-gray-700">
+                        <div>
+                            <x-icons.check-badge class="size-6"/>
 
+                        </div>
                         <p>
-                            Access control systems - Fire detection alarms
+                            <strong>به سمت راست بکشید (رنگی):</strong>حقیقت مطلق. جزئیات حیاتی مانند رنگ پارچه‌ها، جنس
+                            چوب، و خصوصیات چهره‌های متمایز را در تاریکی حفظ کنید. این شفافیت قاطع برای اقدامی سریع و
+                            مستند است.
                         </p>
                     </div>
                     <div
                         data-aos="fade-up"
                         data-aos-delay="600"
                         class="flex items-center gap-2 p-4 border-b border-gray-700">
+                        <div>
+                            <x-icons.check-badge class="size-6"/>
 
+                        </div>
                         <p>
-                            Access control systems - Fire detection alarms
+                            <strong>به سمت چپ اسکرول کنید (سیاه و سفید):</strong>محدودیت‌های قدیمی. تصویر مبهم و بی‌عمق که شما را در لحظات حساس، در ابهام رها می‌کند. آیا امنیت دارایی‌های شما، به این ابهام می‌ارزد؟
                         </p>
                     </div>
                     <div
                         data-aos="fade-up"
                         data-aos-delay="700"
                         class="flex items-center gap-2 p-4">
+                        <div>
+                            <x-icons.check-badge class="size-6"/>
 
+                        </div>
                         <p>
-                            Access control systems - Fire detection alarms
+                            ​ما برتری را انتخاب کردیم. سیستم دید در شب رنگی ما، آرامش خاطر شما را با قدرت اطلاعاتی برتر تضمین می‌کند
                         </p>
                     </div>
                 </div>
@@ -351,20 +368,18 @@
                     <img src="{{asset('assets/images/about-bg04.jpg')}}" alt="">
                 </div>
             </div>
-            <a href="#"
+            <a href="{{route('client.about-us')}}"
                data-aos="fade-up"
                data-aos-delay="900"
-               class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                درباره ما
+               class="text-white bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300  font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                درباره رایاین نوین
             </a>
         </div>
         <div class="beforeAfter overflow-hidden">
             <img src="{{asset('assets/images/day-vision01.png')}}" alt="">
             <img src="{{asset('assets/images/night-vision01.png')}}" alt="">
         </div>
-        <div>
 
-        </div>
     </section>
     <x-client.last-articles />
 
@@ -407,9 +422,12 @@
             arrowColor: '#333333',
 
             // Callback functions
-            onMoveStart: function() {},
-            onMoving: function() {},
-            onMoveEnd: function() {}
+            onMoveStart: function() {
+            },
+            onMoving: function() {
+            },
+            onMoveEnd: function() {
+            }
 
         });
     </script>

@@ -3,8 +3,8 @@
         <p class="text-4xl text-sky-500 font-bold">پر فروش ترین محصولات</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-        @foreach($products as $product)
-            <x-client.ui.single-product :product="$product"/>
+        @foreach($products as $key=> $product)
+            <x-client.ui.single-product aos="{{$key}}" :product="$product"/>
         @endforeach
     </div>
 </section>

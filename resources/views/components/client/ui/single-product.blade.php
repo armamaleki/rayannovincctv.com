@@ -1,4 +1,7 @@
-<div class="group flex flex-col items-center text-center space-y-4">
+<div
+    data-aos="fade-up"
+    data-aos-delay="{{$aos +1 *2}}00"
+    class="group flex flex-col items-center text-center space-y-4">
     <div class="overflow-hidden relative">
         <a href="{{route('client.store.show' , $product)}}">
             <div class="rounded-xl overflow-hidden">
