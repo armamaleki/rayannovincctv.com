@@ -73,28 +73,28 @@
 @push('js')
 
     <script>
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     console.log('ddd');
-        //     var enamad = document.createElement('a');
-        //     enamad.setAttribute('referrerpolicy', 'origin');
-        //     enamad.setAttribute('target', '_blank');
-        //     enamad.setAttribute('href', 'https://trustseal.enamad.ir/?id=667972&Code=XNhWc5JWT3Tvrhvzc6Ezjyxl64Z3pMYp');
-        //
-        //     var img = document.createElement('img');
-        //     img.setAttribute('referrerpolicy', 'origin');
-        //     img.setAttribute('src', 'https://trustseal.enamad.ir/logo.aspx?id=667972&Code=XNhWc5JWT3Tvrhvzc6Ezjyxl64Z3pMYp');
-        //     img.setAttribute('alt', '');
-        //     img.style.cursor = 'pointer';
-        //
-        //     enamad.appendChild(img);
-        //
-        //     var target = document.getElementById('enamad');
-        //     if (target) {
-        //         target.appendChild(enamad);
-        //     } else {
-        //         console.warn('div#enamad not found');
-        //     }
-        // });
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('ddd');
+            var enamad = document.createElement('a');
+            enamad.setAttribute('referrerpolicy', 'origin');
+            enamad.setAttribute('target', '_blank');
+            enamad.setAttribute('href', 'https://trustseal.enamad.ir/?id=667972&Code=XNhWc5JWT3Tvrhvzc6Ezjyxl64Z3pMYp');
+
+            var img = document.createElement('img');
+            img.setAttribute('referrerpolicy', 'origin');
+            img.setAttribute('src', 'https://trustseal.enamad.ir/logo.aspx?id=667972&Code=XNhWc5JWT3Tvrhvzc6Ezjyxl64Z3pMYp');
+            img.setAttribute('alt', '');
+            img.style.cursor = 'pointer';
+
+            enamad.appendChild(img);
+
+            var target = document.getElementById('enamad');
+            if (target) {
+                target.appendChild(enamad);
+            } else {
+                console.warn('div#enamad not found');
+            }
+        });
     </script>
 @endpush
 
