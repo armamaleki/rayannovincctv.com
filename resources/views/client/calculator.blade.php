@@ -46,7 +46,7 @@
                         id="mic"
                         name="mic"
                         label="از چند میکروفون استفاده میکنید؟">
-                        @for ($i = 0; $i < 67; $i++)
+                        @for ($i = 1; $i < 67; $i++)
                             <option value="{{ $i }}" {{$i == 4 ? 'selected': ''}}>{{ $i }} میکروفون </option>
                         @endfor
                     </x-input.select>
@@ -91,6 +91,36 @@
                 </div>
                 <div class="flex justify-between py-2">
                     <p>
+                        تعداد دوربین مورد استفاده:
+                    </p>
+
+                    <p id="cameraValueSelected">
+                        انتخاب نشده
+                    </p>
+
+                </div>
+                <div class="flex justify-between py-2">
+                    <p>
+                        کیفیت دوربین های استفاده شده:
+                    </p>
+
+                    <p id="qualityValueSelected">
+                        انتخاب نشده
+                    </p>
+
+                </div>
+                <div class="flex justify-between py-2">
+                    <p>
+                        استفاده از میکروفون دوربین:
+                    </p>
+
+                    <p id="micValueSelected">
+                        انتخاب نشده
+                    </p>
+
+                </div>
+                <div class="flex justify-between py-2">
+                    <p>
                         فریم بر ثانیه:
                     </p>
 
@@ -109,36 +139,9 @@
                     </p>
 
                 </div>
-                <div class="flex justify-between py-2">
-                    <p>
-                        استفاده از میکروفون دوربین:
-                    </p>
 
-                    <p id="micValueSelected">
-                        انتخاب نشده
-                    </p>
 
-                </div>
-                <div class="flex justify-between py-2">
-                    <p>
-                        کیفیت دوربین های استفاده شده:
-                    </p>
 
-                    <p id="qualityValueSelected">
-                        انتخاب نشده
-                    </p>
-
-                </div>
-                <div class="flex justify-between py-2">
-                    <p>
-                        تعداد دوربین مورد استفاده:
-                    </p>
-
-                    <p id="cameraValueSelected">
-                        انتخاب نشده
-                    </p>
-
-                </div>
                 <div class="flex justify-between py-2">
                     <p>
                         تعداد روز های انتخاب شده:
@@ -149,7 +152,7 @@
                     </p>
 
                 </div>
-                <div class="flex justify-between py-2">
+                <div class="flex justify-between py-2 text-2xl text-sky-400">
                     <p>
                         حجم تقریبی موردنیاز:
                     </p>
