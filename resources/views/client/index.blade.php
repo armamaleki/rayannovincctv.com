@@ -33,18 +33,12 @@
                     class="-rotate-90 origin-left text-white font-bold text-sm tracking-widest pl-6 flex items-center gap-2">
                     <div class="text-center">
                         <p class="uppercase">Always Beyond <span class="text-sky-400">Expectation</span></p>
-                        <p class="text-xl font-bold">همیشه چیزی فراتر از <span class="text-sky-400">انتظار</span></p>
+                        <p class="text-xl hidden md:block font-bold">همیشه چیزی فراتر از <span class="text-sky-400">انتظار</span></p>
                     </div>
                     <span class="p-1 rounded-full bg-gray-50 h-fit w-25"></span>
                 </div>
             </div>
-            <div class="absolute right-10 transform z-20 1/2 flex flex-col items-center space-y-4">
-                <x-icons.chat-bubble-oval-left class="size-6  stroke-sky-400 animate-pulse" />
-                <x-icons.chat-bubble-oval-left class="size-6  stroke-sky-400 animate-pulse" />
-                <x-icons.chat-bubble-oval-left class="size-6  stroke-sky-400 animate-pulse" />
-                <x-icons.chat-bubble-oval-left class="size-6  stroke-sky-400 animate-pulse" />
-                <x-icons.chat-bubble-oval-left class="size-6 stroke-sky-400 animate-pulse" />
-            </div>
+
             <div class="z-30 absolut ">
                 <h1 class="text-4xl md:text-6xl   font-bold text-center">
                     عاملیت محصولات

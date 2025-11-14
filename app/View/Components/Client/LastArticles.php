@@ -22,7 +22,7 @@ class LastArticles extends Component
      */
     public function render(): View|Closure|string
     {
-        $articles = Article::where('status' , 'active')->latest()->take(3)->get();
+        $articles = Article::where('status' , 'active')->latest()->take(8)->get();
         return view('components.client.last-articles' , compact('articles'));
     }
 }
