@@ -33,7 +33,7 @@
                     class="-rotate-90 origin-left text-white font-bold text-sm tracking-widest pl-6 flex items-center gap-2">
                     <div class="text-center">
                         <p class="uppercase">Always Beyond <span class="text-sky-400">Expectation</span></p>
-                        <p class="text-xl hidden md:block font-bold">همیشه چیزی فراتر از <span class="text-sky-400">انتظار</span></p>
+                        <p class="text-xl hidden md:block font-bold">همیشه فراتر از <span class="text-sky-400">انتظار</span></p>
                     </div>
                     <span class="p-1 rounded-full bg-gray-50 h-fit w-25"></span>
                 </div>

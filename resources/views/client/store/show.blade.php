@@ -21,8 +21,8 @@
             class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center bg-gray-800 p-2 rounded-xl shadow-lg shadow-sky-400">
             <div class="space-y-4">
                 <swiper-container
-                    style="--swiper-navigation-color: #fff;
-                     --swiper-pagination-color: #fff"
+                    style="--swiper-navigation-color: #00bcff;
+                     --swiper-pagination-color: #00bcff"
                     class="mySwiper"
                     thumbs-swiper=".mySwiper2" space-between="10" navigation="true">
                     @foreach ($product->getMedia('avatars') as $media)
