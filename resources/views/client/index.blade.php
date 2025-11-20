@@ -188,7 +188,7 @@
     <livewire:client.request-project />
 
     <a href="tel:09129494234"
-       class="container mx-auto px-2 py-16 space-y-1 flex flex-col items-center bg-gray-600 rounded-xl shadow-lg shadow-sky-400 relative">
+       class="container mx-auto px-2 py-16 space-y-1 flex flex-col items-center bg-gray-600 rounded-xl overflow-hidden   shadow-lg shadow-sky-400 relative">
         <x-icons.device-phone-mobile
             class="size-48 phone-shake absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-25" />
 
@@ -196,7 +196,75 @@
         <p class="text-3xl font-bold">09129494234</p>
         <br>
         <p class="text-3xl font-bold">09902706257</p>
+        <svg viewBox="0 0 1024 1024" aria-hidden="true" class="absolute top-0 left-1/2 z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0">
+            <circle r="512" cx="512" cy="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7" />
+            <defs>
+                <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
+                    <stop stop-color="#00a6e4" />
+                    <stop offset="1" stop-color="##00a6e4" />
+                </radialGradient>
+            </defs>
+        </svg>
     </a>
+    <div class="container mx-auto px-2 py-16 space-y-1 flex flex-col items-center bg-gray-600 rounded-xl overflow-hidden   shadow-lg shadow-sky-400 relative">
+        <div class=" ">
+            <div class="relative mx-auto mb-12 w-fit sm:mb-16 lg:mb-24">
+                <h2 class="  text-2xl font-bold md:text-3xl lg:text-4xl">تماس با ما</h2>
+                <span
+                    class=" bg-gradient-to-l from-sky-400/40 to-sky-200/5 absolute start-0 top-9 h-1 w-full rounded-full "
+                ></span>
+            </div>
+
+            <div class="grid items-center gap-12 lg:grid-cols-2">
+                <img
+                    src="{{asset('assets/images/contact-us-section.jpg')}}"
+                    alt="تماس با رایان نوین"
+                    class="rounded-xl"
+                />
+                <div>
+                    <h3 class=" mb-6 text-2xl font-semibold">تماس با ما</h3>
+                    <p class="/80 mb-10 text-lg font-medium">
+                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur consequuntur explicabo iste nulla, pariatur quae quibusdam. Aperiam eligendi laudantium molestiae recusandae ut? Consequatur dolore eligendi, praesentium rem similique voluptate.
+                    </p>
+                    <div class="grid gap-6 md:grid-cols-2">
+                        <div class="bg-gray-800 flex flex-col items-center rounded-md shadow  space-y-4 shadow-sky-400 p-2">
+                            <div class="border-2 p-2 rounded-full border-gray-700">
+                                <x-icons.clock-7 class="size-6"/>
+                            </div>
+                            <h3 class="font-bold text-xl text-center">ساعت کاری رایان نوین</h3>
+                            <p>شنبه تا پنج شنبه</p>
+                            <p>
+                                10 صبح تا 16 عصر
+                            </p>
+                        </div>
+                        <div class="bg-gray-800 flex flex-col items-center rounded-md shadow  space-y-4 shadow-sky-400 p-2">
+                            <div class="border-2 p-2 rounded-full border-gray-700">
+                                <x-icons.map class="size-6"/>
+                            </div>
+                            <h3 class="font-bold text-xl text-center">آدرس دفتر مرکزی</h3>
+                            <p>
+                                تهران،خیابان جمهوری، تقاطع شیخ هادی و رازی ،مرکز تجاری یگانه،طبقه دوم، واحد ۲۱۱
+                            </p>
+                        </div>
+                        <div class="bg-gray-800 flex flex-col items-center rounded-md shadow  space-y-4 shadow-sky-400 p-2">
+                            <div class="border-2 p-2 rounded-full border-gray-700">
+                                <x-icons.phone class="size-6 phone-shake"/>
+                            </div>
+                            <h3 class="font-bold text-xl text-center">پشتیبانی </h3>
+                            <a href="tel:09902706257">09902706257</a>
+                        </div>
+                        <div class="bg-gray-800 flex flex-col items-center rounded-md shadow  space-y-4 shadow-sky-400 p-2">
+                            <div class="border-2 p-2 rounded-full border-gray-700">
+                                <x-icons.phone class="size-6 phone-shake"/>
+                            </div>
+                            <h3 class="font-bold text-xl text-center">مدیر فروش</h3>
+                            <a href="tel:09129494234">09129494234</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section
         style="background-image: url('{{asset('assets/images/shape/about-photo.png')}}')"
         class="container mx-auto px-2 my-16 py-16 bg-center bg-cover">

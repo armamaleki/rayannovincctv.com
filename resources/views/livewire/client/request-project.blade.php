@@ -83,7 +83,7 @@
                             id="input-group-1"
                             wire:model="name"
                             class="bg-gray-700 border border-gray-100 text-sm rounded-lg outline-0  focus:border-sky-400  block w-full ps-10 p-2.5"
-                            placeholder="آرما....">
+                            placeholder="اکبر کشاورز ....">
                     </div>
                 </div>
                 <div>
@@ -104,7 +104,7 @@
                             id="input-group-1"
                             wire:model="phone"
                             class="bg-gray-700 border border-gray-100 text-sm rounded-lg outline-0  focus:border-sky-400  block w-full ps-10 p-2.5"
-                            placeholder="091211111">
+                            placeholder="09129494234">
                     </div>
                 </div>
 
