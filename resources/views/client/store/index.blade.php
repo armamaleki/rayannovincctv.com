@@ -17,7 +17,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-4 ">
             <div
-                class="border hidden md:block border-gray-400 rounded-xl bg-gray-800 h-200 sticky p-3 shadow-lg shadow-sky-400">
+                class="border hidden md:block border-gray-400 rounded-xl bg-gray-800 h-200 overflow-auto p-3 shadow-lg shadow-sky-400">
                 <p class="text-2xl font-bold mb-3">
                     فیلتر ها
                 </p>
