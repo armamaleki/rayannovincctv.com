@@ -7,7 +7,7 @@
                 <img src="{{asset('assets/images/logo.png')}}" class="main-logo" alt="logo">
             </a>
             <a class="desktop-logo logo-dark active" href="{{route('client.home')}}">
-                <img src="{{asset('assets/images/logoWith.png')}}" class="main-logo" alt="logo">
+                <img src="{{asset('assets/images/logo.png')}}" class="main-logo" alt="logo">
             </a>
 
         </div>

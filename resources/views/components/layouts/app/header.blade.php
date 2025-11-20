@@ -2,7 +2,7 @@
     <div class="container mx-auto">
         <div class=" flex flex-wrap gap-3 items-center">
             <a href="/">
-                <img src="{{asset('assets/images/logoWith.png')}}" alt="رایان نوین">
+                <img src="{{asset('assets/images/logo.png')}}" alt="رایان نوین">
             </a>
             <a
                 class="flex gap-1 items-center font-bold text-lg hover:border-b hover:text-sky-500 transition-all delay-150 duration-300 {{request()->path() == '/' ? 'border-b text-sky-500' :'' }} "
