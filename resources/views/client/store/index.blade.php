@@ -16,29 +16,31 @@
     <div class="space-y-4 my-0 md:my-16  container mx-auto p-2">
 
         <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-4 ">
-            <div
-                class="border hidden md:block border-gray-400 rounded-xl bg-gray-800 h-200 overflow-auto p-3 shadow-lg shadow-sky-400">
-                <p class="text-2xl font-bold mb-3">
-                    فیلتر ها
-                </p>
-                @foreach($attributes as $attribute)
-                    <div class="mb-4">
-                        <p class="text-lg font-semibold text-white mb-2">{{ $attribute->name }}</p>
-                        @foreach($attribute->values as $value)
-                            @php
-                                $query = request()->query();
-                                $query[$attribute->name] = $value->value;
-                                $url = route('client.store.index', $query);
-                                $isActive = request($attribute->name) == $value->value;
-                            @endphp
-                            <a href="{{ $url }}"
-                               class="inline-block px-3 py-1 rounded-lg mr-2 mb-2 transition
+            <div class="hidden md:block sticky top-20 h-10">
+                <div
+                    class="border  border-gray-400 rounded-xl bg-gray-800 overflow-auto p-3 shadow-lg shadow-sky-400">
+                    <p class="text-2xl font-bold mb-3">
+                        فیلتر ها
+                    </p>
+                    @foreach($attributes as $attribute)
+                        <div class="mb-4">
+                            <p class="text-lg font-semibold text-white mb-2">{{ $attribute->name }}</p>
+                            @foreach($attribute->values as $value)
+                                @php
+                                    $query = request()->query();
+                                    $query[$attribute->name] = $value->value;
+                                    $url = route('client.store.index', $query);
+                                    $isActive = request($attribute->name) == $value->value;
+                                @endphp
+                                <a href="{{ $url }}"
+                                   class="inline-block px-3 py-1 rounded-lg mr-2 mb-2 transition
                                        {{ $isActive ? 'bg-sky-500 text-white' : 'bg-gray-700 text-gray-300 hover:bg-sky-500 hover:text-white' }}">
-                                {{ $value->value }}
-                            </a>
-                        @endforeach
-                    </div>
-                @endforeach
+                                    {{ $value->value }}
+                                </a>
+                            @endforeach
+                        </div>
+                    @endforeach
+                </div>
             </div>
 
             <div class="col-span-1 md:col-span-3 lg:col-span-4 space-y-4">
