@@ -22,7 +22,7 @@ class Article extends Model implements HasMedia
             ->fit(Fit::Contain, 150, 150)
             ->nonQueued();
         $this->addMediaConversion('watermark')
-            ->watermark(public_path('assets/images/logo-250.png'))
+            ->watermark(public_path('assets/images/watermark.png'))
             ->nonQueued();
     }
 
