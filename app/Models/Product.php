@@ -25,6 +25,7 @@ class Product extends Model implements HasMedia
         $this->addMediaConversion('watermark')
             ->watermark(public_path('assets/images/watermark.png'))
             ->nonQueued();
+
     }
 
     public static function boot()
