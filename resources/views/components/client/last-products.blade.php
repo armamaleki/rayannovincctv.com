@@ -2,7 +2,7 @@
     <div class="text-center">
         <p class="text-4xl text-sky-500 font-bold">پر فروش ترین محصولات</p>
     </div>
-    <swiper-container id="latest_product"  init="false">
+    <swiper-container id="latest_product"  navigation="true" init="false">
         @foreach($products as $key=> $product)
             <swiper-slide class="my-8">
             <x-client.ui.single-product aos="{{$key}}" :product="$product"/>
