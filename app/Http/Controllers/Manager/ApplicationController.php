@@ -69,5 +69,4 @@ class ApplicationController extends Controller
                 'text' => 'تغییرات با موفقیت اعمال شد از این پس با تغییرات جدید در سایت دیده میشه!!!',
             ]);
     }
-
 }

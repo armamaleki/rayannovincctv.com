@@ -18,7 +18,6 @@
                     <table id="example" class="table table-bordered text-nowrap key-buttons">
                         <thead>
                         <tr>
-                            <th class="border-bottom-0">ایکون</th>
                             <th class="border-bottom-0">نام</th>
                             <th class="border-bottom-0">وضعیت</th>
                             <th class="border-bottom-0">#</th>
@@ -27,27 +26,21 @@
                         <tbody>
                         @foreach($applications as $data)
                             <tr>
-                                <td>
-{{--                                    @if($data->getMedia('avatars')->isNotEmpty())--}}
-{{--                                        <img class="avatar avatar-xxl brround"--}}
-{{--                                             src="{{ $data->getMedia('avatars')->first()->getUrl('thumb') }}" alt="">--}}
-{{--                                    @endif--}}
-                                </td>
                                 <td>{{$data->name}}</td>
                                 <td>
-{{--                                        <livewire:manager.article-status article="{{$data->id}}" />--}}
+                                    <livewire:manager.application-status application="{{$data->id}}" />
                                 </td>
                                 <td>
                                     <div aria-label="Basic example" class="btn-group ms-3 mb-3" role="group">
 
-                                            <a href="#" class="btn btn-green active" type="button">
-                                                <i class="fa fa-eye fa-lg"></i>
-                                            </a>
+                                        <a href="#" class="btn btn-green active" type="button">
+                                            <i class="fa fa-eye fa-lg"></i>
+                                        </a>
 
-                                            <a href="{{route('manager.application.edit' , $data)}}"
-                                               class="btn btn-primary pd-x-25" type="button">
-                                                <i class="fa fa-pencil fa-lg"></i>
-                                            </a>
+                                        <a href="{{route('manager.application.edit' , $data)}}"
+                                           class="btn btn-primary pd-x-25" type="button">
+                                            <i class="fa fa-pencil fa-lg"></i>
+                                        </a>
 
                                     </div>
                                 </td>
@@ -62,6 +55,5 @@
     </div>
 
     {{$applications->links()}}
-
 
 @endsection

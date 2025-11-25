@@ -33,6 +33,11 @@ Route::name('client.')->group(function () {
         return view('client.privacy-policy');
     })->name('privacy-policy');
 
+    Route::get('/applications', function () {
+        $applications = \App\Models\Application::where('status' , 'active')->latestUpdated()->get();
+        return view('client.applications' , compact('applications'));
+    })->name('applications');
+
     Route::get('/articles', [\App\Http\Controllers\Client\ArticleController::class, 'index'])->name('articles.index');
     Route::get('/articles/{article}', [\App\Http\Controllers\Client\ArticleController::class, 'show'])->name('articles.show');
 
