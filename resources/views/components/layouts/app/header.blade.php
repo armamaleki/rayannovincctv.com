@@ -63,7 +63,7 @@
 
 <div
     class="flex justify-around items-center divide-x  md:hidden fixed z-40 bottom-0 w-full  bg-gray-800 rounded-t-xl p-2 shadow shadow-sky-400 ">
-    <div x-data="{ open: true }">
+    <div x-data="{ open: false }">
         <button
             class="flex flex-col items-center text-center font-thin text-sm p-2 text-[10px] w-full"
             @click="open = ! open">

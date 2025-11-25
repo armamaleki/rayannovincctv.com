@@ -135,6 +135,11 @@
                         <span>درخواست های پروژه</span>
                     </a>
                 </li>
+                <li>
+                    <a class="slide-item" href="{{route('manager.application.index')}}">
+                        <span>دانلود نرم افزار</span>
+                    </a>
+                </li>
             </ul>
 
             <div class="app-sidebar-help">

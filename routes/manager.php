@@ -73,6 +73,14 @@ Route::prefix('granite')->name('granite.')->group(function () {
     Route::put('/update/{granite}',[\App\Http\Controllers\Manager\GraniteController::class , 'update'])->name('update');
 });
 
+Route::prefix('application')->name('application.')->group(function () {
+   Route::get('/', [\App\Http\Controllers\Manager\ApplicationController::class , 'index'])->name('index');
+   Route::get('/create', [\App\Http\Controllers\Manager\ApplicationController::class , 'create'])->name('create');
+   Route::post('/store', [\App\Http\Controllers\Manager\ApplicationController::class , 'store'])->name('store');
+   Route::get('/edit/{application}',[\App\Http\Controllers\Manager\ApplicationController::class , 'edit'])->name('edit');
+   Route::put('/update/{application}',[\App\Http\Controllers\Manager\ApplicationController::class , 'update'])->name('update');
+});
+
 
 
 Route::get('projects' , function (){
