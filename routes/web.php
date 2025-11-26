@@ -38,6 +38,11 @@ Route::name('client.')->group(function () {
         return view('client.applications' , compact('applications'));
     })->name('applications');
 
+    Route::get('/price-list', function () {
+        $price_lists = \App\Models\PriceList::where('status' , 'active')->latestUpdated()->get();
+        return view('client.price-list' , compact('price_lists'));
+    })->name('price-list');
+
     Route::get('/articles', [\App\Http\Controllers\Client\ArticleController::class, 'index'])->name('articles.index');
     Route::get('/articles/{article}', [\App\Http\Controllers\Client\ArticleController::class, 'show'])->name('articles.show');
 
