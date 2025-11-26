@@ -58,7 +58,7 @@ class PriceListController extends Controller
             'name' => 'required',
         ]);
         $data['user_id'] = auth()->id();
-        $update = PriceList::create($data);
+        $update = $priceList->update($data);
         if ($update) {
             return to_route('manager.price-list.index')->with('message',
                 [
