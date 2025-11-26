@@ -25,7 +25,7 @@
                             {{$application->description}}
                         </p>
                     </div>
-                    <a download href="https://dl.rayannovincctv.com/DMSS.apk">
+                    <a download href="{{$application->link}}">
                         <x-icons.hard-drive-download class="size-12"/>
                     </a>
                 </div>

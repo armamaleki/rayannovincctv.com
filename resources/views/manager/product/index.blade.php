@@ -2,8 +2,8 @@
 @section('content')
 
     <x-layouts.manager.page-header
-        placeholder="جستجو دسترسی...."
-        action="{{route('manager.role.index')}}" />
+        placeholder="جستجو محصول...."
+        action="{{route('manager.product.index')}}" />
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">مدیریت محصول</h3>

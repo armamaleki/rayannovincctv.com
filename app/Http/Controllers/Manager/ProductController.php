@@ -163,7 +163,7 @@ class ProductController extends Controller
     public function dataSheet(Request $request, Product $product)
     {
         $request->validate([
-            'data_sheet' => 'required|mimes:pdf|max:5120',
+            'data_sheet' => 'required|mimes:pdf|max:20480',
         ]);
         $product->clearMediaCollection('data_sheet');
         $product->addMediaFromRequest('data_sheet')

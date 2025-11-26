@@ -140,6 +140,11 @@
                         <span>دانلود نرم افزار</span>
                     </a>
                 </li>
+                <li>
+                    <a class="slide-item" href="{{route('manager.price-list.index')}}">
+                        <span>لیست قیمت</span>
+                    </a>
+                </li>
             </ul>
 
             <div class="app-sidebar-help">

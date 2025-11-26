@@ -8,55 +8,55 @@ Route::get('/', function () {
 });
 
 Route::prefix('user')->name('user.')->group(function () {
-    Route::get('/',[\App\Http\Controllers\Manager\UserController::class , 'index'])->name('index');
-    Route::get('/create',[\App\Http\Controllers\Manager\UserController::class , 'create'])->name('create');
+    Route::get('/', [\App\Http\Controllers\Manager\UserController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\UserController::class, 'create'])->name('create');
 });
 
 Route::prefix('role')->name('role.')->group(function () {
-    Route::get('/',[\App\Http\Controllers\Manager\RoleController::class , 'index'])->name('index');
-    Route::get('/create',[\App\Http\Controllers\Manager\RoleController::class , 'create'])->name('create');
-    Route::post('/store',[\App\Http\Controllers\Manager\RoleController::class , 'store'])->name('store');
-    Route::get('/edit/{role}',[\App\Http\Controllers\Manager\RoleController::class , 'edit'])->name('edit');
-    Route::put('/update/{role}',[\App\Http\Controllers\Manager\RoleController::class , 'update'])->name('update');
+    Route::get('/', [\App\Http\Controllers\Manager\RoleController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\RoleController::class, 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\RoleController::class, 'store'])->name('store');
+    Route::get('/edit/{role}', [\App\Http\Controllers\Manager\RoleController::class, 'edit'])->name('edit');
+    Route::put('/update/{role}', [\App\Http\Controllers\Manager\RoleController::class, 'update'])->name('update');
 });
 
 Route::prefix('article')->name('article.')->group(function () {
-    Route::get('/',[\App\Http\Controllers\Manager\ArticleController::class , 'index'])->name('index');
-    Route::get('/create',[\App\Http\Controllers\Manager\ArticleController::class , 'create'])->name('create');
-    Route::post('/store',[\App\Http\Controllers\Manager\ArticleController::class , 'store'])->name('store');
-    Route::get('/edit/{article}',[\App\Http\Controllers\Manager\ArticleController::class , 'edit'])->name('edit');
-    Route::put('/update/{article}',[\App\Http\Controllers\Manager\ArticleController::class , 'update'])->name('update');
+    Route::get('/', [\App\Http\Controllers\Manager\ArticleController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\ArticleController::class, 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\ArticleController::class, 'store'])->name('store');
+    Route::get('/edit/{article}', [\App\Http\Controllers\Manager\ArticleController::class, 'edit'])->name('edit');
+    Route::put('/update/{article}', [\App\Http\Controllers\Manager\ArticleController::class, 'update'])->name('update');
     Route::post('/article/avatar/', [\App\Http\Controllers\Manager\ArticleController::class, 'avatar'])->name('avatar');
 
 });
 
 Route::prefix('value')->name('value.')->group(function () {
-    Route::get('/',[\App\Http\Controllers\Manager\ValueController::class , 'index'])->name('index');
-    Route::get('/create',[\App\Http\Controllers\Manager\ValueController::class , 'create'])->name('create');
-    Route::post('/store',[\App\Http\Controllers\Manager\ValueController::class , 'store'])->name('store');
-    Route::get('/edit/{value}',[\App\Http\Controllers\Manager\ValueController::class , 'edit'])->name('edit');
-    Route::put('/update/{value}',[\App\Http\Controllers\Manager\ValueController::class , 'update'])->name('update');
+    Route::get('/', [\App\Http\Controllers\Manager\ValueController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\ValueController::class, 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\ValueController::class, 'store'])->name('store');
+    Route::get('/edit/{value}', [\App\Http\Controllers\Manager\ValueController::class, 'edit'])->name('edit');
+    Route::put('/update/{value}', [\App\Http\Controllers\Manager\ValueController::class, 'update'])->name('update');
 });
 
 
 Route::prefix('attribute')->name('attribute.')->group(function () {
-    Route::get('/', [\App\Http\Controllers\Manager\AttributeController::class , 'index'])->name('index');
-    Route::get('/create', [\App\Http\Controllers\Manager\AttributeController::class , 'create'])->name('create');
-    Route::post('/store', [\App\Http\Controllers\Manager\AttributeController::class , 'store'])->name('store');
-    Route::get('/edit/{attribute}',[\App\Http\Controllers\Manager\AttributeController::class , 'edit'])->name('edit');
-    Route::put('/update/{attribute}',[\App\Http\Controllers\Manager\AttributeController::class , 'update'])->name('update');
+    Route::get('/', [\App\Http\Controllers\Manager\AttributeController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\AttributeController::class, 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\AttributeController::class, 'store'])->name('store');
+    Route::get('/edit/{attribute}', [\App\Http\Controllers\Manager\AttributeController::class, 'edit'])->name('edit');
+    Route::put('/update/{attribute}', [\App\Http\Controllers\Manager\AttributeController::class, 'update'])->name('update');
 
 
-    Route::post('/values' , [\App\Http\Controllers\Manager\AttributeController::class , 'getValues'])->name('value');
+    Route::post('/values', [\App\Http\Controllers\Manager\AttributeController::class, 'getValues'])->name('value');
 });
 
 
 Route::prefix('product')->name('product.')->group(function () {
-    Route::get('/', [\App\Http\Controllers\Manager\ProductController::class , 'index'])->name('index');
-    Route::get('/create', [\App\Http\Controllers\Manager\ProductController::class , 'create'])->name('create');
-    Route::post('/store', [\App\Http\Controllers\Manager\ProductController::class , 'store'])->name('store');
-    Route::get('/edit/{product}',[\App\Http\Controllers\Manager\ProductController::class , 'edit'])->name('edit');
-    Route::put('/update/{product}',[\App\Http\Controllers\Manager\ProductController::class , 'update'])->name('update');
+    Route::get('/', [\App\Http\Controllers\Manager\ProductController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\ProductController::class, 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\ProductController::class, 'store'])->name('store');
+    Route::get('/edit/{product}', [\App\Http\Controllers\Manager\ProductController::class, 'edit'])->name('edit');
+    Route::put('/update/{product}', [\App\Http\Controllers\Manager\ProductController::class, 'update'])->name('update');
     Route::post('/product/avatar/', [\App\Http\Controllers\Manager\ProductController::class, 'avatar'])->name('avatar');
     Route::post('/product/gallery/', [\App\Http\Controllers\Manager\ProductController::class, 'gallery'])->name('gallery');
     Route::delete('/product/media/{media}', [\App\Http\Controllers\Manager\ProductController::class, 'deleteAvatar'])->name('delete-avatar');
@@ -66,25 +66,34 @@ Route::prefix('product')->name('product.')->group(function () {
 
 
 Route::prefix('granite')->name('granite.')->group(function () {
-    Route::get('/', [\App\Http\Controllers\Manager\GraniteController::class , 'index'])->name('index');
-    Route::get('/create', [\App\Http\Controllers\Manager\GraniteController::class , 'create'])->name('create');
-    Route::post('/store', [\App\Http\Controllers\Manager\GraniteController::class , 'store'])->name('store');
-    Route::get('/edit/{granite}' , [\App\Http\Controllers\Manager\GraniteController::class , 'edit'])->name('edit');
-    Route::put('/update/{granite}',[\App\Http\Controllers\Manager\GraniteController::class , 'update'])->name('update');
+    Route::get('/', [\App\Http\Controllers\Manager\GraniteController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\GraniteController::class, 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\GraniteController::class, 'store'])->name('store');
+    Route::get('/edit/{granite}', [\App\Http\Controllers\Manager\GraniteController::class, 'edit'])->name('edit');
+    Route::put('/update/{granite}', [\App\Http\Controllers\Manager\GraniteController::class, 'update'])->name('update');
 });
 
 Route::prefix('application')->name('application.')->group(function () {
-   Route::get('/', [\App\Http\Controllers\Manager\ApplicationController::class , 'index'])->name('index');
-   Route::get('/create', [\App\Http\Controllers\Manager\ApplicationController::class , 'create'])->name('create');
-   Route::post('/store', [\App\Http\Controllers\Manager\ApplicationController::class , 'store'])->name('store');
-   Route::get('/edit/{application}',[\App\Http\Controllers\Manager\ApplicationController::class , 'edit'])->name('edit');
-   Route::put('/update/{application}',[\App\Http\Controllers\Manager\ApplicationController::class , 'update'])->name('update');
+    Route::get('/', [\App\Http\Controllers\Manager\ApplicationController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\ApplicationController::class, 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\ApplicationController::class, 'store'])->name('store');
+    Route::get('/edit/{application}', [\App\Http\Controllers\Manager\ApplicationController::class, 'edit'])->name('edit');
+    Route::put('/update/{application}', [\App\Http\Controllers\Manager\ApplicationController::class, 'update'])->name('update');
+});
+
+Route::prefix('price-list')->name('price-list.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Manager\PriceListController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\PriceListController::class, 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\PriceListController::class, 'store'])->name('store');
+    Route::get('/edit/{priceList}', [\App\Http\Controllers\Manager\PriceListController::class, 'edit'])->name('edit');
+    Route::put('/update/{priceList}', [\App\Http\Controllers\Manager\PriceListController::class, 'update'])->name('update');
+    Route::post('/{priceList}/price_list', [\App\Http\Controllers\Manager\PriceListController::class, 'price_list'])->name('price_list');
+
 });
 
 
-
-Route::get('projects' , function (){
-    $projects =\App\Models\ProjectRequest::orderBy('created_at', 'desc')->get();
+Route::get('projects', function () {
+    $projects = \App\Models\ProjectRequest::orderBy('created_at', 'desc')->get();
     return view('manager.projects.index', compact('projects'));
 })->name('projects');
 

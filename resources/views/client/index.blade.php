@@ -147,7 +147,7 @@
                     </div>
                 </div>
                 <img
-                    class="z-40 absolute top-1/2 left-1/2 -mt-4 md:-mt-0 transform -translate-x-1/2 -translate-y-1/2 rotate360 drop-shadow-md drop-shadow-sky-500"
+                    class="z-30 absolute top-1/2 left-1/2 -mt-4 md:-mt-0 transform -translate-x-1/2 -translate-y-1/2 rotate360 drop-shadow-md drop-shadow-sky-500"
                     src="{{asset('assets/images/shape/experience-circle.png')}}" alt="">
                 <div class="md:-mt-40 mt-2">
                     <div class="image-anime w-fit">

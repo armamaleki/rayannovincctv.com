@@ -41,6 +41,10 @@
                 <x-icons.pencil-square />
                 محاسبه فضای هارد دوربین
             </a>
+            <a href="{{route('client.calculator')}}" class="flex gap-1 items-center">
+                <x-icons.pencil-square />
+                دانلود لیست قیمت
+            </a>
             <a href="{{route('client.articles.index')}}" class="flex gap-1 items-center">
                 <x-icons.pencil-square />
                 مقالات
