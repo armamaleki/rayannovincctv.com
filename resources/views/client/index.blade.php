@@ -203,8 +203,9 @@
                 />
                 <div>
                     <h3 class=" mb-6 text-2xl font-semibold">تماس با ما</h3>
-                    <p class="/80 mb-10 text-lg font-medium">
-                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur consequuntur explicabo iste nulla, pariatur quae quibusdam. Aperiam eligendi laudantium molestiae recusandae ut? Consequatur dolore eligendi, praesentium rem similique voluptate.
+                    <p class="text-justify mb-10 text-lg font-medium">
+                        این بخش مسیر ارتباط مستقیم شما با تیم ماست؛ مسیری که با هدف ارائه مشاوره دقیق، پیگیری سریع و ایجاد تجربه‌ای قابل اتکا طراحی شده است.
+                        اگر پرسشی دارید یا تصمیم به شروع همکاری دارید، ما آماده‌ایم
                     </p>
                     <div class="grid gap-6 md:grid-cols-2">
                         <div class="bg-gray-800 flex flex-col items-center rounded-md shadow  space-y-4 shadow-sky-400 p-2">

@@ -21,6 +21,10 @@ class Application extends Model implements HasMedia
     {
         return $this->belongsTo(User::class);
     }
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
     public function scopeLatestUpdated($query)
     {
         return $query->orderBy('updated_at', 'desc');
