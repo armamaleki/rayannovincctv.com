@@ -19,7 +19,7 @@
                 <div class="p-4 shadow-lg  shadow-sky-400 rounded-lg  space-y-4  bg-gray-800 text-justify  flex flex-col items-center justify-between h-full">
                     <div>
                         <h2 class="font-bold text-center text-2xl text-sky-400">
-                            دانلود
+                            <span class="text-sky-200">دانلود</span>
                             <br>
                             {{$price_list->name}}
                         </h2>
