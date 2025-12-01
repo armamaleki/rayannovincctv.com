@@ -16,9 +16,11 @@
     <div class="container mx-auto px-2 py-16 ">
         <div class="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-5 gap-4">
             @foreach($price_lists as $price_list)
-                <div class="p-4 shadow-lg shadow-sky-400 rounded-lg  space-y-4  bg-gray-800 text-justify  flex flex-col items-center justify-between h-full">
+                <div class="p-4 shadow-lg  shadow-sky-400 rounded-lg  space-y-4  bg-gray-800 text-justify  flex flex-col items-center justify-between h-full">
                     <div>
-                        <h2 class="font-bold text-2xl text-sky-400">
+                        <h2 class="font-bold text-center text-2xl text-sky-400">
+                            دانلود
+                            <br>
                             {{$price_list->name}}
                         </h2>
                     </div>
