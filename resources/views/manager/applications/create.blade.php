@@ -46,11 +46,14 @@
                     </label>
                     <div class="col-md-9">
                         <select
-                            name="attribute"
+                            name="tag[]"
+                            multiple
                             class="form-control select2-show-search" data-placeholder="انتخاب تگ">
                             <option value="">انتخاب تگ</option>
                             @foreach($tags as $tag)
-                                <option value="{{$tag->id}}">{{$tag->name}}</option>
+                                <option
+                                    {{ in_array($tag->id, old('tag', [])) ? 'selected' : '' }}
+                                    value="{{$tag->id}}">{{$tag->name}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -75,3 +78,11 @@
         </div>
     </div>
 @endsection
+@push('js')
+    <script src="{{asset('assets/plugins/select2/select2.full.min.js')}}"></script>
+    <script>
+        $('.select2-show-search').select2({
+            minimumResultsForSearch: ''
+        });
+    </script>
+@endpush

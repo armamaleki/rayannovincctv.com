@@ -42,6 +42,29 @@
                 </div>
                 <div class="mb-3 row">
                     <label class="col-md-3 form-label">
+                        تگ
+                        @error('tag') <span class="text-danger">{{$message}}</span> @enderror
+                    </label>
+                    <div class="col-md-9">
+                        <select
+                            name="tag[]"
+                            multiple
+                            class="form-control select2-show-search" data-placeholder="انتخاب تگ">
+                            <option value="">انتخاب تگ</option>
+                            @foreach($tags as $tag)
+                                <option
+                                    @if( is_array(old('tag')) && in_array($tag->id, old('tag')) )
+                                        selected
+                                    @elseif ($application->tags->contains($tag->id))
+                                        selected
+                                    @endif
+                                    value="{{$tag->id}}">{{$tag->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-md-3 form-label">
                         توضیح کوتاه
                         @error('description')
                         <span class="text-danger">{{ $message }}</span>
@@ -59,3 +82,13 @@
         </div>
     </div>
 @endsection
+
+@push('js')
+    <script src="{{asset('assets/plugins/select2/select2.full.min.js')}}"></script>
+    <script>
+        $('.select2-show-search').select2({
+            minimumResultsForSearch: ''
+        });
+    </script>
+@endpush
+
