@@ -41,6 +41,22 @@
                 </div>
                 <div class="mb-3 row">
                     <label class="col-md-3 form-label">
+                        تگ
+                        @error('tag') <span class="text-danger">{{$message}}</span> @enderror
+                    </label>
+                    <div class="col-md-9">
+                        <select
+                            name="attribute"
+                            class="form-control select2-show-search" data-placeholder="انتخاب تگ">
+                            <option value="">انتخاب تگ</option>
+                            @foreach($tags as $tag)
+                                <option value="{{$tag->id}}">{{$tag->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-md-3 form-label">
                         توضیح کوتاه
                         @error('description')
                         <span class="text-danger">{{ $message }}</span>

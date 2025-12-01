@@ -2,7 +2,7 @@
 @section('content')
 
     <x-layouts.manager.page-header
-        placeholder="جستجو دسترسی...."
+        placeholder="جستجو مقاله...."
         action="{{route('manager.article.index')}}" />
     <div class="card">
         @can('article-create')

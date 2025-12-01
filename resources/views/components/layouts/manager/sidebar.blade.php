@@ -145,6 +145,11 @@
                         <span>لیست قیمت</span>
                     </a>
                 </li>
+                <li>
+                    <a class="slide-item" href="{{route('manager.tags.index')}}">
+                        <span>تگ ها</span>
+                    </a>
+                </li>
             </ul>
 
             <div class="app-sidebar-help">

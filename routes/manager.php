@@ -88,7 +88,15 @@ Route::prefix('price-list')->name('price-list.')->group(function () {
     Route::get('/edit/{priceList}', [\App\Http\Controllers\Manager\PriceListController::class, 'edit'])->name('edit');
     Route::put('/update/{priceList}', [\App\Http\Controllers\Manager\PriceListController::class, 'update'])->name('update');
     Route::post('/{priceList}/price_list', [\App\Http\Controllers\Manager\PriceListController::class, 'price_list'])->name('price_list');
+});
 
+
+Route::prefix('tags')->name('tags.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Manager\TagController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\Manager\TagController::class, 'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\Manager\TagController::class, 'store'])->name('store');
+    Route::get('/edit/{tag}', [\App\Http\Controllers\Manager\TagController::class, 'edit'])->name('edit');
+    Route::put('/update/{tag}', [\App\Http\Controllers\Manager\TagController::class, 'update'])->name('update');
 });
 
 

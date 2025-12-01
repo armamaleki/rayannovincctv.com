@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Manager;
 
 use App\Http\Controllers\Controller;
 use App\Models\Application;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
@@ -18,7 +19,8 @@ class ApplicationController extends Controller
 
     public function create()
     {
-        return view('manager.applications.create');
+        $tags = Tag::all();
+        return view('manager.applications.create' , compact('tags'));
     }
 
     public function store(Request $request)
