@@ -28,7 +28,7 @@
         </div>
         <div dir="rtl" class="grid contentLists grid-cols-1  md:grid-cols-3 lg:grid-cols-5 gap-4">
             @foreach($applications as $application)
-                <div class=" p-2 filter-item @foreach($price_list->tags as $ta) {{ Str::slug($ta->name) }} @endforeach">
+                <div class=" p-2 filter-item @foreach($application->tags as $ta) {{ Str::slug($ta->name) }} @endforeach">
 
                     <div
                         class="p-4 shadow-lg shadow-sky-400 rounded-lg space-y-4 bg-gray-800 text-justify  flex flex-col items-center justify-between h-full">
