@@ -18,8 +18,6 @@
     <x-client.ui.breadcrumb title="دانلود لیست قیمت دوربین مدار بسته" :breads="$breads" />
 
     <div class="container mx-auto px-2 py-16">
-
-        {{-- فیلترها --}}
         <div class="flex flex-wrap gap-2 items-center tag_menu">
             <button class="active px-3 py-1 bg-sky-600 text-white rounded" data-filter="*">همه</button>
 
