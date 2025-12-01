@@ -35,12 +35,14 @@ Route::name('client.')->group(function () {
 
     Route::get('/applications', function () {
         $applications = \App\Models\Application::where('status' , 'active')->latestUpdated()->get();
-        return view('client.applications' , compact('applications'));
+        $tags = \App\Models\Tag::all();
+        return view('client.applications' , compact('applications' , 'tags'));
     })->name('applications');
 
     Route::get('/price-list', function () {
         $price_lists = \App\Models\PriceList::where('status' , 'active')->latestUpdated()->get();
-        return view('client.price-list' , compact('price_lists'));
+        $tags = \App\Models\Tag::all();
+        return view('client.price-list' , compact('price_lists' , 'tags'));
     })->name('price-list');
 
     Route::get('/articles', [\App\Http\Controllers\Client\ArticleController::class, 'index'])->name('articles.index');
