@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Manager;
 
 use App\Http\Controllers\Controller;
 use App\Models\PriceList;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class PriceListController extends Controller
@@ -18,16 +19,21 @@ class PriceListController extends Controller
 
     public function create()
     {
-        return view('manager.price-list.create');
+        $tags = Tag::all();
+
+        return view('manager.price-list.create' , compact('tags'));
     }
 
     public function store(Request $request)
     {
         $data = $request->validate([
             'name' => 'required',
+            'tag' => 'required|array',
+            'tag.*' => 'exists:tags,id',
         ]);
         $data['user_id'] = auth()->id();
         $create = PriceList::create($data);
+        $create->tags()->attach($data['tag']);
         if ($create) {
             return to_route('manager.price-list.edit', $create);
         } else {
@@ -49,16 +55,21 @@ class PriceListController extends Controller
                 'title' => 'ویرایش نرم افزار',
                 'text' => 'دقت کنید شما در حال ویرایش نرم افزار هستید پس از ذخیره هیچ راه بازگشتی نیست!!',
             ]);
-        return view('manager.price-list.edit', compact('priceList'));
+        $tags = Tag::all();
+
+        return view('manager.price-list.edit', compact('priceList' , 'tags'));
     }
 
     public function update(Request $request, PriceList $priceList)
     {
         $data = $request->validate([
             'name' => 'required',
+            'tag' => 'required|array',
+            'tag.*' => 'exists:tags,id',
         ]);
         $data['user_id'] = auth()->id();
         $update = $priceList->update($data);
+        $priceList->tags()->sync($data['tag']);
         if ($update) {
             return to_route('manager.price-list.index')->with('message',
                 [
