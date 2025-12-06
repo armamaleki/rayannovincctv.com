@@ -184,8 +184,12 @@
             </div>
         </div>
     </section>
+    <div class="container mx-auto px-2 py-16 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <video controls class="shadow-2xl outline-none  shadow-sky-400 rounded-md" >
+            <source src="https://dl.rayannovincctv.com/hikvision.mp4" type="video/webm" />
+        </video>
+    </div>
     <x-client.last-products />
-    <livewire:client.request-project />
     <div class="container mx-auto px-2 py-16 space-y-1 flex flex-col items-center bg-gray-600 rounded-xl overflow-hidden   shadow-lg shadow-sky-400 relative">
         <div class=" ">
             <div class="relative mx-auto mb-12 w-fit sm:mb-16 lg:mb-24">
@@ -425,7 +429,7 @@
 
     </section>
     <x-client.last-articles />
-
+    <livewire:client.request-project />
 @endsection
 @push('js')
     <script>
